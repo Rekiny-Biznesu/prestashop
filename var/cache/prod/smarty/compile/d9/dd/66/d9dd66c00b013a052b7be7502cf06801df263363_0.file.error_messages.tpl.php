@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-08 16:04:33
+/* Smarty version 3.1.39, created on 2021-11-10 21:57:52
   from '/var/www/html/prestashop/prestashop/admin057uc2t3k/themes/new-theme/template/components/layout/error_messages.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61893c81b23657_39529906',
+  'unifunc' => 'content_618c32508ab6e0_09447590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61893c81b23657_39529906 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618c32508ab6e0_09447590 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['errors']->value) && current($_smarty_tpl->tpl_vars['errors']->value) != '' && (!(isset($_smarty_tpl->tpl_vars['disableDefaultErrorOutPut']->value)) || $_smarty_tpl->tpl_vars['disableDefaultErrorOutPut']->value == false)) {?>
   <div class="bootstrap">
     <div class="alert alert-danger">
