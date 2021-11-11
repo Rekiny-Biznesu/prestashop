@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-08 16:06:26
+/* Smarty version 3.1.39, created on 2021-11-10 21:59:39
   from '/var/www/html/prestashop/prestashop/modules/blockreassurance/views/templates/hook/displayBlock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61893cf26e4f46_83783410',
+  'unifunc' => 'content_618c32bb3caa41_41965265',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61893cf26e4f46_83783410 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618c32bb3caa41_41965265 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container container-blockreassurance">
     <div class="blockreassurance">
         <?php $_smarty_tpl->_assignInScope('numCols', count($_smarty_tpl->tpl_vars['blocks']->value));?>
