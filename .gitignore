@@ -8,10 +8,13 @@ config/settings.*.php
 
 admin-dev/autoupgrade/
 /cache/*
+/var/cache/**
 /var/cache/*
 !/var/cache/*/
 var/cache/*/*
 var/cache/*/
+!/var/cache/*
+!/var/cache/*/*
 !/cache/index.php
 !/cache/*/
 /cache/*/*
