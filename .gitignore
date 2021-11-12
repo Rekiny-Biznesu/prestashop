@@ -12,6 +12,8 @@ admin-dev/autoupgrade/
 /var/cache/**
 /var/cache/*
 !/var/cache/*/
+var/cache
+var/cache/*
 var/cache/*/*
 var/cache/*/
 !/var/cache/*
