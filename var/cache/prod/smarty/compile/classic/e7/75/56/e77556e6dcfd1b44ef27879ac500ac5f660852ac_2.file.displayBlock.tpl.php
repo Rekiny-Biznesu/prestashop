@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-11 19:39:55
+/* Smarty version 3.1.39, created on 2021-11-12 23:50:07
   from '/var/www/html/prestashop/prestashop/modules/blockreassurance/views/templates/hook/displayBlock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_618d637b049b11_44560002',
+  'unifunc' => 'content_618eef9fd88586_57419565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e77556e6dcfd1b44ef27879ac500ac5f660852ac' => 
     array (
       0 => '/var/www/html/prestashop/prestashop/modules/blockreassurance/views/templates/hook/displayBlock.tpl',
-      1 => 1594995166,
+      1 => 1636577991,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_618d637b049b11_44560002 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618eef9fd88586_57419565 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container container-blockreassurance">
     <div class="blockreassurance">
         <?php $_smarty_tpl->_assignInScope('numCols', count($_smarty_tpl->tpl_vars['blocks']->value));?>
