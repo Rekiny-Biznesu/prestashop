@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 09 Lis 2021, 19:47
+-- Czas generowania: 13 Lis 2021, 13:31
 -- Wersja serwera: 8.0.27-0ubuntu0.20.04.1
 -- Wersja PHP: 7.4.3
 
@@ -625,6 +625,42 @@ INSERT INTO `ps_access` (`id_profile`, `id_authorization_role`) VALUES
 (1, 838),
 (1, 839),
 (1, 840),
+(1, 849),
+(1, 850),
+(1, 851),
+(1, 852),
+(1, 853),
+(1, 854),
+(1, 855),
+(1, 856),
+(1, 857),
+(1, 858),
+(1, 859),
+(1, 860),
+(1, 861),
+(1, 862),
+(1, 863),
+(1, 864),
+(1, 865),
+(1, 866),
+(1, 867),
+(1, 868),
+(1, 869),
+(1, 870),
+(1, 871),
+(1, 872),
+(1, 873),
+(1, 874),
+(1, 875),
+(1, 876),
+(1, 877),
+(1, 878),
+(1, 879),
+(1, 880),
+(1, 881),
+(1, 882),
+(1, 883),
+(1, 884),
 (2, 9),
 (2, 10),
 (2, 11),
@@ -1206,7 +1242,7 @@ CREATE TABLE `ps_admin_filter` (
 
 INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`, `filter`, `filter_id`) VALUES
 (1, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
-(2, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"active\":\"1\",\"id_category_parent\":2}}', 'category'),
+(2, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"active\":\"1\",\"id_category_parent\":\"2\"}}', 'category'),
 (3, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page_category'),
 (4, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page'),
 (5, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"date_add\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'customer'),
@@ -1216,7 +1252,9 @@ INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`,
 (9, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_order\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'order'),
 (10, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_tax\",\"sortOrder\":\"asc\",\"filters\":[]}', 'tax'),
 (11, 1, 1, 'profile', 'index', '{\"limit\":10,\"orderBy\":\"id_profile\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
-(12, 1, 1, 'employee', 'index', '{\"limit\":50,\"orderBy\":\"id_employee\",\"sortOrder\":\"asc\",\"filters\":[]}', '');
+(12, 1, 1, 'employee', 'index', '{\"limit\":50,\"orderBy\":\"id_employee\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
+(13, 1, 1, 'email', 'index', '{\"limit\":50,\"orderBy\":\"id_mail\",\"sortOrder\":\"desc\",\"filters\":[]}', ''),
+(14, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_meta\",\"sortOrder\":\"asc\",\"filters\":[]}', 'meta');
 
 -- --------------------------------------------------------
 
@@ -1572,6 +1610,10 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (540, 'ROLE_MOD_MODULE_PAGESNOTFOUND_DELETE'),
 (538, 'ROLE_MOD_MODULE_PAGESNOTFOUND_READ'),
 (539, 'ROLE_MOD_MODULE_PAGESNOTFOUND_UPDATE'),
+(845, 'ROLE_MOD_MODULE_PAYPAL_CREATE'),
+(848, 'ROLE_MOD_MODULE_PAYPAL_DELETE'),
+(846, 'ROLE_MOD_MODULE_PAYPAL_READ'),
+(847, 'ROLE_MOD_MODULE_PAYPAL_UPDATE'),
 (541, 'ROLE_MOD_MODULE_PRODUCTCOMMENTS_CREATE'),
 (544, 'ROLE_MOD_MODULE_PRODUCTCOMMENTS_DELETE'),
 (542, 'ROLE_MOD_MODULE_PRODUCTCOMMENTS_READ'),
@@ -2108,6 +2150,10 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (256, 'ROLE_MOD_TAB_ADMINPARENTPAYMENT_DELETE'),
 (254, 'ROLE_MOD_TAB_ADMINPARENTPAYMENT_READ'),
 (255, 'ROLE_MOD_TAB_ADMINPARENTPAYMENT_UPDATE'),
+(849, 'ROLE_MOD_TAB_ADMINPARENTPAYPALCONFIGURATION_CREATE'),
+(852, 'ROLE_MOD_TAB_ADMINPARENTPAYPALCONFIGURATION_DELETE'),
+(850, 'ROLE_MOD_TAB_ADMINPARENTPAYPALCONFIGURATION_READ'),
+(851, 'ROLE_MOD_TAB_ADMINPARENTPAYPALCONFIGURATION_UPDATE'),
 (257, 'ROLE_MOD_TAB_ADMINPARENTPREFERENCES_CREATE'),
 (260, 'ROLE_MOD_TAB_ADMINPARENTPREFERENCES_DELETE'),
 (258, 'ROLE_MOD_TAB_ADMINPARENTPREFERENCES_READ'),
@@ -2148,6 +2194,38 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (296, 'ROLE_MOD_TAB_ADMINPAYMENTPREFERENCES_DELETE'),
 (294, 'ROLE_MOD_TAB_ADMINPAYMENTPREFERENCES_READ'),
 (295, 'ROLE_MOD_TAB_ADMINPAYMENTPREFERENCES_UPDATE'),
+(853, 'ROLE_MOD_TAB_ADMINPAYPALCONFIGURATION_CREATE'),
+(856, 'ROLE_MOD_TAB_ADMINPAYPALCONFIGURATION_DELETE'),
+(854, 'ROLE_MOD_TAB_ADMINPAYPALCONFIGURATION_READ'),
+(855, 'ROLE_MOD_TAB_ADMINPAYPALCONFIGURATION_UPDATE'),
+(861, 'ROLE_MOD_TAB_ADMINPAYPALCUSTOMIZECHECKOUT_CREATE'),
+(864, 'ROLE_MOD_TAB_ADMINPAYPALCUSTOMIZECHECKOUT_DELETE'),
+(862, 'ROLE_MOD_TAB_ADMINPAYPALCUSTOMIZECHECKOUT_READ'),
+(863, 'ROLE_MOD_TAB_ADMINPAYPALCUSTOMIZECHECKOUT_UPDATE'),
+(877, 'ROLE_MOD_TAB_ADMINPAYPALGETCREDENTIALS_CREATE'),
+(880, 'ROLE_MOD_TAB_ADMINPAYPALGETCREDENTIALS_DELETE'),
+(878, 'ROLE_MOD_TAB_ADMINPAYPALGETCREDENTIALS_READ'),
+(879, 'ROLE_MOD_TAB_ADMINPAYPALGETCREDENTIALS_UPDATE'),
+(869, 'ROLE_MOD_TAB_ADMINPAYPALHELP_CREATE'),
+(872, 'ROLE_MOD_TAB_ADMINPAYPALHELP_DELETE'),
+(870, 'ROLE_MOD_TAB_ADMINPAYPALHELP_READ'),
+(871, 'ROLE_MOD_TAB_ADMINPAYPALHELP_UPDATE'),
+(865, 'ROLE_MOD_TAB_ADMINPAYPALINSTALLMENT_CREATE'),
+(868, 'ROLE_MOD_TAB_ADMINPAYPALINSTALLMENT_DELETE'),
+(866, 'ROLE_MOD_TAB_ADMINPAYPALINSTALLMENT_READ'),
+(867, 'ROLE_MOD_TAB_ADMINPAYPALINSTALLMENT_UPDATE'),
+(873, 'ROLE_MOD_TAB_ADMINPAYPALLOGS_CREATE'),
+(876, 'ROLE_MOD_TAB_ADMINPAYPALLOGS_DELETE'),
+(874, 'ROLE_MOD_TAB_ADMINPAYPALLOGS_READ'),
+(875, 'ROLE_MOD_TAB_ADMINPAYPALLOGS_UPDATE'),
+(881, 'ROLE_MOD_TAB_ADMINPAYPALPROCESSLOGGER_CREATE'),
+(884, 'ROLE_MOD_TAB_ADMINPAYPALPROCESSLOGGER_DELETE'),
+(882, 'ROLE_MOD_TAB_ADMINPAYPALPROCESSLOGGER_READ'),
+(883, 'ROLE_MOD_TAB_ADMINPAYPALPROCESSLOGGER_UPDATE'),
+(857, 'ROLE_MOD_TAB_ADMINPAYPALSETUP_CREATE'),
+(860, 'ROLE_MOD_TAB_ADMINPAYPALSETUP_DELETE'),
+(858, 'ROLE_MOD_TAB_ADMINPAYPALSETUP_READ'),
+(859, 'ROLE_MOD_TAB_ADMINPAYPALSETUP_UPDATE'),
 (297, 'ROLE_MOD_TAB_ADMINPERFORMANCE_CREATE'),
 (300, 'ROLE_MOD_TAB_ADMINPERFORMANCE_DELETE'),
 (298, 'ROLE_MOD_TAB_ADMINPERFORMANCE_READ'),
@@ -2528,7 +2606,7 @@ INSERT INTO `ps_badge` (`id_badge`, `id_ps_badge`, `type`, `id_group`, `group_po
 (139, 15, 'feature', 5, 5, 20, 0, 0),
 (140, 16, 'feature', 5, 6, 20, 0, 0),
 (141, 17, 'achievement', 7, 1, 5, 0, 1),
-(142, 18, 'achievement', 7, 2, 10, 0, 0),
+(142, 18, 'achievement', 7, 2, 10, 0, 1),
 (143, 19, 'feature', 8, 1, 15, 0, 1),
 (144, 20, 'feature', 8, 2, 15, 0, 0),
 (145, 21, 'feature', 9, 1, 15, 0, 0),
@@ -3291,16 +3369,16 @@ CREATE TABLE `ps_category` (
 INSERT INTO `ps_category` (`id_category`, `id_parent`, `id_shop_default`, `level_depth`, `nleft`, `nright`, `active`, `date_add`, `date_upd`, `position`, `is_root_category`) VALUES
 (1, 0, 1, 0, 1, 24, 1, '2021-10-31 15:24:13', '2021-10-31 15:24:13', 0, 0),
 (2, 1, 1, 1, 2, 23, 1, '2021-10-31 15:24:13', '2021-11-03 22:45:42', 0, 1),
-(3, 2, 1, 2, 3, 4, 1, '2021-10-31 15:25:47', '2021-10-31 17:46:26', 0, 0),
-(6, 2, 1, 2, 5, 6, 1, '2021-10-31 15:25:47', '2021-10-31 17:46:26', 1, 0),
-(9, 2, 1, 2, 7, 8, 1, '2021-10-31 15:25:48', '2021-10-31 17:46:26', 2, 0),
-(11, 2, 1, 2, 9, 10, 1, '2021-11-03 22:46:18', '2021-11-03 22:52:00', 3, 0),
-(12, 2, 1, 2, 11, 12, 1, '2021-11-03 22:46:37', '2021-11-03 22:46:37', 4, 0),
-(13, 2, 1, 2, 13, 14, 1, '2021-11-03 22:46:52', '2021-11-03 22:46:52', 5, 0),
-(14, 2, 1, 2, 15, 16, 1, '2021-11-03 22:47:05', '2021-11-03 22:47:05', 6, 0),
-(15, 2, 1, 2, 17, 18, 1, '2021-11-03 22:47:18', '2021-11-03 22:47:18', 7, 0),
-(16, 2, 1, 2, 19, 20, 1, '2021-11-03 22:47:30', '2021-11-03 22:47:30', 8, 0),
-(17, 2, 1, 2, 21, 22, 1, '2021-11-03 22:47:44', '2021-11-03 22:47:44', 9, 0);
+(12, 2, 1, 2, 9, 10, 1, '2021-11-03 22:46:37', '2021-11-11 00:02:32', 4, 0),
+(13, 2, 1, 2, 11, 12, 1, '2021-11-03 22:46:52', '2021-11-11 00:02:32', 5, 0),
+(14, 2, 1, 2, 13, 14, 1, '2021-11-03 22:47:05', '2021-11-11 00:02:32', 6, 0),
+(15, 2, 1, 2, 15, 16, 1, '2021-11-03 22:47:18', '2021-11-11 00:02:32', 7, 0),
+(16, 2, 1, 2, 17, 18, 1, '2021-11-03 22:47:30', '2021-11-11 00:02:32', 8, 0),
+(17, 2, 1, 2, 19, 20, 1, '2021-11-03 22:47:44', '2021-11-11 00:02:32', 9, 0),
+(18, 2, 1, 2, 3, 4, 1, '2021-11-11 00:00:46', '2021-11-11 00:02:11', 0, 0),
+(19, 2, 1, 2, 5, 6, 1, '2021-11-11 00:01:31', '2021-11-11 00:02:11', 1, 0),
+(20, 2, 1, 2, 7, 8, 1, '2021-11-11 00:01:42', '2021-11-11 00:02:11', 2, 0),
+(21, 2, 1, 2, 21, 22, 1, '2021-11-11 00:02:26', '2021-11-11 00:02:32', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -3321,18 +3399,6 @@ INSERT INTO `ps_category_group` (`id_category`, `id_group`) VALUES
 (2, 1),
 (2, 2),
 (2, 3),
-(3, 1),
-(3, 2),
-(3, 3),
-(6, 1),
-(6, 2),
-(6, 3),
-(9, 1),
-(9, 2),
-(9, 3),
-(11, 1),
-(11, 2),
-(11, 3),
 (12, 1),
 (12, 2),
 (12, 3),
@@ -3350,7 +3416,19 @@ INSERT INTO `ps_category_group` (`id_category`, `id_group`) VALUES
 (16, 3),
 (17, 1),
 (17, 2),
-(17, 3);
+(17, 3),
+(18, 1),
+(18, 2),
+(18, 3),
+(19, 1),
+(19, 2),
+(19, 3),
+(20, 1),
+(20, 2),
+(20, 3),
+(21, 1),
+(21, 2),
+(21, 3);
 
 -- --------------------------------------------------------
 
@@ -3377,16 +3455,16 @@ CREATE TABLE `ps_category_lang` (
 INSERT INTO `ps_category_lang` (`id_category`, `id_shop`, `id_lang`, `name`, `description`, `link_rewrite`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
 (1, 1, 1, 'Baza', '', 'baza', '', '', ''),
 (2, 1, 1, 'Strona główna', '', 'strona-glowna', '', '', ''),
-(3, 1, 1, 'Koncerty', '<p>Bilety na koncerty</p>', 'koncerty', '', '', ''),
-(6, 1, 1, 'Teatr', '<p>Bilety do teatru</p>', 'teatr', '', '', ''),
-(9, 1, 1, 'Kino', '<p>Bilety do kina.</p>', 'kino', '', '', ''),
-(11, 1, 1, 'Filharmonia', '<p>Bilety na wydarzenia w filharmonii</p>', 'filharmonia', '', '', ''),
 (12, 1, 1, 'Opera i Balet', '', 'opera-i-balet', '', '', ''),
 (13, 1, 1, 'Kabaret', '', 'kabaret', '', '', ''),
 (14, 1, 1, 'Dla dzieci', '', 'dla-dzieci', '', '', ''),
 (15, 1, 1, 'Online', '', 'online', '', '', ''),
 (16, 1, 1, 'Karnety', '', 'karnety', '', '', ''),
-(17, 1, 1, 'Inne', '', 'inne', '', '', '');
+(17, 1, 1, 'Inne', '', 'inne', '', '', ''),
+(18, 1, 1, 'Koncerty', '', 'koncerty', '', '', ''),
+(19, 1, 1, 'Teatr', '', 'teatr', '', '', ''),
+(20, 1, 1, 'Kino', '', 'kino', '', '', ''),
+(21, 1, 1, 'Filharmonia', '', 'filharmonia', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -3428,16 +3506,16 @@ CREATE TABLE `ps_category_shop` (
 INSERT INTO `ps_category_shop` (`id_category`, `id_shop`, `position`) VALUES
 (1, 1, 0),
 (2, 1, 0),
-(3, 1, 0),
-(6, 1, 1),
-(9, 1, 2),
-(11, 1, 3),
 (12, 1, 4),
 (13, 1, 5),
 (14, 1, 6),
 (15, 1, 7),
 (16, 1, 8),
-(17, 1, 9);
+(17, 1, 9),
+(18, 1, 0),
+(19, 1, 1),
+(20, 1, 2),
+(21, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -3554,10 +3632,10 @@ CREATE TABLE `ps_cms_lang` (
 
 INSERT INTO `ps_cms_lang` (`id_cms`, `id_lang`, `id_shop`, `meta_title`, `head_seo_title`, `meta_description`, `meta_keywords`, `content`, `link_rewrite`) VALUES
 (1, 1, 1, 'Dostawa', '', 'Warunki dostawy', 'conditions, delivery, delay, shipment, pack', '<h2>Shipments and returns</h2>\n<h3>Your pack shipment</h3>\n<p>Packages are generally dispatched within 2 days after receipt of payment and are shipped via UPS with tracking and drop-off without signature. If you prefer delivery by UPS Extra with required signature, an additional cost will be applied, so please contact us before choosing this method. Whichever shipment choice you make, we will provide you with a link to track your package online.</p>\n<p>Shipping fees include handling and packing fees as well as postage costs. Handling fees are fixed, whereas transport fees vary according to total weight of the shipment. We advise you to group your items in one order. We cannot group two distinct orders placed separately, and shipping fees will apply to each of them. Your package will be dispatched at your own risk, but special care is taken to protect fragile objects.<br /><br />Boxes are amply sized and your items are well-protected.</p>', 'dostawa'),
-(2, 1, 1, 'Legal Notice', '', 'Legal notice', 'notice, legal, credits', '<h2>Legal</h2><h3>Credits</h3><p>Concept and production:</p><p>This Web site was created using <a href=\"http://www.prestashop.com\">PrestaShop</a>&trade; open-source software.</p>', 'legal-notice'),
-(3, 1, 1, 'Terms and conditions of use', '', 'Our terms and conditions of use', 'conditions, terms, use, sell', '<h2>Your terms and conditions of use</h2><h3>Rule 1</h3><p>Here is the rule 1 content</p>\r\n<h3>Rule 2</h3><p>Here is the rule 2 content</p>\r\n<h3>Rule 3</h3><p>Here is the rule 3 content</p>', 'terms-and-conditions-of-use'),
-(4, 1, 1, 'About us', '', 'Learn more about us', 'about us, informations', '<h2>About us</h2>\r\n<h3>Our company</h3><p>Our company</p>\r\n<h3>Our team</h3><p>Our team</p>\r\n<h3>Informations</h3><p>Informations</p>', 'about-us'),
-(5, 1, 1, 'Secure payment', '', 'Our secure payment mean', 'secure payment, ssl, visa, mastercard, paypal', '<h2>Secure payment</h2>\r\n<h3>Our secure payment</h3><p>With SSL</p>\r\n<h3>Using Visa/Mastercard/Paypal</h3><p>About this services</p>', 'secure-payment');
+(2, 1, 1, 'Informacje prawne', '', 'Informacja prawna', '', '<h2>Informacje prawne</h2>\n<p>Koncept i produkcja</p>\n<p>Strona została stworzona przy użyciu  open-source  oprogramowania <a href=\"http://www.prestashop.com\">PrestaShop</a>™.</p>', 'informacje-prawne'),
+(3, 1, 1, 'Regulamin', '', 'Our terms and conditions of use', 'conditions, terms, use, sell', '<p><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">REGULAMIN SERWISU INTERNETOWEGO BILETY24</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">www.bilety24.pl</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"> </span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">I. Postanowienia ogólne</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">II. Definicje</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">III. Rodzaj i zakres usług elektronicznych</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">IV. Rejestracja</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">V. Warunki świadczenia i zawierania umów o świadczenie usług elektronicznych</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">VI. Warunki zawierania umów sprzedaży</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">VII. Bilety elektroniczne – bilet drukowany (print@home)</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">VIII. Warunki rozwiązywania umów o świadczenie usług  elektronicznych</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">IX. Tryb postępowania reklamacyjnego</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">XI. Prawo odstąpienia od umowy</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">XII. Własność intelektualna</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">XIII. Postanowienia końcowe</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"> </span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">I. POSTANOWIENIA OGÓLNE</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"> </span></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Właścicielem, operatorem i administratorem serwisu Bilety24 jest Bilety24 Sp. z o.o. z siedzibą w Poznaniu, wpisaną do rejestru przedsiębiorców prowadzonego przez Sąd Rejonowy w Poznaniu, VIII Wydział Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS: 0000887164, NIP: 7792524394, REGON: 38831840200000, adres miejsca wykonywania działalności i adres do doręczeń: ul. Tęczowa 15, 60-275 Poznań, adres poczty elektronicznej (e-mail): info@bilety24.pl, tel. +48 61 642 92 36 wew. 1 fax. 61 642 90 31.</li>\n<li style=\"list-style:none;\">Serwis internetowy dostępny pod adresem: www.bilety24.pl prowadzony jest przez Bilety24 Sp. z o.o. – szczegółowe informacje dotyczące prowadzonej działalności przedstawione są powyżej.</li>\n<li style=\"list-style:none;\">Regulamin sporządzony jest w języku polskim i stanowi wzorzec umowny umowy zawieranej na odległość, zgodnie z obowiązującymi powszechnie przepisami prawa polskiego.</li>\n<li style=\"list-style:none;\">Treść Regulaminu, w przypadku odrębnej decyzji Kupującego stanowi treść zawartej Umowy pomiędzy Stronami. Treść Umowy zostaje stosownie do obwiązujących przepisów utrwalona oraz udostępniona Kupującemu na trwałym nośniku, w celu zagwarantowania Kupującemu możliwości powołania się na niego w razie potrzeby.</li>\n<li style=\"list-style:none;\">Sprzedaż prowadzona jest na terenie Rzeczpospolitej Polski.</li>\n<li style=\"list-style:none;\">Klient ma możliwość zapoznania się z kodeksem dobrych praktyk przedsiębiorców. Kodeks dobrych praktyk znajduje się w ustawie z dnia 23 sierpnia 2007 r o przeciwdziałaniu nieuczciwym praktykom rynkowym. Aktualne brzmienie Ustawy jest dostępne pod adresem http://isap.sejm.gov.pl/.</li>\n<li style=\"list-style:none;\">{uchylony}</li>\n<li style=\"list-style:none;\">Regulamin określa rodzaje i zakres usług świadczonych drogą elektroniczną przez Serwis www.bilety24.pl , zasady świadczenia tych usług, warunki zawierania i rozwiązywania umów o świadczenie usług drogą elektroniczną oraz Umów Sprzedaży Produktu, a także tryb postępowania reklamacyjnego.</li>\n<li style=\"list-style:none;\">Każdy Usługobiorca z chwilą podjęcia czynności zmierzających do korzystania z Usług Elektronicznych Serwisu www.bilety24.pl , zobowiązany jest do przestrzegania postanowień niniejszego Regulaminu.</li>\n<li style=\"list-style:none;\"> Warunkiem realizacji Zamówienia złożonego przez Klienta w Serwisie Bilety24 jest zapoznanie się z Regulaminem i akceptacja jego postanowień w czasie składania Zamówienia.</li>\n<li style=\"list-style:none;\"> Usługodawca zastrzega, a Klient akceptuje, że regulaminy Partnerów Serwisu, Organizatorów poszczególnych Wydarzeń artystycznych (w tym spektakli, koncertów oraz innych imprez) mogą nakładać na Kupujących dodatkowe obowiązki niewymienione w niniejszym Regulaminie. W przypadku dokonania zakupu w serwisie Partnera, obowiązuje regulamin serwisu Partnera.</li>\n<li style=\"list-style:none;\"> Serwis www.bilety24.pl  pośredniczy w sprzedaży biletów poprzez sieć Internet na terenie Polski oraz w innych krajach Unii Europejskiej, na Wydarzenia realizowane przez Organizatorów.</li>\n<li style=\"list-style:none;\"> Serwis www.bilety24.pl  nie jest stroną umowy ani stosunków prawnych pomiędzy Klientem, a Organizatorem/Partnerem w szczególności umowy sprzedaży biletów.</li>\n<li style=\"list-style:none;\"> Sprzedaż biletów na Wydarzenia odbywa się:\n<ol>\n<li style=\"list-style:none;\">bezpośrednio na stronie Serwisu www.bilety24.pl ,</li>\n<li style=\"list-style:none;\">na stronie internetowej Partnera, po uprzednim przekierowaniu ze strony Serwisu.<br /><br /><br />Wydarzenia oraz informacje o nich, zamieszczane są na stronie www.bilety24.pl:\n<ol>\n<li style=\"list-style:none;\">bezpośrednio przez Serwis www.bilety24.pl,</li>\n<li style=\"list-style:none;\">przez Organizatorów lub Partnerów Serwisu.</li>\n</ol>\n</li>\n</ol>\n</li>\n<li style=\"list-style:none;\"> Zakończenie sprzedaży biletów w serwisie następuje według ustaleń z Organizatorem. Jeśli sprzedaż biletów zostanie zakończona we wcześniejszym terminie, wówczas jest on wyraźnie określony w Serwisie. Sprzedaż biletów na Wydarzenia udostępnione przez Partnera, kończy się zgodnie z wytycznymi Partnera.</li>\n<li style=\"list-style:none;\"> Bilety oferowane za pośrednictwem Serwisu są nowe, wolne od wad fizycznych i prawnych oraz zostały legalnie wprowadzone na rynek polski.</li>\n<li style=\"list-style:none;\"> W sprawach nieuregulowanych w niniejszym Regulaminie mają zastosowanie poniższe przepisy:\n<ol>\n<li style=\"list-style:none;\">Ustawy o świadczeniu usług drogą elektroniczną z dnia 18 lipca 2002 r. (Dz. U. Nr 144, poz. 1204 ze zm.),</li>\n<li style=\"list-style:none;\">Ustawy o prawach konsumenta z dnia 30 maja 2014 r. (Dz. U. 2014 poz. 827),</li>\n<li style=\"list-style:none;\">Ustawy Kodeks cywilny z dnia 23 kwietnia 1964 r. (Dz. U. nr 16, poz. 93 ze zm.)  oraz inne właściwe przepisy prawa polskiego.</li>\n</ol>\n</li>\n</ol>\n<p><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">II. DEFINICJE</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">KONSUMENT – osoba fizyczna, która dokonuje z przedsiębiorcą czynności prawnej niezwiązanej bezpośrednio z jej działalnością gospodarczą lub zawodową.</li>\n<li style=\"list-style:none;\">KLIENT – Usługobiorca, który zamierza zawrzeć lub zawarł Umowę Sprzedaży z Usługodawcą.</li>\n<li style=\"list-style:none;\">UŻYTKOWNIK – każdy podmiot korzystający z serwisu internetowego.</li>\n<li style=\"list-style:none;\">DZIEŃ ROBOCZY – jeden dzień od poniedziałku do piątku z wyłączeniem dni ustawowo wolnych od pracy.</li>\n<li style=\"list-style:none;\">FORMULARZ ZAMÓWIENIA – formularz dostępny na stronie internetowej www.bilety24.pl umożliwiający złożenie Zamówienia.</li>\n<li style=\"list-style:none;\">KONTO – indywidualny panel administracyjny Użytkownika dostępny po dokonaniu rejestracji i zalogowaniu w Serwisie internetowym Bilety24 oznaczony loginem i hasłem, służący zawieraniu umów sprzedaży oraz indywidualnych informacji o zakupach dokonanych przez Użytkownika w Serwisie Bilety24.</li>\n<li style=\"list-style:none;\">REJESTRACJA – proces polegający na utworzeniu przez Użytkownika Konta w Serwisie internetowym Bilety24.</li>\n<li style=\"list-style:none;\">NEWSLETTER – usługa Elektroniczna pozwalająca Usługobiorcy na subskrybowanie i otrzymywanie na podany przez Usługobiorcę adres e-mail bezpłatnych informacji pochodzących od Usługodawcy, dotyczących Produktów dostępnych w Serwisie.</li>\n<li style=\"list-style:none;\">ORGANIZATOR – osoba fizyczna, osoba prawna albo jednostka organizacyjna nieposiadająca osobowości prawnej, której ustawa przyznaje zdolność prawną będąca organizatorem Wydarzenia, na które bilety sprzedawane są za pośrednictwem serwisu Bilety24.pl bezpośrednio na stronie Serwisu albo stronie internetowej Partnera.</li>\n<li style=\"list-style:none;\">PARTNER – podmiot prowadzący działalność związaną z Wydarzeniami kulturalnymi, który udostępnia informacje o Wydarzeniach w Serwisie Bilety24.pl gdzie można dokonać zakupu biletów albo o Wydarzeniach, na które zakup biletów odbywa się po przekierowaniu, na stronie internetowej Partnera, zgodnie z regulaminem sprzedaży Partnera.</li>\n<li style=\"list-style:none;\">PRODUKT – dostępna w Serwisie usługa pośrednictwa w sprzedaży biletów na realizowane przez Organizatorów/Partnerów Wydarzenia zamieszczone w Serwisie.</li>\n<li style=\"list-style:none;\">REGULAMIN – niniejszy regulamin Serwisu.</li>\n<li style=\"list-style:none;\">RODO – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).</li>\n<li style=\"list-style:none;\">SERWIS – serwis internetowy Usługodawcy działający pod adresem www.bilety24.pl</li>\n<li style=\"list-style:none;\">UMOWA SPRZEDAŻY – Umowa Kupna - Sprzedaży Produktu zawarta między Klientem, a Sprzedawcą za pośrednictwem Serwisu.</li>\n<li style=\"list-style:none;\">USŁUGOBIORCA – osoba fizyczna, osoba prawna albo jednostka organizacyjna nieposiadająca osobowości prawnej, której ustawa przyznaje zdolność prawną korzystająca z Usługi Elektronicznej.</li>\n<li style=\"list-style:none;\">USŁUGODAWCA, SPRZEDAWCA – Bilety24 Sp. z o.o. z siedzibą w Poznaniu, ul. Tęczowa 15, 60-275 Poznań, NIP: 7792524394, REGON: 38831840200000.</li>\n<li style=\"list-style:none;\">USŁUGA ELEKTRONICZNA – usługa świadczona drogą elektroniczną przez Usługodawcę na rzecz Usługobiorcy za pośrednictwem Serwisu polegająca na możliwości zakupu biletów na wydarzenia kulturalne dostępne w ofercie Serwisu oraz na możliwości założenia konta Użytkownika.</li>\n<li style=\"list-style:none;\">WYDARZENIE – każde widowisko związane z działalnością kulturalną (w szczególności seans filmowy, koncert, festiwal, spektakl teatralny), realizowane przez Organizatora, na które prowadzona jest sprzedaż biletów za pośrednictwem serwisu Bilety24 lub bezpośrednio na stronie internetowej Partnera.</li>\n<li style=\"list-style:none;\">ZAMÓWIENIE – oświadczenie woli Klienta stanowiące ofertę zawarcia Umowy Sprzedaży.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">III. RODZAJ I ZAKRES USŁUG ELEKTRONICZNYCH</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Usługodawca umożliwia za pośrednictwem Serwisu korzystanie z Usług Elektronicznych takich jak:\n<ol>\n<li style=\"list-style:none;\">zawieranie Umów Kupna - Sprzedaży Produktu,</li>\n<li style=\"list-style:none;\">założenie i prowadzenie Konta w Serwisie Bilety24,</li>\n<li style=\"list-style:none;\">korzystanie z Newslettera.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Świadczenie Usług na rzecz Usługobiorców w Serwisie odbywa się na warunkach określonych w Regulaminie.</li>\n<li style=\"list-style:none;\">Usługodawca ma prawo do zamieszczania na stronie Serwisu treści reklamowych. Treści te, stanowią integralną część Serwisu i prezentowanych w nim materiałów.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">IV. REJESTRACJA</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Rejestracja w Serwisie internetowym Bilety24 jest dobrowolna i bezpłatna.</li>\n<li style=\"list-style:none;\">W celu dokonania Rejestracji w Serwisie Użytkownik powinien wypełnić formularz rejestracji znajdujący się na stronie internetowej Serwisu, podając w nim swoje prawdziwe dane.</li>\n<li style=\"list-style:none;\">Użytkownik w celu pomyślnego przejścia procesu Rejestracji zobowiązany jest podać następujące dane:\n<ol>\n<li style=\"list-style:none;\">Imię</li>\n<li style=\"list-style:none;\">Nazwisko</li>\n<li style=\"list-style:none;\">Adres e-mail</li>\n<li style=\"list-style:none;\">Hasło</li>\n<li style=\"list-style:none;\">Powtórz hasło</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Oprócz danych wskazanych w ust. 3 powyżej, Użytkownik nie będący Konsumentem w rozumieniu art. 221 Kodeksu cywilnego, zobowiązany jest podać dodatkowo:\n<ol>\n<li style=\"list-style:none;\">Nazwę firmy</li>\n<li style=\"list-style:none;\">NIP</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Opcjonalnie przy dokonywanej rejestracji, można wyrazić zgodę na otrzymywanie Newslettera informującego Użytkownika o promocjach i nowościach w serwisie i wysyłanego  na adres mailowy podawany przy Rejestracji.</li>\n<li style=\"list-style:none;\">Po wypełnieniu przez Użytkownika pól formularza Rejestracji wymaganymi danymi zostanie utworzone Konto Użytkownika.</li>\n<li style=\"list-style:none;\">W przypadku gdy dane Użytkownika wymagane podczas procesu Rejestracji ulegną zmianie, Użytkownik proszony jest do ich aktualizacji w celu doprowadzenia do stanu zgodnego z rzeczywistością.</li>\n<li style=\"list-style:none;\">W sytuacji, gdy dane Użytkownika wymagane podczas procesu rejestracji ulegną zmianie po rozpoczęciu realizacji zamówienia, Użytkownik jest proszony do ich aktualizacji i poinformowaniu o tym Serwisu drogą mailową (na adres: marketing@bilety24.pl).</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">V. WARUNKI ŚWIADCZENIA I ZAWIERANIA UMÓW O ŚWIADCZENIE USŁUG ELEKTRONICZNYCH</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Usługodawca świadczy za pośrednictwem Serwisu internetowego dostępnego pod adresem www.bilety24.pl następujące Usługi Elektroniczne:\n<ol>\n<li style=\"list-style:none;\">założenie i prowadzenie Konta w Serwisie internetowym;</li>\n<li style=\"list-style:none;\">umożliwienie złożenia zamówienia poprzez odpowiedni Formularz;</li>\n<li style=\"list-style:none;\">Newsletter.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Świadczenie Usług Elektronicznych przez Usługodawcę jest bezpłatne.</li>\n<li style=\"list-style:none;\">Umowa o świadczenie Usług Elektronicznych polegających na prowadzeniu Konta w Serwisie internetowym oraz świadczenia Usługi Newsletter zawarte są na czas nieoznaczony z możliwością rezygnacji przez Usługobiorcę z w/w usług.</li>\n<li style=\"list-style:none;\">Umowa o świadczenie usługi elektronicznej polegającej na umożliwieniu złożenia zamówienia poprzez odpowiedni Formularz zawierana jest na czas oznaczony i ulega rozwiązaniu z chwilą złożenia zamówienia albo zaprzestania składania zamówienia przez Usługobiorcę.</li>\n<li style=\"list-style:none;\">Zalecane wymagania techniczne współpracy z systemem teleinformatycznym to: komputer z dostępem do Internetu, dostęp do poczty elektronicznej, przeglądarka internetowa: Internet Explorer w wersji IE Edge, IE 9+ lub nowszej z włączoną obsługą JavaScript i cookies, Mozilla Firefox w wersji Firefox 47+ lub nowszej z włączoną obsługą JavaScript i cookies albo Google Chrome w wersji Chrome 47+ lub nowszej. Zalecana rozdzielczość monitora 1024x768 pikseli.</li>\n<li style=\"list-style:none;\">Usługobiorca jest zobowiązany do korzystania z Serwisu internetowego w sposób zgodny z prawem i dobrymi obyczajami mając na uwadze poszanowanie dóbr osobistych i praw własności intelektualnej osób trzecich. Usługobiorcę obowiązuje zakaz dostarczania treści o charakterze bezprawnym. Zabronione jest korzystanie z Usług elektronicznych w sposób bezprawnie zakłócający funkcjonowanie Serwisu internetowego poprzez użycie określonego oprogramowania lub urządzeń oraz rozsyłanie lub umieszczanie w Serwisie internetowym niezamówionej informacji handlowej.</li>\n<li style=\"list-style:none;\">Usługobiorca zobowiązany jest do wprowadzania danych zgodnych ze stanem faktycznym.</li>\n<li style=\"list-style:none;\">Usługobiorca może składać reklamacje związane ze świadczeniem usługi elektronicznej za pośrednictwem Serwisu internetowego Bilety24 poprzez wysłanie wiadomości e-mail na adres poczty elektronicznej: info@bilety24.pl , lub pisemnie na adres: Bilety24 sp. Z z o.o. , ul. Tęczowa 15, 60-275 Poznań. Usługodawca rozpatrzy reklamację niezwłocznie, nie później niż w terminie 14 dni liczonych od dnia złożenia reklamacji.</li>\n<li style=\"list-style:none;\">Usługobiorca może wypowiedzieć ze skutkiem natychmiastowym bezterminową usługę o świadczenie Usługi elektronicznej o charakterze ciągłym w każdym czasie i bez wskazywania przyczyn poprzez przesłanie stosownego oświadczenia za pośrednictwem poczty elektronicznej na adres: info@bilety24.pl, lub pisemnie na adres: Bilety24 sp. z o.o. , ul. Tęczowa 15, 60-275 Poznań.</li>\n<li style=\"list-style:none;\">Usługodawca może wypowiedzieć bezterminową umowę o świadczenie Usługi elektronicznej w przypadku, gdy Usługobiorca obiektywnie lub uporczywie narusza Regulamin, a w szczególności, gdy dostarcza treści o charakterze bezprawnym, po bezskutecznym, jednokrotnym wezwaniu do zaprzestania, z wyznaczeniem odpowiedniego terminu. Umowa w takim wypadku wygasa po upływie 7 dni od złożenia oświadczenia woli o wypowiedzeniu.</li>\n<li style=\"list-style:none;\">Na drodze porozumienia stron, Usługodawca i Usługobiorca mogą rozwiązać Umowę o świadczenie Usługi drogą elektroniczną w każdym czasie.</li>\n<li style=\"list-style:none;\">Wypowiedzenie Umowy o świadczenie usługi elektronicznej zawartej na czas nieoznaczony przez Usługodawcę lub Usługobiorcę nie narusza praw lub świadczeń nabytych przez Strony w czasie trwania Umowy.</li>\n<li style=\"list-style:none;\">Usługodawca udzieli odpowiedzi w sprawie Reklamacji na podany przez Usługobiorcę adres e-mail lub w inny, uzgodniony przez Strony sposób.</li>\n<li style=\"list-style:none;\">Świadczenie Usługi Elektronicznej określonej w rozdziale III pkt. 1 lit. a) Regulaminu przez Usługodawcę jest płatne, a wszelkie prowizje i opłaty są wskazane w procesie zakupu. Serwis zastrzega sobie prawo do wprowadzenia odpłatności poszczególnych kategorii biletów, o czym Usługobiorca będzie każdorazowo informowany w procesie składania Zamówienia.</li>\n<li style=\"list-style:none;\">Świadczenie Usług Elektronicznych określonych w rozdziale III pkt. 1 lit. b) Regulaminu przez Usługodawcę jest nieodpłatne.</li>\n<li style=\"list-style:none;\">Okres na jaki umowa zostaje zawarta:\n<ol>\n<li style=\"list-style:none;\">umowa o świadczenie Usługi Elektronicznej polegającej na umożliwieniu złożenia Zamówienia w Serwisie zawierana jest na czas oznaczony i ulega rozwiązaniu z chwilą złożenia Zamówienia albo zaprzestania jego składania przez Usługobiorcę,</li>\n<li style=\"list-style:none;\">umowa o świadczenie Usługi Elektronicznej polegającej na prowadzeniu konta Użytkownika w serwisie Bilety24 zawierana jest na czas nieoznaczony,</li>\n<li style=\"list-style:none;\">umowa o świadczenie Usługi Elektronicznej polegającej na korzystaniu z Newslettera zawierana jest na czas nieoznaczony.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Usługobiorca zobowiązany jest do korzystania z Serwisu w sposób zgodny z prawem i dobrymi obyczajami mając na uwadze poszanowanie dóbr osobistych i praw własności intelektualnej osób trzecich.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">VI. WARUNKI ZAWIERANIA UMÓW SPRZEDAŻY</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Informacje znajdujące się na stronach internetowych Serwisu nie stanowią oferty w rozumieniu przepisów prawa. Klient składając Zamówienie, składa ofertę zawarcia Umowy Sprzedaży dotyczącej określonego Produktu na warunkach podanych w jego opisie.</li>\n<li style=\"list-style:none;\">Cena biletu uwidoczniona na stronie internetowej Serwisu podana jest w złotych polskich (PLN) i zawiera podatek VAT.</li>\n<li style=\"list-style:none;\">Całkowita wartość Zamówienia i ostateczna cena Zamówienia znajduje się w Podsumowaniu w polu „do zapłaty” i jest są widoczna widoczne przed ostatecznym zatwierdzeniem transakcji, zawierają wszelkie prowizje i opłaty, w tym na rzecz Partnerów.</li>\n<li style=\"list-style:none;\">Cena biletu uwidoczniona na stronie Serwisu jest wiążąca w chwili złożenia przez Klienta Zamówienia. Cena ta nie ulegnie zmianie niezależnie od zmian cen w Serwisie, które mogą się pojawić w odniesieniu do poszczególnych Produktów po złożeniu przez Klienta Zamówienia.</li>\n<li style=\"list-style:none;\">Zamówienia można składać bezpośrednio poprzez witrynę internetową za pomocą Formularza Zamówień (www.bilety24.pl) – 24 godziny na dobę przez cały rok albo na stronie internetowej Partnera Serwisu.</li>\n<li style=\"list-style:none;\">Proces zakupu biletów bezpośrednio na stronie internetowej serwisu Bilety24 składa się z następujących etapów:\n<ol>\n<li style=\"list-style:none;\">wyboru Wydarzenia z listy udostępnionej na stronie www.bilety24.pl,</li>\n<li style=\"list-style:none;\">wyboru miejsc numerowanych z aktywnego widoku sali lub nienumerowanych oraz udostępnionych wariantów cenowych,</li>\n<li style=\"list-style:none;\">wyboru wariantu cenowych biletów, jeżeli jest udostępniony w Serwisie: bilet normalny, bilet ulgowy, bilet rodzinny,</li>\n<li style=\"list-style:none;\">wyboru kategorii biletów, jeżeli jest udostępniony w Serwisie: Bilet „Prezent”, Bilet grupowy, Bilety pojedyncze, Bilet okazjonalny,</li>\n<li style=\"list-style:none;\">wyboru formy dostawy spośród udostępnionych w Serwisie: bilet drukowany (print@home), mms lub inny wskazany w Serwisie,</li>\n<li style=\"list-style:none;\">uzupełnienia danych Klienta: imię, nazwisko, numer telefonu, adres e-mail oraz innych wyświetlonych w postaci pól z wymogiem uzupełnienia treści, jeżeli wymaga ich Organizator,</li>\n<li style=\"list-style:none;\">wyboru formy płatności za bilety: przelew online, Karta płatnicza lub inne wskazane w Serwisie,</li>\n<li style=\"list-style:none;\">zaakceptowania niniejszego Regulaminu,</li>\n<li style=\"list-style:none;\">dokonania płatności internetowych za pośrednictwem systemu Przelewy24 lub inną metodą wskazaną w Serwisie,</li>\n<li style=\"list-style:none;\">potwierdzenia zakupu w postaci trwałej informacji wysłanej na podany przez Klienta podczas zakupu adres e-mail.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Zamówienie tworzone jest w momencie kliknięcia w przycisk  \"Kupuję i płacę”. Do tego czasu wybrane bilety znajdują się w ogólnodostępnej puli i mogą zostać zakupione przez inną osobę.</li>\n<li style=\"list-style:none;\">Proces zakupu biletów na wydarzenia udostępnione przez Partnera za pośrednictwem Jego strony internetowej składa się z następujących etapów:\n<ol>\n<li style=\"list-style:none;\">wybór Wydarzenia na stronie www.bilety24.pl,</li>\n<li style=\"list-style:none;\">przekierowanie do strony internetowej Partnera,</li>\n<li style=\"list-style:none;\">proces zakupu z wyborem miejsc, form dostawy oraz dokonanie procesu płatności w serwisie Partnera następuje zgodnie z wytycznymi regulaminu zaakceptowanego podczas procesu składania zamówienia na stronie internetowej Partnera.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Klient jest zobowiązany zweryfikować poprawność wprowadzonych przez siebie danych osobowych oraz teleadresowych oraz zgodność informacji umieszczonych na bilecie z danymi zawartymi w złożonym przez Niego Zamówieniu.</li>\n<li style=\"list-style:none;\">Czas rezerwacji biletu w procesie zakupu wynosi 20 minut i jest to okres, w którym Klient powinien dokonać zapłaty. Bilet jest dostępny dopiero po potwierdzeniu poprawności transakcji przez Przelewy24.</li>\n<li style=\"list-style:none;\">W przypadku dokonania zakupu biletu bezpośrednio poprzez stronę internetową Partnera, obowiązują postanowienia regulaminu sprzedaży Partnera.</li>\n<li style=\"list-style:none;\">Warunkiem zakupu biletu w Serwisie jest zapłata za bilet poprzez płatność online. Serwis Bilety24 zapewnia poniższe możliwości płatności online:\n<ol>\n<li style=\"list-style:none;\">BLIK</li>\n<li style=\"list-style:none;\">karta kredytowa</li>\n<li style=\"list-style:none;\">przelew internetowy.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Operatorem płatności online jest system Przelewy24 zapewniający natychmiastową wpłatę za zakupiony bilet.</li>\n<li style=\"list-style:none;\">Szczegółowe informacje o warunkach płatności i przelewów internetowych znajdują się w Regulaminie Przelewy24 na stronie www.przelewy24.pl w zakładce Kupuj on-line. Jeśli bilety zostały już sprzedane albo wpłata nastąpi po upływie 15 minut od chwili złożenia Zamówienia biletu, wpłata na konto jest traktowana, jako przedpłata i posiada status \"do wykorzystania\".</li>\n<li style=\"list-style:none;\">Przedpłata jest zwracana po upływie 30 dni, jeśli wcześniej Klient nie wybierze opcji \"Użyj przedpłaty\" podczas ponownego zakupu biletów na stronie Serwisu. Szczegółowe informacje o metodach płatności i wykorzystaniu przedpłaty znajdują się na stronie www.bilety24.pl  w zakładce metody płatności.</li>\n<li style=\"list-style:none;\">Do zawarcia Umowy Sprzedaży, niezbędne jest wcześniejsze złożenie przez Klienta, Zamówienia udostępnionymi przez Sprzedawcę sposobami.</li>\n<li style=\"list-style:none;\">Po złożeniu Zamówienia bezpośrednio na stronie internetowej Serwisu Sprzedawca, niezwłocznie potwierdza jego otrzymanie jednocześnie przyjmując Zamówienie, co powoduje związanie Klienta jego Zamówieniem. Potwierdzenie otrzymania oraz przyjęcie Zamówienia do realizacji następuje poprzez przesłanie wiadomości e-mail, która zawiera:\n<ol>\n<li style=\"list-style:none;\">potwierdzenie wszystkich istotnych elementów Zamówienia.</li>\n<li style=\"list-style:none;\">pouczenie o prawie do odstąpienia od umowy,</li>\n<li style=\"list-style:none;\">niniejszy Regulamin.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Z chwilą otrzymania przez Klienta wiadomości e-mail, o której mowa w pkt. 16 lit b) zostaje zawarta Umowa kupna - Sprzedaży między Klientem, a Sprzedawcą.</li>\n<li style=\"list-style:none;\">Wystawienie faktury VAT za zakupione bilety następuje na żądanie Klienta, tylko w przypadku, gdy w procesie zakupu była udostępniona opcja „Faktura VAT”. Faktura zostanie wystawiona do transakcji dokonanej w Serwisie Bilety24 na dane zawarte w formularzu, uwzględniając łączną ilość biletów zakupionych w transakcji. Przez transakcję rozumie się jednorazowy zakup biletów bez względu na ich ilość.</li>\n<li style=\"list-style:none;\">Zlecenia można dokonać zaznaczając odpowiednią opcję podczas procesu składania Zamówienia oraz podając wymagane w formularzu dane.</li>\n<li style=\"list-style:none;\">Faktura będzie wystawiona w formie elektronicznej i dostarczona drogą mailową na adres wskazany przez Klienta podczas zakupu, na zasadach i w terminach wynikających z ustawy o podatku od towarów i usług (VAT).</li>\n<li style=\"list-style:none;\">Serwis Bilety24.pl nie ponosi odpowiedzialności za wystawiane faktury oraz ich poprawność w przypadku, gdy ich wystawcą jest Organizator/Partner.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">VII. BILET DRUKOWANY (print@home)</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Bilet drukowany (print@home) stanowi dokument elektroniczny w formacje PDF przeznaczony do samodzielnego wydruku przez Klienta.</li>\n<li style=\"list-style:none;\">Bilet przesyłany jest na adres mailowy podany przez Klienta podczas składania Zamówienia po potwierdzeniu poprawności transakcji przez operatora płatności udostępnianych w Serwisie metod płatności.</li>\n<li style=\"list-style:none;\">Klient może wydrukować bilet wielokrotnie, w dowolnym miejscu i czasie przed Wydarzeniem, korzystając z opcji „WYDRUKUJ BILET PONOWNIE” na stronie www.bilety24.pl.</li>\n<li style=\"list-style:none;\">Bilet należy wydrukować w formacie A4 i okazać bileterowi, jeśli w Serwisie (i na bilecie) nie określono inaczej. W przypadku, gdy wymagana jest wymiana na bilet standardowy (zabezpieczony blankiet biletowy), odbywa się ona bezpośrednio przed Wydarzeniem w miejscu wyznaczonym przez Organizatora/Partnera.</li>\n<li style=\"list-style:none;\">Wiadomość e-mail z potwierdzeniem dokonania zakupu biletów oraz linkiem do pobrania biletu zostanie wysłana w ciągu 20 minut od potwierdzenia transakcji płatniczej. W przypadku braku wiadomości w głównym folderze konta pocztowego, Serwis zaleca sprawdzenie folderu „SPAM” oraz pozostałych folderów, a w dalszej kolejności kontaktowanie się z Biurem Obsługi Klienta: e-mail info@bilety24.pl lub telefonicznie 61 642 92 36 wew. 1. czynnym siedem dni w tygodniu w godzinach 8-24.</li>\n<li style=\"list-style:none;\">Bilet drukowany (print@home) zawiera unikalny kod kreskowy oraz 2D będący identyfikatorem wstępu. Serwis przestrzega Klienta, a Klient przyjmuje do wiadomości, aby NIE POKAZYWAĆ BILETU OSOBOM POSTRONNYM, gdyż kody zawarte na bilecie są ważne tylko przy pierwszym skanowaniu, jakiekolwiek udostępnianie biletu osobom trzecim spowoduje unieważnienie biletu i będzie traktowane jako próba oszustwa. Organizator/Partner może zastrzec sobie prawo odmowy wstępu na Wydarzenie wszystkim posiadaczom biletów o tych samych kodach.</li>\n<li style=\"list-style:none;\">Ze względów bezpieczeństwa w trakcie kontroli bileter może dodatkowo poprosić Klienta  o okazanie dokumentu tożsamości w celu potwierdzenia danych podanych podczas zakupu.</li>\n<li style=\"list-style:none;\">Bilet umożliwia wejście jednorazowe wymienionej na bilecie liczbie osób. Dopuszczalna ilość osób na jednym bilecie jest określana przez Organizatora/Partnera i widnieje jako ograniczenie podczas zakupu. W przypadku biletu grupowego (wieloosobowego) obowiązuje stawiennictwo i jednorazowe wejście całej grupy osób.</li>\n<li style=\"list-style:none;\">Bilet nieczytelny, zniszczony lub uszkodzony może zostać uznany przez Organizatora/Partnera za nieważny.</li>\n<li style=\"list-style:none;\">W przypadku „Biletów okazjonalnych” oraz „Biletów prezentów” Serwis nie bierze odpowiedzialności za treści wpisane w pole edytowalne podczas zakupu.</li>\n<li style=\"list-style:none;\">W przypadku „Biletów okazjonalnych” oraz „Biletów prezentów” Serwis może pobrać dodatkową opłatę w wysokości 5 zł brutto za wybór grafiki dedykowanej udostępnionej przez Serwis, o czym Klient będzie informowany każdorazowo w procesie zakupu.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">VIII. WARUNKI ROZWIĄZYWANIA UMÓW O ŚWIADCZENIE USŁUG ELEKTRONICZNYCH</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Wypowiedzenie umowy o świadczenie Usługi Elektronicznej:</li>\n<li style=\"list-style:none;\">Wypowiedzeniu może ulec umowa o świadczenie Usługi Elektronicznej o charakterze ciągłym i bezterminowym (Newsletter).</li>\n<li style=\"list-style:none;\">Usługobiorca może wypowiedzieć umowę ze skutkiem natychmiastowym i bez wskazywania przyczyn poprzez przesłanie stosownego oświadczenia za pośrednictwem poczty elektronicznej na adres: info@bilety24.pl</li>\n<li style=\"list-style:none;\">Usługodawca może wypowiedzieć umowę o świadczenie usługi drogą elektroniczną o charakterze ciągłym i bezterminowym w przypadku, gdy Usługobiorca narusza Regulamin, w szczególności, gdy dostarcza treści o charakterze bezprawnym po bezskutecznym wcześniejszym wezwaniu do zaprzestania naruszeń z wyznaczeniem odpowiedniego terminu. Umowa w takim wypadku wygasa po upływie 7 dni od dnia złożenia oświadczenia woli o jej wypowiedzeniu (okres wypowiedzenia).</li>\n<li style=\"list-style:none;\">Wypowiedzenie prowadzi do ustania stosunku prawnego ze skutkiem na przyszłość.</li>\n<li style=\"list-style:none;\">Usługodawca i Usługobiorca mogą rozwiązać umowę o świadczenie Usługi Elektronicznej w każdym czasie w drodze porozumienia stron.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">IX. TRYB POSTĘPOWANIA REKLAMACYJNEGO</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Reklamacje z tytułu rękojmi:\n<ol>\n<li style=\"list-style:none;\">Podstawa i zakres odpowiedzialności Sprzedawcy wobec Klienta będącego Konsumentem, z tytułu rękojmi obejmującej wady fizyczne i prawne, są określone w ustawie Kodeks cywilny z dnia 23 kwietnia 1964 r. (Dz. U. nr 16, poz. 93 ze zm.).</li>\n<li style=\"list-style:none;\">Zawiadomienia o wadach dotyczących biletów oraz zgłoszenie odpowiedniego żądania można dokonać za pośrednictwem poczty elektronicznej na adres: info@bilety24.pl lub pisemnie na adres: Bilety24 sp. Z z o.o.  ul. Tęczowa 15, 60-275 Poznań.</li>\n<li style=\"list-style:none;\">W powyższej wiadomości e-mail należy podać jak najwięcej informacji i okoliczności dotyczących przedmiotu reklamacji, w szczególności rodzaj i datę wystąpienia nieprawidłowości oraz dane kontaktowe. Podane informacje znacznie ułatwią i przyspieszą rozpatrzenie reklamacji przez Sprzedawcę.</li>\n<li style=\"list-style:none;\">W przypadku, gdy jest to niezbędne dla oceny wad fizycznych biletu oraz wynika to z porozumienia z Organizatorem/Partnerem, bilet należy dostarczyć na adres: Bilety24 sp. Z z o.o.  ul. Tęczowa 15, 60-275 Poznań.</li>\n<li style=\"list-style:none;\">Sprzedawca ustosunkuje się do żądania Klienta niezwłocznie, nie później niż w terminie 14 dni. Odpowiedź w sprawie reklamacji jest wysyłana na podany przez Klienta adres e-mail lub w inny podany przez Klienta sposób.</li>\n<li style=\"list-style:none;\">W przypadku reklamacji Klienta będącego Konsumentem – nierozpatrzenie reklamacji w terminie 14 dni jest jednoznaczne z jej uwzględnieniem.</li>\n<li style=\"list-style:none;\">W przypadku, gdy w porozumieniu z Organizatorem/Partnerem, zwrotów za bilety dokonuje Serwis Bilety24, Klient zobowiązany jest do odesłania drogą mailową danych niezbędnych do weryfikacji wpłaty. Prośba o przedstawienie danych do zwrotu wysyłana jest na adres e-mail podany podczas zakupu w Serwisie Bilety24.pl</li>\n<li style=\"list-style:none;\">Zwrot pieniędzy za zakup biletu odbywa się przelewem na rachunek bankowy, z którego wykonywana była płatność lub w drodze zwrotu na kartę płatniczą.</li>\n<li style=\"list-style:none;\">W przypadku konieczności dokonania zwrotu biletów zakupionych w serwisie Partnera, obowiązują wytyczne zawarte w regulaminie serwisu Partnera.</li>\n</ol>\n</li>\n<li style=\"list-style:none;\">Reklamacje związane ze świadczeniem Usług Elektronicznych przez Usługodawcę:\n<ol>\n<li style=\"list-style:none;\">Reklamacje związane ze świadczeniem Usług Elektronicznych za pośrednictwem Serwisu Usługobiorca może składać za pośrednictwem poczty elektronicznej na adres: info@bilety24.pl.</li>\n<li style=\"list-style:none;\">W powyższej wiadomości e-mail, należy podać jak najwięcej informacji i okoliczności dotyczących przedmiotu reklamacji, w szczególności rodzaj i datę wystąpienia nieprawidłowości oraz dane kontaktowe. Podane informacje znacznie ułatwią i przyspieszą rozpatrzenie reklamacji przez Usługodawcę.</li>\n<li style=\"list-style:none;\">Rozpatrzenie reklamacji przez Usługodawcę następuje niezwłocznie, nie później niż w terminie 14 dni.</li>\n<li style=\"list-style:none;\">Odpowiedź Usługodawcy w sprawie reklamacji jest wysyłana na adres e-mail Usługobiorcy podany w zgłoszeniu reklamacyjnym lub w inny podany przez Usługobiorcę sposób.</li>\n</ol>\n</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">X. PRAWO ODSTĄPIENIA OD UMOWY</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Zgodnie z postanowieniami art. 38 pkt. 12 Ustawy z dnia 30 maja 2014 r. o prawach konsumenta (Dz.U. 2014 poz. 827) prawo odstąpienia od umowy zawartej poza lokalem przedsiębiorstwa lub na odległość nie przysługuje konsumentowi w odniesieniu do umów o świadczenie usług związanych z wypoczynkiem, wydarzeniami rozrywkowymi, sportowymi lub kulturalnymi, jeżeli w umowie oznaczono dzień lub okres świadczenia usługi.</li>\n<li style=\"list-style:none;\">Bilet zakupiony w serwisie nie podlega zwrotowi pieniędzy ani do zamiany na inny, za wyjątkiem przypadku odwołania Wydarzenia, zmiany daty i/lub miejsca Wydarzenia przez Organizatora.</li>\n<li style=\"list-style:none;\">W przypadku odwołania, zmiany terminu lub zmian w programie Klient informowany jest o tym fakcie przez Organizatora/Partnera. Serwis Bilety24.pl zastrzega sobie prawo do informowania Klientów, którzy kupili bilet na dane Wydarzenie o zaistniałych zmianach, nie jest to jednak jego obowiązkiem. Informacja taka może być wysłana przez Serwis Bilety24.pl mailem lub w formie SMS, na dane podane w procesie zakupu.</li>\n<li style=\"list-style:none;\">Zwrotowi podlega tylko i wyłącznie wartość biletu, pozostałe opłaty serwisowe w tym opłaty transakcyjne są bezzwrotne.</li>\n<li style=\"list-style:none;\">Zwrot nastąpi w terminie do 31 dni od daty wydania dyspozycji zwrotu przez Organizatora/Partnera, którego dotyczą zwracane bilety.</li>\n<li style=\"list-style:none;\">Jeżeli Klient zlecił wystawienie faktury za zakup biletu, zwrot środków może otrzymać jedynie po wcześniejszym potwierdzeniu otrzymania korekty do faktury. Za potwierdzenie uznaje się odesłanie podpisanego dokumentu do serwisu Bilety24 lub Organizatora/Partnera. Faktura korygująca może być wystawiona w formie elektronicznej i dostarczona drogą mailową na adres wskazany przez Klienta podczas zakupu, na zasadach wynikających z ustawy o podatku od towarów i usług (VAT). Wówczas fakturę korygującą uznaje się za dostarczoną bez konieczności drukowania i odsyłania podpisanej kopii faktury.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">XI. WŁASNOŚĆ INTELEKTUALNA</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Wszystkie treści zamieszczone na stronie internetowej pod adresem www.bilety24.pl  korzystają z ochrony prawno-autorskiej i są własnością Bilety24 Sp. z o.o. z siedzibą w Poznaniu, ul. Tęczowa 15, 60-275 Poznań, NIP: 7792524394, REGON: 38831840200000. Usługobiorca ponosi pełną odpowiedzialność za szkodę wyrządzoną Usługodawcy, będącą następstwem użycia jakiejkolwiek zawartości strony www.bilety24.pl , bez zgody Usługodawcy.</li>\n<li style=\"list-style:none;\">Jakiekolwiek wykorzystanie przez kogokolwiek, bez wyraźnej pisemnej zgody Usługodawcy, któregokolwiek z elementów składających się na treść oraz zawartość strony www.bilety24.pl   stanowi naruszenie prawa autorskiego przysługującego Usługodawcy i skutkuje odpowiedzialnością cywilnoprawną oraz karną.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">XII. DANE OSOBOWE</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Administratorem danych osobowych jest Usługodawca, którego tożsamość i dane kontaktowe podano w Rozdział I ust. 1 Regulaminu.</li>\n<li style=\"list-style:none;\">Usługodawca przetwarza dane osobowe niezbędne do zawarcia i wykonania umowy w rozumieniu art. 8 ust. 2 ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną, w tym w szczególności w celach opisanych w niniejszym Regulaminie.</li>\n<li style=\"list-style:none;\">Usługodawca przetwarza dane zgodnie z przepisami powszechnie obowiązującego prawa, w tym w szczególności zgodnie z RODO.</li>\n<li style=\"list-style:none;\">Klient składając Zamówienie wyraża dobrowolną zgodę na przekazanie jego danych osobowych zawartych w Zamówieniu do Partnera, do którego kierowane jest Zamówienie. Z chwilą przyjęcia Zamówienia administratorem danych (w rozumieniu art. 4 ust. 7 RODO), w zakresie niezbędnym do realizacji Zamówienia i jego dostarczenia jest Partner.</li>\n<li style=\"list-style:none;\">W zakresie nieuregulowanym niniejszym Regulaminem zasady przetwarzania danych osobowych oraz ochrony prywatności Usługobiorcy określa dokument „Polityka prywatności” dostępny w Serwisie.</li>\n</ol>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">XIII. POSTANOWIENIA KOŃCOWE</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /></p>\n<ol style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">\n<li style=\"list-style:none;\">Reklamacje i skargi dotyczące organizacji oraz przebiegu Wydarzenia powinny zostać zgłoszone przez Klienta bezpośrednio do Organizatora/Partnera. W przypadku otrzymania reklamacji dotyczącej danego Wydarzenia serwis Bilety24 przekaże reklamację do Organizatora/Partnera.</li>\n<li style=\"list-style:none;\">Odpowiedzialność serwisu Bilety24.pl jest wyłączona w przypadku wysłania wiadomości  e-mail (biletu, informacji o odwołaniu wydarzenia lub informacji dotyczących Zamówienia) na niewłaściwy adres e-mail lub w przypadku wysłania wiadomości mms na niewłaściwy numer, jeśli zostały błędnie podane przez Klienta podczas składania Zamówienia.</li>\n<li style=\"list-style:none;\">Biuro Obsługi Klienta serwisu Bilety24, czynne jest od poniedziałku do niedzieli w godzinach 08:00 - 24:00. W sprawach bieżących lub informacji o płatnościach prosimy o kontakt telefoniczny pod numerem telefonu 61 642 92 36 w.1, lub elektroniczny na adres e-mail: info@bilety24.p l. Lista kontaktów dostępna na stronie Kontakt dla kupujących.</li>\n<li style=\"list-style:none;\">Serwis Bilety24.pl nie ponosi odpowiedzialności za informacje oraz przebieg procesów na stronach internetowych serwisu Organizatora/Partnera.</li>\n<li style=\"list-style:none;\">Umowy zawierane poprzez Serwis zawierane są zgodnie z prawem polskim.</li>\n<li style=\"list-style:none;\">Zmiany dokonane w Regulaminie Serwisu przez Usługodawcę, wiążą Usługobiorcę, pod warunkiem, iż został on prawidłowo poinformowany o zmianach i nie wypowiedział umowy o świadczenie usług drogą elektroniczną w terminie 14 dni od dnia powiadomienia Usługobiorcy o zmianach przez Serwis.</li>\n<li style=\"list-style:none;\">W przypadku niezgodności jakiejkolwiek części Regulaminu z obowiązującym prawem, w miejsce zakwestionowanego przepisu Regulaminu zastosowanie mają właściwe przepisy prawa polskiego.</li>\n<li style=\"list-style:none;\">Wszelkie spory pomiędzy Usługodawcą a Usługobiorcą będą rozstrzygane w pierwszej kolejności na drodze negocjacji, z intencją polubownego zakończenia sporu. Jeśli jednak nie byłoby to możliwe, lub też byłoby niesatysfakcjonujące dla którejkolwiek ze stron, spory będą rozstrzygane przez właściwy sąd powszechny zgodnie z przepisami kodeksu postępowania cywilnego z dnia 17 listopada 1964 r. (Dz. U. Nr 43, poz. 296 ze zm.).</li>\n<li style=\"list-style:none;\">Klient będący konsumentem ma prawo do skorzystania z pozasądowych sposobów rozstrzygania sporów. Konsument w celu polubownego rozwiązania sporu może np. złożyć skargę za pośrednictwem platformy internetowej ODR (Online Dispute Resolution), dostępnej pod adresem: http://ec.europa.eu/consumers/odr/.</li>\n<li style=\"list-style:none;\">Klient będący Konsumentem ma również prawo do skorzystania z pozasądowych sposobów rozstrzygania sporów w szczególności poprzez złożenie po zakończeniu postępowania reklamacyjnego wniosku o wszczęcie mediacji lub wniosku o rozpatrzenie sprawy przez sąd polubowny (na stronie internetowej www.uokik.gov.pl można pobrać wniosek). Wykaz Stałych Polubownych Sądów Konsumenckich działających przy Wojewódzkich Inspektoratach Inspekcji Handlowej również dostępny jest na stronie internetowej. Konsument może skorzystać także z bezpłatnej pomocy powiatowego (miejskiego) rzecznika konsumentów lub organizacji społecznej, do której zadań statutowych należy ochrona konsumentów.  Pozasądowe dochodzenie roszczeń po zakończeniu postępowania reklamacyjnego jest bezpłatne.</li>\n</ol>', 'regulamin'),
+(4, 1, 1, 'o nas', '', 'Dowiedz się więcej', 'about us, informations', '<p><strong>O nas</strong></p>\n<p><span style=\"color:#333333;font-family:Roboto, Arial, sans-serif;font-size:14px;font-style:normal;font-weight:300;letter-spacing:normal;text-align:left;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Bilety online na koncerty, do teatru, filharmonii, opery, a także na przeróżne wydarzenia kulturalne.</span><strong></strong></p>\n<p></p>', 'o-nas'),
+(5, 1, 1, 'Bezpieczeństwo płatności', '', 'Bezpieczeństwo płatności', 'secure payment, ssl, visa, mastercard, paypal', '<p><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Serwis Bilety24 prowadzi sprzedaż biletów</span><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\"><span> </span>od 2002 roku</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">. Wszystkie bilety zakupione poprzez Serwis Bilety24 posiadają<span> </span></span><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">unikatowy kod kreskowy</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">,</span><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\"><span> </span>QR</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"><span> </span>lub<span> </span></span><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">numer biletu</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">, pozwalający na weryfikację biletów przez bileterów. Służą do tego specjalne urządzenia oraz zabezpieczone oprogramowanie do weryfikacji.</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Kupując w Bilety24, masz pewność, że bilet lub miejsce, którego dotyczy, nie zostaną ponownie sprzedane w naszym serwisie.</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Zdarza się, że w sieci można natrafić na ogłoszenia o odsprzedaży biletów z zyskiem. W świetle prawa, wykroczenie popełniają nie tylko tzw. „koniki”, ale i osoby korzystające z ich usług. Działania te podlegają karze.</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><em>Art. 133 kodeksu wykroczeń § 1. Kto nabywa w celu odprzedaży z zyskiem bilety wstępu na imprezy artystyczne, rozrywkowe lub sportowe albo kto bilety takie sprzedaje z zyskiem, podlega karze aresztu, ograniczenia wolności albo grzywny.</em><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"></span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Wystrzegaj się zakupów od niezweryfikowanych serwisów lub osób trzecich, kupuj tylko w autoryzowanych punktach sprzedaży !!!</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">Zwrot pieniędzy</strong><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">W przypadku odwołania lub przeniesienia wydarzenia na inny termin, serwis Bilety24 będąc w stałym kontakcie z Organizatorem, wysyła na podany podczas zakupu adres e-mail informacje o procesie zwrotu. Zwroty realizowane są automatycznie, tą samą drogą, którą nastąpiła płatność (przelew, BLIK, karta płatnicza).</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">W przypadku wydarzeń odwołanych z powodu pandemii, zastosowanie mają przepisy art. 15zp ustawy z dnia 31 marca 2020 r. o zmianie ustawy o szczególnych rozwiązaniach związanych z zapobieganiem, przeciwdziałaniem i zwalczaniem COVID-19, innych chorób zakaźnych oraz wywołanych nimi sytuacji kryzysowych oraz niektórych innych ustaw, wskazujące iż zwrot środków nastąpi w terminie maksymalnie 180 dni od rozwiązania umowy.</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">Bezpieczne transakcje płatnicze</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"></span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Bezpieczną i niezwłoczną realizację transakcji płatniczych w serwisie Bilety24, zapewnia serwis<span> </span></span><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">Przelewy24</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">. Wśród dostępnych na naszej platformie metod płatności, znajdują się przelewy bankowe, płatności kartą oraz jedna z najpopularniejszych metod - BLIK.</span></p>\n<p><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><strong style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\">Chronimy naszych Klientów!!!</strong><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\"></span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Serwis Bilety24 nigdy nie wysyła próśb o jakąkolwiek dodatkową dopłatę do zakupionych biletów, poza żądaniem podczas składania zamówienia.</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Nie pokazuj zakupionych biletów osobom trzecim.</span><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><br style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;\" /><span style=\"color:#3d3d3d;font-family:Roboto, sans-serif;font-size:14px;font-style:normal;font-weight:400;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:#ffffff;float:none;\">Twoje dane są chronione. Jeśli nie otrzymaliśmy zgody na wysyłanie wiadomości marketingowych drogą elektroniczną, nie będziemy ich wysyłać. Wyjątkiem są wiadomości dotyczące realizacji wydarzeń (odwołanie/przeniesienie/zmiany), które z pewnością chcesz otrzymać.</span></p>', 'bezpieczenstwo-platnosci');
 
 -- --------------------------------------------------------
 
@@ -3640,251 +3718,250 @@ CREATE TABLE `ps_condition` (
 --
 
 INSERT INTO `ps_condition` (`id_condition`, `id_ps_condition`, `type`, `request`, `operator`, `value`, `result`, `calculation_type`, `calculation_detail`, `validated`, `date_add`, `date_upd`) VALUES
-(1, 1, 'configuration', 'PS_REWRITING_SETTINGS', '==', '1', '', 'hook', 'actionAdminMetaControllerUpdate_optionsAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(2, 2, 'configuration', 'PS_SMARTY_FORCE_COMPILE', '!=', '2', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(3, 3, 'configuration', 'PS_CSS_THEME_CACHE', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(4, 4, 'configuration', 'PS_CIPHER_ALGORITHM', '==', '1', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(5, 5, 'configuration', 'PS_MEDIA_SERVERS', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(6, 6, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '0', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(7, 7, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(8, 8, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '0', '2', 'hook', 'actionObjectCarrierAddAfter', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(9, 9, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '1', '2', 'hook', 'actionObjectCarrierAddAfter', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(10, 10, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '0', '1', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(11, 11, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(12, 12, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(13, 13, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '999', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(14, 14, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9999', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(15, 15, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99999', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(16, 16, 'configuration', 'PS_SHOP_PHONE', '!=', '0', '', 'hook', 'actionAdminStoresControllerUpdate_optionsAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(17, 17, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '2', '2', 'hook', 'actionObjectContactAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(18, 18, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '4', '2', 'hook', 'actionObjectContactAddAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(19, 19, 'install', '', '>', '0', '1', 'time', '1', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(20, 20, 'install', '', '>=', '7', '', 'time', '1', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(21, 21, 'configuration', 'PS_LOGO', '!=', 'logo.jpg', '1', 'hook', 'actionAdminThemesControllerUpdate_optionsAfter', 1, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(22, 22, 'sql', 'SELECT COUNT(*) FROM PREFIX_theme WHERE directory != \"default\" AND directory != \"prestashop\" AND directory ! \"default-bootstrap\"', '>', '0', '0', 'hook', 'actionObjectShopUpdateAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(23, 23, 'configuration', 'PS_LOGGED_ON_ADDONS', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(24, 24, 'configuration', 'PS_MULTISHOP_FEATURE_ACTIVE', '==', '1', '', 'hook', 'actionAdminPreferencesControllerUpdate_optionsAfter', 0, '2021-11-08 16:04:01', '2021-11-08 16:04:01'),
-(25, 25, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '1', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(26, 26, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '4', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(27, 27, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '5', '1', 'hook', 'actionObjectShopGroupAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(28, 28, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '1', '1', 'hook', 'actionObjectShopGroupAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(29, 29, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '2', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(30, 30, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '2', '2', 'hook', 'actionObjectCarrierAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(31, 31, 'sql', 'SELECT SUM(total_paid_tax_excl / c.conversion_rate)\r\nFROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '200', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(32, 32, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '2000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(33, 33, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '20000', '0', 'time', '1', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(34, 34, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '200000', '0', 'time', '7', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(35, 35, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '2000000', '0', 'time', '7', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(36, 36, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '20000000', '0', 'time', '7', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(37, 37, 'install', '', '>=', '30', '', 'time', '1', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(38, 38, 'install', '', '>=', '182', '', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(39, 39, 'install', '', '>=', '365', '', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(40, 40, 'install', '', '>=', '730', '', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(41, 41, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10', '10', 'time', '1', 1, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(42, 42, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100', '13', 'time', '1', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(43, 43, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000', '13', 'time', '1', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(44, 44, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10000', '10', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(45, 45, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100000', '10', 'time', '3', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(46, 46, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000000', '10', 'time', '4', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(47, 47, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '2', '2', 'hook', 'actionObjectCartAddAfter', 1, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(48, 48, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10', '2', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(49, 49, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100', '2', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(50, 50, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(51, 51, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10000', '2', 'time', '4', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(52, 52, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100000', '2', 'time', '8', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(53, 53, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1', '0', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(54, 54, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10', '0', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(55, 55, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100', '0', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(56, 56, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1000', '0', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(57, 57, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10000', '0', 'time', '4', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(58, 58, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100000', '0', 'time', '8', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(59, 59, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1', '1', 'hook', 'actionObjectCustomerAddAfter', 1, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(60, 60, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10', '2', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(61, 61, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100', '2', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(62, 62, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(63, 63, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10000', '1', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(64, 64, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100000', '1', 'time', '4', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(65, 65, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(66, 66, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(67, 67, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(68, 68, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1000', '0', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(69, 69, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10000', '0', 'time', '4', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(70, 70, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100000', '0', 'time', '8', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(71, 76, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"CA\",\r\n\"GL\",\r\n\"PM\",\r\n\"US\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(72, 79, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"UM\",\r\n\"AS\",\r\n\"AU\",\r\n\"CK\",\r\n\"FJ\",\r\n\"FM\",\r\n\"GU\",\r\n\"KI\",\r\n\"MH,\"\r\n\"MP\",\r\n\"NC\",\r\n\"NF\",\r\n\"NR\",\r\n\"NU\",\r\n\"NZ\",\r\n\"PF\",\r\n\"PG\",\r\n\"PN\",\r\n\"PW\",\r\n\"SB\",\r\n\"TK\",\r\n\"TO\",\r\n\"TV\",\r\n\"VU\",\r\n\"WF\",\r\n\"WS\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(73, 85, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"KG\",\r\n\"KZ\",\r\n\"TJ\",\r\n\"TM\",\r\n\"UZ\",\r\n\"AE\",\r\n\"AM\",\r\n\"AZ\",\r\n\"BH\",\r\n\"CY\",\r\n\"GE\",\r\n\"IL\",\r\n\"IQ\",\r\n\"IR\",\r\n\"JO\",\r\n\"KW\",\r\n\"LB\",\r\n\"OM\",\r\n\"QA\",\r\n\"SA\",\r\n\"SY\",\r\n\"TR\",\r\n\"YE\",\r\n\"AF\",\r\n\"BD\",\r\n\"BT\",\r\n\"IN\",\r\n\"IO\",\r\n\"LK\",\r\n\"MV\",\r\n\"NP\",\r\n\"PK\",\r\n\"CN\",\r\n\"HK\",\r\n\"JP\",\r\n\"KP\",\r\n\"KR\",\r\n\"MO\",\r\n\"TW\",\r\n\"MN\",\r\n\"BN\",\r\n\"CC\",\r\n\"CX\",\r\n\"ID\",\r\n\"KH\",\r\n\"LA\",\r\n\"MM\",\r\n\"MY\",\r\n\"PH\",\r\n\"SG\",\r\n\"TH\",\r\n\"TP\",\r\n\"VN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(74, 86, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BZ\",\r\n\"CR\",\r\n\"GT\",\r\n\"HN\",\r\n\"MX\",\r\n\"NI\",\r\n\"PA\",\r\n\"SV\",\r\n\"AG\",\r\n\"AI\",\r\n\"AN\",\r\n\"AW\",\r\n\"BB\",\r\n\"BM\",\r\n\"BS\",\r\n\"CU\",\r\n\"DM\",\r\n\"DO\",\r\n\"GD\",\r\n\"GP\",\r\n\"HT\",\r\n\"JM\",\r\n\"KN\",\r\n\"KY\",\r\n\"LC\",\r\n\"MQ\",\r\n\"MS\",\r\n\"PR\",\r\n\"TC\",\r\n\"TT\",\r\n\"VC\",\r\n\"VG\",\r\n\"VI\",\r\n\"AR\",\r\n\"BO\",\r\n\"BR\",\r\n\"CL\",\r\n\"CO\",\r\n\"EC\",\r\n\"FK\",\r\n\"GF\",\r\n\"GY\",\r\n\"PE\",\r\n\"PY\",\r\n\"SR\",\r\n\"UY\",\r\n\"VE\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(75, 87, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BE\",\r\n\"DE\",\r\n\"FR\",\r\n\"FX\",\r\n\"GB\",\r\n\"IE\",\r\n\"LU\",\r\n\"MC\",\r\n\"NL\",\r\n\"IT\",\r\n\"MT\",\r\n\"SM\",\r\n\"VA\",\r\n\"AD\",\r\n\"ES\",\r\n\"GI\",\r\n\"PT\",\r\n\"BY\",\r\n\"EE\",\r\n\"LT\",\r\n\"LV\",\r\n\"MD\",\r\n\"PL\",\r\n\"UA\",\r\n\"AL\",\r\n\"BA\",\r\n\"BG\",\r\n\"GR\",\r\n\"HR\",\r\n\"MK\",\r\n\"RO\",\r\n\"SI\",\r\n\"YU\",\r\n\"RU\",\r\n\"AT\",\r\n\"CH\",\r\n\"CZ\",\r\n\"HU\",\r\n\"LI\",\r\n\"SK\",\r\n\"DK\",\r\n\"FI\",\r\n\"FO\",\r\n\"IS\",\r\n\"NO\",\r\n\"SE\",\r\n\"SJ\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(76, 88, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BI\",\r\n\"CF\",\r\n\"CG\",\r\n\"RW\",\r\n\"TD\",\r\n\"ZR\",\r\n\"DJ\",\r\n\"ER\",\r\n\"ET\",\r\n\"KE\",\r\n\"SO\",\r\n\"TZ\",\r\n\"UG\",\r\n\"KM\",\r\n\"MG\",\r\n\"MU\",\r\n\"RE\",\r\n\"SC\",\r\n\"YT\",\r\n\"AO\",\r\n\"BW\",\r\n\"LS\",\r\n\"MW\",\r\n\"MZ\",\r\n\"NA\",\r\n\"SZ\",\r\n\"ZA\",\r\n\"ZM\",\r\n\"ZW\",\r\n\"BF\",\r\n\"BJ\",\r\n\"CI\",\r\n\"CM\",\r\n\"CV\",\r\n\"GA\",\r\n\"GH\",\r\n\"GM\",\r\n\"GN\",\r\n\"GQ\",\r\n\"GW\",\r\n\"LR\",\r\n\"ML\",\r\n\"MR\",\r\n\"NE\",\r\n\"NG\",\r\n\"SL\",\r\n\"SN\",\r\n\"ST\",\r\n\"TG\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(77, 89, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"DZ\",\r\n\"EG\",\r\n\"EH\",\r\n\"LY\",\r\n\"MA\",\r\n\"SD\",\r\n\"TN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(78, 90, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '2', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(79, 91, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '3', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(80, 92, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '5', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(81, 93, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '10', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(82, 94, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '20', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(83, 95, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '40', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(84, 96, 'sql', 'SELECT id_image FROM PREFIX_image WHERE id_image > 26', '>', '0', '0', 'hook', 'actionObjectImageAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(85, 97, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50', '24', 'hook', 'actionObjectImageAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(86, 98, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '100', '24', 'hook', 'actionObjectImageAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(87, 99, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '1000', '23', 'time', '2', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(88, 100, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '10000', '23', 'time', '4', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(89, 101, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50000', '23', 'time', '8', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(90, 102, 'sql', 'SELECT id_cms FROM PREFIX_cms WHERE id_cms > 5', '>', '0', '0', 'hook', 'actionObjectCMSAddAfter', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(91, 103, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(92, 104, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '10', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(93, 105, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '100', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(94, 106, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(95, 107, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '500', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(96, 108, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '5000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(97, 109, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1', '0', 'hook', 'newOrder', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(98, 110, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:02', '2021-11-08 16:04:02'),
-(99, 111, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '100', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(100, 112, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(101, 113, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(102, 114, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '5000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(103, 132, 'sql', 'SELECT count(id_configuration) FROM PREFIX_configuration WHERE `name` = \'PS_SHOP_DOMAIN\' AND value IN (\'127.0.0.1\', \'localhost\' )', '==', '1', '1', 'time', '1', 1, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(104, 136, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ebay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(105, 140, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%moneybookers%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(106, 142, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypal%\"', '>=', '1', '', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(107, 158, 'install', '', '>=', '90', '', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(108, 159, 'install', '', '<=', '90', '1', 'time', '2', 1, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(109, 165, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '0', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(110, 166, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '1', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(111, 167, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '4', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(112, 168, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '9', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(113, 169, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '19', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(114, 170, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '49', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(115, 171, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '1', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(116, 172, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '2', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(117, 173, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '3', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(118, 174, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '4', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(119, 175, 'sql', 'SELECT count(*) FROM	 PREFIX_configuration WHERE name = \'PS_HOSTED_MODE\'', '==', '0', '0', 'time', '1', 1, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(120, 209, 'configuration', 'EBAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(121, 320, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shopgate%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(122, 322, 'configuration', 'SHOPGATE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(123, 323, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(124, 324, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '==', '0', '0', 'time', '1', 1, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(125, 325, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURATION_OK\' OR name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURED\'', '>=', '1', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(126, 326, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'MONEYBOOKERS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'MB_PAY_TO_EMAIL \') AND ( value != \'testaccount2@moneybookers.com \'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(127, 358, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1', '>=', '1', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(128, 359, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(129, 375, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(130, 376, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(131, 377, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%moneybookers%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(132, 394, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%sofortbanking%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(133, 399, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '499', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(134, 424, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%alliance3%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(135, 425, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ALLIANCE3_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ALLIANCE_DEMO\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(136, 426, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(137, 427, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(138, 428, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%authorizeaim%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(139, 429, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'AUTHORIZEAIM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AUTHORIZE_AIM_SANDBOX\') AND ( value = \'0\'))', '==', '2', '', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(140, 430, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(141, 431, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(142, 434, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluepay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(143, 435, 'configuration', 'BLUEPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(144, 436, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(145, 437, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(146, 438, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payplug%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(147, 439, 'configuration', 'PAYPLUG_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(148, 440, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(149, 441, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '10000', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(150, 442, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%affinityitems%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(151, 443, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'AFFINITYITEMS_CONFIGURATION_OK\' AND value = \'1\'', '==', '1', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(152, 446, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%dpdpoland%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(153, 447, 'configuration', 'DPDPOLAND_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(154, 448, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(155, 449, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(156, 450, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%envoimoinscher%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(157, 451, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ENVOIMOINSCHER_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'EMC_ENV \') AND ( value != \'TEST\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(158, 452, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(159, 453, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(160, 454, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%klikandpay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(161, 455, 'configuration', 'KLIKANDPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(162, 456, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(163, 457, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(164, 458, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%clickline%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(165, 459, 'configuration', 'CLICKLINE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(166, 460, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(167, 461, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(168, 462, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%cdiscount%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(169, 463, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(170, 464, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(171, 465, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 365 DAY)', '>=', '500', '0', 'time', '7', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(172, 467, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%erpillicopresta%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(173, 468, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ERPILLICOPRESTA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ERP_LICENCE_VALIDITY \') AND ( value == \'1\')) OR (( name LIKE \'ERP_MONTH_FREE_ACTIVE \') AND ( value == \'0\'))', '==', '3', '', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(174, 469, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(175, 470, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(176, 471, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%netreviews%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(177, 472, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'NETREVIEWS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AVISVERIFIES_URLCERTIFICAT \') AND ( value IS NOT LIKE \'%preprod%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(178, 473, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(179, 474, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(180, 475, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluesnap%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(181, 476, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'BLUESNAP_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'BLUESNAP_SANDBOX \') AND ( value NOT LIKE \'%sandbox%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:03', '2021-11-08 16:04:03'),
-(182, 477, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(183, 478, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(184, 479, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%desjardins%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(185, 480, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'DESJARDINS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'DESJARDINS_MODE \') AND ( value NOT LIKE \'%test%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(186, 481, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(187, 482, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(188, 483, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%firstdata%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(189, 484, 'configuration', 'FIRSTDATA_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(190, 485, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(191, 486, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(192, 487, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%giveit%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(193, 488, 'sql', 'GIVEIT_CONFIGURATION_OK', '>=', '1', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(194, 489, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(195, 490, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(196, 491, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ganalytics%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(197, 492, 'configuration', 'GANALYTICS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(198, 493, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(199, 494, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(200, 496, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%pagseguro%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(201, 497, 'configuration', 'PAGSEGURO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(202, 498, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(203, 499, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(204, 500, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalmx%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(205, 501, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALMX_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_MX_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(206, 502, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(207, 503, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(208, 505, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalusa%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(209, 506, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALUSA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_USA_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(210, 507, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalusa%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04');
-INSERT INTO `ps_condition` (`id_condition`, `id_ps_condition`, `type`, `request`, `operator`, `value`, `result`, `calculation_type`, `calculation_detail`, `validated`, `date_add`, `date_upd`) VALUES
-(211, 508, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(212, 509, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payulatam%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(213, 510, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYULATAM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYU_LATAM_TEST\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(214, 511, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(215, 512, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(216, 513, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%prestastats%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(217, 514, 'configuration', 'PRESTASTATS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(218, 515, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(219, 516, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(220, 517, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%riskified%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(221, 518, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'RISKIFIED_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'RISKIFIED_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(222, 519, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(223, 520, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(224, 521, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%simplifycommerce%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(225, 522, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'SIMPLIFY_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'SIMPLIFY_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(226, 523, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(227, 524, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(228, 525, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%vtpayment%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(229, 526, 'configuration', 'VTPAYMENT_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(230, 527, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(231, 528, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(232, 529, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(233, 530, 'configuration', 'YOTPO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(234, 531, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(235, 532, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(236, 533, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(237, 534, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'YOUSTICERESOLUTIONSYSTEM_CONF_OK\') AND ( value = \'1\')) OR (( name LIKE \'YRS_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(238, 535, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(239, 536, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(240, 537, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%loyaltylion%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(241, 538, 'configuration', 'LOYALTYLION_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(242, 539, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(243, 540, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04'),
-(244, 542, 'sql', 'SELECT \'{config} PS_VERSION_DB{/config}\' >= \'1.7.0.0\' AND < \'1.8.0.0\'', '==', '1', '0', 'time', '1', 0, '2021-11-08 16:04:04', '2021-11-08 16:04:04');
+(1, 1, 'configuration', 'PS_REWRITING_SETTINGS', '==', '1', '', 'hook', 'actionAdminMetaControllerUpdate_optionsAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(2, 2, 'configuration', 'PS_SMARTY_FORCE_COMPILE', '!=', '2', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(3, 3, 'configuration', 'PS_CSS_THEME_CACHE', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(4, 4, 'configuration', 'PS_CIPHER_ALGORITHM', '==', '1', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(5, 5, 'configuration', 'PS_MEDIA_SERVERS', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(6, 6, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '0', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(7, 7, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(8, 8, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '0', '2', 'hook', 'actionObjectCarrierAddAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(9, 9, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '1', '2', 'hook', 'actionObjectCarrierAddAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(10, 10, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '0', '1', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(11, 11, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(12, 12, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(13, 13, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '999', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(14, 14, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9999', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(15, 15, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99999', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(16, 16, 'configuration', 'PS_SHOP_PHONE', '!=', '0', '', 'hook', 'actionAdminStoresControllerUpdate_optionsAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(17, 17, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '2', '2', 'hook', 'actionObjectContactAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(18, 18, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '4', '2', 'hook', 'actionObjectContactAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(19, 19, 'install', '', '>', '0', '1', 'time', '1', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(20, 20, 'install', '', '>=', '7', '1', 'time', '1', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(21, 21, 'configuration', 'PS_LOGO', '!=', 'logo.jpg', '1', 'hook', 'actionAdminThemesControllerUpdate_optionsAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(22, 22, 'sql', 'SELECT COUNT(*) FROM PREFIX_theme WHERE directory != \"default\" AND directory != \"prestashop\" AND directory ! \"default-bootstrap\"', '>', '0', '0', 'hook', 'actionObjectShopUpdateAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(23, 23, 'configuration', 'PS_LOGGED_ON_ADDONS', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(24, 24, 'configuration', 'PS_MULTISHOP_FEATURE_ACTIVE', '==', '1', '', 'hook', 'actionAdminPreferencesControllerUpdate_optionsAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(25, 25, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '1', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(26, 26, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '4', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(27, 27, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '5', '1', 'hook', 'actionObjectShopGroupAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(28, 28, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '1', '1', 'hook', 'actionObjectShopGroupAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(29, 29, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '2', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(30, 30, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '2', '2', 'hook', 'actionObjectCarrierAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(31, 31, 'sql', 'SELECT SUM(total_paid_tax_excl / c.conversion_rate)\r\nFROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '200', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(32, 32, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '2000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(33, 33, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '20000', '0', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(34, 34, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '200000', '0', 'time', '7', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(35, 35, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '2000000', '0', 'time', '7', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(36, 36, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '20000000', '0', 'time', '7', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(37, 37, 'install', '', '>=', '30', '', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(38, 38, 'install', '', '>=', '182', '', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(39, 39, 'install', '', '>=', '365', '', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(40, 40, 'install', '', '>=', '730', '', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(41, 41, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10', '10', 'time', '1', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(42, 42, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100', '27', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(43, 43, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000', '27', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(44, 44, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10000', '10', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(45, 45, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100000', '10', 'time', '3', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(46, 46, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000000', '10', 'time', '4', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(47, 47, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '2', '2', 'hook', 'actionObjectCartAddAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(48, 48, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10', '2', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(49, 49, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100', '2', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(50, 50, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(51, 51, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10000', '2', 'time', '4', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(52, 52, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100000', '2', 'time', '8', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(53, 53, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1', '0', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(54, 54, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10', '0', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(55, 55, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100', '0', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(56, 56, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1000', '0', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(57, 57, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10000', '0', 'time', '4', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(58, 58, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100000', '0', 'time', '8', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(59, 59, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1', '1', 'hook', 'actionObjectCustomerAddAfter', 1, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(60, 60, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10', '2', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(61, 61, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100', '2', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(62, 62, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-12 16:47:11', '2021-11-13 00:04:31'),
+(63, 63, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10000', '1', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(64, 64, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100000', '1', 'time', '4', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(65, 65, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(66, 66, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(67, 67, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(68, 68, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1000', '0', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(69, 69, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10000', '0', 'time', '4', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(70, 70, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100000', '0', 'time', '8', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(71, 76, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"CA\",\r\n\"GL\",\r\n\"PM\",\r\n\"US\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(72, 79, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"UM\",\r\n\"AS\",\r\n\"AU\",\r\n\"CK\",\r\n\"FJ\",\r\n\"FM\",\r\n\"GU\",\r\n\"KI\",\r\n\"MH,\"\r\n\"MP\",\r\n\"NC\",\r\n\"NF\",\r\n\"NR\",\r\n\"NU\",\r\n\"NZ\",\r\n\"PF\",\r\n\"PG\",\r\n\"PN\",\r\n\"PW\",\r\n\"SB\",\r\n\"TK\",\r\n\"TO\",\r\n\"TV\",\r\n\"VU\",\r\n\"WF\",\r\n\"WS\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(73, 85, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"KG\",\r\n\"KZ\",\r\n\"TJ\",\r\n\"TM\",\r\n\"UZ\",\r\n\"AE\",\r\n\"AM\",\r\n\"AZ\",\r\n\"BH\",\r\n\"CY\",\r\n\"GE\",\r\n\"IL\",\r\n\"IQ\",\r\n\"IR\",\r\n\"JO\",\r\n\"KW\",\r\n\"LB\",\r\n\"OM\",\r\n\"QA\",\r\n\"SA\",\r\n\"SY\",\r\n\"TR\",\r\n\"YE\",\r\n\"AF\",\r\n\"BD\",\r\n\"BT\",\r\n\"IN\",\r\n\"IO\",\r\n\"LK\",\r\n\"MV\",\r\n\"NP\",\r\n\"PK\",\r\n\"CN\",\r\n\"HK\",\r\n\"JP\",\r\n\"KP\",\r\n\"KR\",\r\n\"MO\",\r\n\"TW\",\r\n\"MN\",\r\n\"BN\",\r\n\"CC\",\r\n\"CX\",\r\n\"ID\",\r\n\"KH\",\r\n\"LA\",\r\n\"MM\",\r\n\"MY\",\r\n\"PH\",\r\n\"SG\",\r\n\"TH\",\r\n\"TP\",\r\n\"VN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(74, 86, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BZ\",\r\n\"CR\",\r\n\"GT\",\r\n\"HN\",\r\n\"MX\",\r\n\"NI\",\r\n\"PA\",\r\n\"SV\",\r\n\"AG\",\r\n\"AI\",\r\n\"AN\",\r\n\"AW\",\r\n\"BB\",\r\n\"BM\",\r\n\"BS\",\r\n\"CU\",\r\n\"DM\",\r\n\"DO\",\r\n\"GD\",\r\n\"GP\",\r\n\"HT\",\r\n\"JM\",\r\n\"KN\",\r\n\"KY\",\r\n\"LC\",\r\n\"MQ\",\r\n\"MS\",\r\n\"PR\",\r\n\"TC\",\r\n\"TT\",\r\n\"VC\",\r\n\"VG\",\r\n\"VI\",\r\n\"AR\",\r\n\"BO\",\r\n\"BR\",\r\n\"CL\",\r\n\"CO\",\r\n\"EC\",\r\n\"FK\",\r\n\"GF\",\r\n\"GY\",\r\n\"PE\",\r\n\"PY\",\r\n\"SR\",\r\n\"UY\",\r\n\"VE\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(75, 87, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BE\",\r\n\"DE\",\r\n\"FR\",\r\n\"FX\",\r\n\"GB\",\r\n\"IE\",\r\n\"LU\",\r\n\"MC\",\r\n\"NL\",\r\n\"IT\",\r\n\"MT\",\r\n\"SM\",\r\n\"VA\",\r\n\"AD\",\r\n\"ES\",\r\n\"GI\",\r\n\"PT\",\r\n\"BY\",\r\n\"EE\",\r\n\"LT\",\r\n\"LV\",\r\n\"MD\",\r\n\"PL\",\r\n\"UA\",\r\n\"AL\",\r\n\"BA\",\r\n\"BG\",\r\n\"GR\",\r\n\"HR\",\r\n\"MK\",\r\n\"RO\",\r\n\"SI\",\r\n\"YU\",\r\n\"RU\",\r\n\"AT\",\r\n\"CH\",\r\n\"CZ\",\r\n\"HU\",\r\n\"LI\",\r\n\"SK\",\r\n\"DK\",\r\n\"FI\",\r\n\"FO\",\r\n\"IS\",\r\n\"NO\",\r\n\"SE\",\r\n\"SJ\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(76, 88, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BI\",\r\n\"CF\",\r\n\"CG\",\r\n\"RW\",\r\n\"TD\",\r\n\"ZR\",\r\n\"DJ\",\r\n\"ER\",\r\n\"ET\",\r\n\"KE\",\r\n\"SO\",\r\n\"TZ\",\r\n\"UG\",\r\n\"KM\",\r\n\"MG\",\r\n\"MU\",\r\n\"RE\",\r\n\"SC\",\r\n\"YT\",\r\n\"AO\",\r\n\"BW\",\r\n\"LS\",\r\n\"MW\",\r\n\"MZ\",\r\n\"NA\",\r\n\"SZ\",\r\n\"ZA\",\r\n\"ZM\",\r\n\"ZW\",\r\n\"BF\",\r\n\"BJ\",\r\n\"CI\",\r\n\"CM\",\r\n\"CV\",\r\n\"GA\",\r\n\"GH\",\r\n\"GM\",\r\n\"GN\",\r\n\"GQ\",\r\n\"GW\",\r\n\"LR\",\r\n\"ML\",\r\n\"MR\",\r\n\"NE\",\r\n\"NG\",\r\n\"SL\",\r\n\"SN\",\r\n\"ST\",\r\n\"TG\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(77, 89, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"DZ\",\r\n\"EG\",\r\n\"EH\",\r\n\"LY\",\r\n\"MA\",\r\n\"SD\",\r\n\"TN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(78, 90, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '2', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(79, 91, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '3', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(80, 92, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '5', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(81, 93, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '10', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(82, 94, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '20', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(83, 95, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '40', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(84, 96, 'sql', 'SELECT id_image FROM PREFIX_image WHERE id_image > 26', '>', '0', '0', 'hook', 'actionObjectImageAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(85, 97, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50', '24', 'hook', 'actionObjectImageAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(86, 98, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '100', '24', 'hook', 'actionObjectImageAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(87, 99, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '1000', '23', 'time', '2', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(88, 100, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '10000', '23', 'time', '4', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(89, 101, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50000', '23', 'time', '8', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(90, 102, 'sql', 'SELECT id_cms FROM PREFIX_cms WHERE id_cms > 5', '>', '0', '0', 'hook', 'actionObjectCMSAddAfter', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(91, 103, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(92, 104, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '10', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(93, 105, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '100', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(94, 106, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(95, 107, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '500', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(96, 108, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '5000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(97, 109, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1', '0', 'hook', 'newOrder', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(98, 110, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(99, 111, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '100', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(100, 112, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(101, 113, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:11', '2021-11-12 16:47:11'),
+(102, 114, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '5000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(103, 132, 'sql', 'SELECT count(id_configuration) FROM PREFIX_configuration WHERE `name` = \'PS_SHOP_DOMAIN\' AND value IN (\'127.0.0.1\', \'localhost\' )', '==', '1', '1', 'time', '1', 1, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(104, 136, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ebay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(105, 140, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%moneybookers%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(106, 142, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypal%\"', '>=', '1', '1', 'hook', 'actionModuleInstallAfter', 1, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(107, 158, 'install', '', '>=', '90', '', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(108, 159, 'install', '', '<=', '90', '1', 'time', '2', 1, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(109, 165, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '0', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(110, 166, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '1', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(111, 167, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '4', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(112, 168, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '9', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(113, 169, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '19', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(114, 170, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '49', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(115, 171, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '1', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(116, 172, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '2', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(117, 173, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '3', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(118, 174, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '4', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(119, 175, 'sql', 'SELECT count(*) FROM	 PREFIX_configuration WHERE name = \'PS_HOSTED_MODE\'', '==', '0', '0', 'time', '1', 1, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(120, 209, 'configuration', 'EBAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(121, 320, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shopgate%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(122, 322, 'configuration', 'SHOPGATE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(123, 323, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(124, 324, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '==', '0', '0', 'time', '1', 1, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(125, 325, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURATION_OK\' OR name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURED\'', '>=', '1', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(126, 326, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'MONEYBOOKERS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'MB_PAY_TO_EMAIL \') AND ( value != \'testaccount2@moneybookers.com \'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(127, 358, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1', '>=', '1', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(128, 359, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(129, 375, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(130, 376, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(131, 377, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%moneybookers%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(132, 394, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%sofortbanking%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(133, 399, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '499', '3', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(134, 424, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%alliance3%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(135, 425, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ALLIANCE3_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ALLIANCE_DEMO\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(136, 426, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(137, 427, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(138, 428, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%authorizeaim%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(139, 429, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'AUTHORIZEAIM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AUTHORIZE_AIM_SANDBOX\') AND ( value = \'0\'))', '==', '2', '', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(140, 430, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(141, 431, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(142, 434, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluepay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(143, 435, 'configuration', 'BLUEPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(144, 436, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(145, 437, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(146, 438, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payplug%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(147, 439, 'configuration', 'PAYPLUG_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(148, 440, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(149, 441, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '10000', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(150, 442, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%affinityitems%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(151, 443, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'AFFINITYITEMS_CONFIGURATION_OK\' AND value = \'1\'', '==', '1', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(152, 446, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%dpdpoland%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(153, 447, 'configuration', 'DPDPOLAND_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(154, 448, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(155, 449, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(156, 450, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%envoimoinscher%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(157, 451, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ENVOIMOINSCHER_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'EMC_ENV \') AND ( value != \'TEST\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(158, 452, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(159, 453, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(160, 454, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%klikandpay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(161, 455, 'configuration', 'KLIKANDPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(162, 456, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(163, 457, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(164, 458, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%clickline%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(165, 459, 'configuration', 'CLICKLINE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(166, 460, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(167, 461, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(168, 462, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%cdiscount%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(169, 463, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(170, 464, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(171, 465, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 365 DAY)', '>=', '500', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(172, 467, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%erpillicopresta%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(173, 468, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ERPILLICOPRESTA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ERP_LICENCE_VALIDITY \') AND ( value == \'1\')) OR (( name LIKE \'ERP_MONTH_FREE_ACTIVE \') AND ( value == \'0\'))', '==', '3', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(174, 469, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(175, 470, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(176, 471, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%netreviews%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(177, 472, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'NETREVIEWS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AVISVERIFIES_URLCERTIFICAT \') AND ( value IS NOT LIKE \'%preprod%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(178, 473, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(179, 474, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(180, 475, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluesnap%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(181, 476, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'BLUESNAP_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'BLUESNAP_SANDBOX \') AND ( value NOT LIKE \'%sandbox%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(182, 477, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(183, 478, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(184, 479, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%desjardins%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(185, 480, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'DESJARDINS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'DESJARDINS_MODE \') AND ( value NOT LIKE \'%test%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:31'),
+(186, 481, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(187, 482, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(188, 483, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%firstdata%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(189, 484, 'configuration', 'FIRSTDATA_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:32'),
+(190, 485, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(191, 486, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(192, 487, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%giveit%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(193, 488, 'sql', 'GIVEIT_CONFIGURATION_OK', '>=', '1', '0', 'time', '1', 0, '2021-11-12 16:47:12', '2021-11-13 00:04:32'),
+(194, 489, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(195, 490, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:12', '2021-11-12 16:47:12'),
+(196, 491, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ganalytics%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(197, 492, 'configuration', 'GANALYTICS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(198, 493, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(199, 494, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(200, 496, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%pagseguro%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(201, 497, 'configuration', 'PAGSEGURO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(202, 498, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(203, 499, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(204, 500, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalmx%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(205, 501, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALMX_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_MX_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(206, 502, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(207, 503, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(208, 505, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalusa%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(209, 506, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALUSA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_USA_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(210, 507, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalusa%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(211, 508, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(212, 509, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payulatam%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(213, 510, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYULATAM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYU_LATAM_TEST\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(214, 511, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(215, 512, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(216, 513, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%prestastats%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(217, 514, 'configuration', 'PRESTASTATS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(218, 515, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(219, 516, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(220, 517, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%riskified%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(221, 518, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'RISKIFIED_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'RISKIFIED_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(222, 519, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(223, 520, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(224, 521, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%simplifycommerce%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(225, 522, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'SIMPLIFY_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'SIMPLIFY_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(226, 523, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(227, 524, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(228, 525, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%vtpayment%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(229, 526, 'configuration', 'VTPAYMENT_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(230, 527, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(231, 528, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(232, 529, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(233, 530, 'configuration', 'YOTPO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(234, 531, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(235, 532, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(236, 533, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(237, 534, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'YOUSTICERESOLUTIONSYSTEM_CONF_OK\') AND ( value = \'1\')) OR (( name LIKE \'YRS_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(238, 535, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(239, 536, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(240, 537, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%loyaltylion%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(241, 538, 'configuration', 'LOYALTYLION_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32'),
+(242, 539, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(243, 540, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-12 16:47:13', '2021-11-12 16:47:13'),
+(244, 542, 'sql', 'SELECT \'{config} PS_VERSION_DB{/config}\' >= \'1.7.0.0\' AND < \'1.8.0.0\'', '==', '1', '0', 'time', '1', 0, '2021-11-12 16:47:13', '2021-11-13 00:04:32');
 
 -- --------------------------------------------------------
 
@@ -4179,7 +4256,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (5, NULL, NULL, 'PS_GROUP_FEATURE_ACTIVE', '1', '2021-10-31 15:24:12', '2021-10-31 15:24:12'),
 (6, NULL, NULL, 'PS_CURRENCY_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (7, NULL, NULL, 'PS_COUNTRY_DEFAULT', '14', '0000-00-00 00:00:00', '2021-10-31 15:24:15'),
-(8, NULL, NULL, 'PS_REWRITING_SETTINGS', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, NULL, NULL, 'PS_REWRITING_SETTINGS', '1', '0000-00-00 00:00:00', '2021-11-12 23:49:24'),
 (9, NULL, NULL, 'PS_ORDER_OUT_OF_STOCK', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (10, NULL, NULL, 'PS_LAST_QTIES', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (11, NULL, NULL, 'PS_CONDITIONS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4200,7 +4277,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (26, NULL, NULL, 'PS_TAX', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (27, NULL, NULL, 'PS_SHOP_ENABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (28, NULL, NULL, 'PS_NB_DAYS_NEW_PRODUCT', '20', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(29, NULL, NULL, 'PS_SSL_ENABLED', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, NULL, NULL, 'PS_SSL_ENABLED', '1', '0000-00-00 00:00:00', '2021-11-12 23:41:41'),
 (30, NULL, NULL, 'PS_WEIGHT_UNIT', 'kg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (31, NULL, NULL, 'PS_BLOCK_CART_AJAX', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (32, NULL, NULL, 'PS_ORDER_RETURN', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4277,9 +4354,9 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (103, NULL, NULL, 'PS_SMARTY_CACHE', NULL, '0000-00-00 00:00:00', '2021-11-04 13:35:20'),
 (104, NULL, NULL, 'PS_DIMENSION_UNIT', 'cm', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (105, NULL, NULL, 'PS_GUEST_CHECKOUT_ENABLED', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(106, NULL, NULL, 'PS_DISPLAY_SUPPLIERS', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(107, NULL, NULL, 'PS_DISPLAY_MANUFACTURERS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(108, NULL, NULL, 'PS_DISPLAY_BEST_SELLERS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(106, NULL, NULL, 'PS_DISPLAY_SUPPLIERS', NULL, '0000-00-00 00:00:00', '2021-11-12 23:41:42'),
+(107, NULL, NULL, 'PS_DISPLAY_MANUFACTURERS', '1', '0000-00-00 00:00:00', '2021-11-12 23:41:42'),
+(108, NULL, NULL, 'PS_DISPLAY_BEST_SELLERS', '1', '0000-00-00 00:00:00', '2021-11-12 23:41:42'),
 (109, NULL, NULL, 'PS_CATALOG_MODE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (110, NULL, NULL, 'PS_GEOLOCATION_WHITELIST', '127;::1;188.165.122;209.185.108;209.185.253;209.85.238;209.85.238.11;209.85.238.4;216.239.33.96;216.239.33.97;216.239.33.98;216.239.33.99;216.239.37.98;216.239.37.99;216.239.39.98;216.239.39.99;216.239.41.96;216.239.41.97;216.239.41.98;216.239.41.99;216.239.45.4;216.239.46;216.239.51.96;216.239.51.97;216.239.51.98;216.239.51.99;216.239.53.98;216.239.53.99;216.239.57.96;91.240.109;216.239.57.97;216.239.57.98;216.239.57.99;216.239.59.98;216.239.59.99;216.33.229.163;64.233.173.193;64.233.173.194;64.233.173.195;64.233.173.196;64.233.173.197;64.233.173.198;64.233.173.199;64.233.173.200;64.233.173.201;64.233.173.202;64.233.173.203;64.233.173.204;64.233.173.205;64.233.173.206;64.233.173.207;64.233.173.208;64.233.173.209;64.233.173.210;64.233.173.211;64.233.173.212;64.233.173.213;64.233.173.214;64.233.173.215;64.233.173.216;64.233.173.217;64.233.173.218;64.233.173.219;64.233.173.220;64.233.173.221;64.233.173.222;64.233.173.223;64.233.173.224;64.233.173.225;64.233.173.226;64.233.173.227;64.233.173.228;64.233.173.229;64.233.173.230;64.233.173.231;64.233.173.232;64.233.173.233;64.233.173.234;64.233.173.235;64.233.173.236;64.233.173.237;64.233.173.238;64.233.173.239;64.233.173.240;64.233.173.241;64.233.173.242;64.233.173.243;64.233.173.244;64.233.173.245;64.233.173.246;64.233.173.247;64.233.173.248;64.233.173.249;64.233.173.250;64.233.173.251;64.233.173.252;64.233.173.253;64.233.173.254;64.233.173.255;64.68.80;64.68.81;64.68.82;64.68.83;64.68.84;64.68.85;64.68.86;64.68.87;64.68.88;64.68.89;64.68.90.1;64.68.90.10;64.68.90.11;64.68.90.12;64.68.90.129;64.68.90.13;64.68.90.130;64.68.90.131;64.68.90.132;64.68.90.133;64.68.90.134;64.68.90.135;64.68.90.136;64.68.90.137;64.68.90.138;64.68.90.139;64.68.90.14;64.68.90.140;64.68.90.141;64.68.90.142;64.68.90.143;64.68.90.144;64.68.90.145;64.68.90.146;64.68.90.147;64.68.90.148;64.68.90.149;64.68.90.15;64.68.90.150;64.68.90.151;64.68.90.152;64.68.90.153;64.68.90.154;64.68.90.155;64.68.90.156;64.68.90.157;64.68.90.158;64.68.90.159;64.68.90.16;64.68.90.160;64.68.90.161;64.68.90.162;64.68.90.163;64.68.90.164;64.68.90.165;64.68.90.166;64.68.90.167;64.68.90.168;64.68.90.169;64.68.90.17;64.68.90.170;64.68.90.171;64.68.90.172;64.68.90.173;64.68.90.174;64.68.90.175;64.68.90.176;64.68.90.177;64.68.90.178;64.68.90.179;64.68.90.18;64.68.90.180;64.68.90.181;64.68.90.182;64.68.90.183;64.68.90.184;64.68.90.185;64.68.90.186;64.68.90.187;64.68.90.188;64.68.90.189;64.68.90.19;64.68.90.190;64.68.90.191;64.68.90.192;64.68.90.193;64.68.90.194;64.68.90.195;64.68.90.196;64.68.90.197;64.68.90.198;64.68.90.199;64.68.90.2;64.68.90.20;64.68.90.200;64.68.90.201;64.68.90.202;64.68.90.203;64.68.90.204;64.68.90.205;64.68.90.206;64.68.90.207;64.68.90.208;64.68.90.21;64.68.90.22;64.68.90.23;64.68.90.24;64.68.90.25;64.68.90.26;64.68.90.27;64.68.90.28;64.68.90.29;64.68.90.3;64.68.90.30;64.68.90.31;64.68.90.32;64.68.90.33;64.68.90.34;64.68.90.35;64.68.90.36;64.68.90.37;64.68.90.38;64.68.90.39;64.68.90.4;64.68.90.40;64.68.90.41;64.68.90.42;64.68.90.43;64.68.90.44;64.68.90.45;64.68.90.46;64.68.90.47;64.68.90.48;64.68.90.49;64.68.90.5;64.68.90.50;64.68.90.51;64.68.90.52;64.68.90.53;64.68.90.54;64.68.90.55;64.68.90.56;64.68.90.57;64.68.90.58;64.68.90.59;64.68.90.6;64.68.90.60;64.68.90.61;64.68.90.62;64.68.90.63;64.68.90.64;64.68.90.65;64.68.90.66;64.68.90.67;64.68.90.68;64.68.90.69;64.68.90.7;64.68.90.70;64.68.90.71;64.68.90.72;64.68.90.73;64.68.90.74;64.68.90.75;64.68.90.76;64.68.90.77;64.68.90.78;64.68.90.79;64.68.90.8;64.68.90.80;64.68.90.9;64.68.91;64.68.92;66.249.64;66.249.65;66.249.66;66.249.67;66.249.68;66.249.69;66.249.70;66.249.71;66.249.72;66.249.73;66.249.78;66.249.79;72.14.199;8.6.48', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (111, NULL, NULL, 'PS_LOGS_BY_EMAIL', '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4287,7 +4364,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (113, NULL, NULL, 'PS_COOKIE_SAMESITE', 'Lax', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (114, NULL, NULL, 'PS_USE_ECOTAX', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (115, NULL, NULL, 'PS_CANONICAL_REDIRECT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(116, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1635792185', '0000-00-00 00:00:00', '2021-11-01 19:43:05'),
+(116, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1636583103', '0000-00-00 00:00:00', '2021-11-10 23:25:03'),
 (117, NULL, NULL, 'PS_BACKUP_DROP_TABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (118, NULL, NULL, 'PS_OS_CHEQUE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (119, NULL, NULL, 'PS_OS_PAYMENT', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4363,7 +4440,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (189, NULL, NULL, 'MANUFACTURER_DISPLAY_TEXT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (190, NULL, NULL, 'MANUFACTURER_DISPLAY_TEXT_NB', '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (191, NULL, NULL, 'NEW_PRODUCTS_NBR', '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(192, NULL, NULL, 'PS_TOKEN_ENABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(192, NULL, NULL, 'PS_TOKEN_ENABLE', '1', '0000-00-00 00:00:00', '2021-11-12 23:41:41'),
 (193, NULL, NULL, 'PS_STATS_RENDER', 'graphnvd3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (194, NULL, NULL, 'PS_STATS_OLD_CONNECT_AUTO_CLEAN', 'never', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (195, NULL, NULL, 'PS_STATS_GRID_RENDER', 'gridhtml', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4382,7 +4459,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (208, NULL, NULL, 'BLOCKADVERT_LINK', 'https://www.prestashop.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (209, NULL, NULL, 'BLOCKSTORE_IMG', 'store.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (210, NULL, NULL, 'BLOCKADVERT_IMG_EXT', 'jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(211, NULL, NULL, 'MOD_BLOCKTOPMENU_ITEMS', 'CAT3,CAT6,CAT9,CAT11,CAT12,CAT13,CAT14,CAT15,CAT16,CAT17', '0000-00-00 00:00:00', '2021-11-03 22:53:21'),
+(211, NULL, NULL, 'MOD_BLOCKTOPMENU_ITEMS', 'CAT18,CAT19,CAT20,CAT12,CAT13,CAT14,CAT15,CAT16,CAT17', '0000-00-00 00:00:00', '2021-11-12 19:41:58'),
 (212, NULL, NULL, 'MOD_BLOCKTOPMENU_SEARCH', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (213, NULL, NULL, 'BLOCKSOCIAL_FACEBOOK', NULL, '0000-00-00 00:00:00', '2021-10-31 15:24:30'),
 (214, NULL, NULL, 'BLOCKSOCIAL_TWITTER', NULL, '0000-00-00 00:00:00', '2021-10-31 15:24:30'),
@@ -4405,8 +4482,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (231, NULL, NULL, 'HOMESLIDER_PAUSE', '7700', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (232, NULL, NULL, 'HOMESLIDER_LOOP', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (233, NULL, NULL, 'PS_BASE_DISTANCE_UNIT', 'm', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(234, NULL, NULL, 'PS_SHOP_DOMAIN', 'localhost', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(235, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', 'localhost', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(234, NULL, NULL, 'PS_SHOP_DOMAIN', '192.168.123.14', '0000-00-00 00:00:00', '2021-11-12 16:56:06'),
+(235, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', '192.168.123.14', '0000-00-00 00:00:00', '2021-11-12 23:48:26'),
 (236, NULL, NULL, 'PS_SHOP_NAME', 'bilety24', '0000-00-00 00:00:00', '2021-10-31 15:24:15'),
 (237, NULL, NULL, 'PS_SHOP_EMAIL', 'hm@example.com', '0000-00-00 00:00:00', '2021-10-31 15:24:18'),
 (238, NULL, NULL, 'PS_MAIL_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4435,13 +4512,13 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (261, NULL, NULL, 'PS_ATTRIBUTE_ANCHOR_SEPARATOR', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (262, NULL, NULL, 'CONF_AVERAGE_PRODUCT_MARGIN', '40', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (263, NULL, NULL, 'PS_DASHBOARD_SIMULATION', '0', '0000-00-00 00:00:00', '2021-11-02 14:35:02'),
-(264, NULL, NULL, 'PS_USE_HTMLPURIFIER', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(264, NULL, NULL, 'PS_USE_HTMLPURIFIER', '1', '0000-00-00 00:00:00', '2021-11-12 23:41:41'),
 (265, NULL, NULL, 'PS_SMARTY_CACHING_TYPE', 'filesystem', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (266, NULL, NULL, 'PS_SMARTY_LOCAL', NULL, '0000-00-00 00:00:00', '2021-11-04 13:35:20'),
 (267, NULL, NULL, 'PS_SMARTY_CLEAR_CACHE', 'everytime', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (268, NULL, NULL, 'PS_DETECT_LANG', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (269, NULL, NULL, 'PS_DETECT_COUNTRY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(270, NULL, NULL, 'PS_ROUND_TYPE', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(270, NULL, NULL, 'PS_ROUND_TYPE', '1', '0000-00-00 00:00:00', '2021-11-10 23:45:35'),
 (271, NULL, NULL, 'PS_LOG_EMAILS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (272, NULL, NULL, 'PS_CUSTOMER_OPTIN', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (273, NULL, NULL, 'PS_CUSTOMER_BIRTHDATE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4463,7 +4540,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (289, NULL, NULL, 'PS_LOGS_EMAIL_RECEIVERS', 'hm@example.com', '0000-00-00 00:00:00', '2021-10-31 15:24:18'),
 (290, NULL, NULL, 'PS_SHOW_LABEL_OOS_LISTING_PAGES', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (291, NULL, NULL, 'ADDONS_API_MODULE_CHANNEL', 'stable', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(292, NULL, NULL, 'PS_SSL_ENABLED_EVERYWHERE', '0', '2021-10-31 15:24:15', '2021-10-31 15:24:15'),
+(292, NULL, NULL, 'PS_SSL_ENABLED_EVERYWHERE', '1', '2021-10-31 15:24:15', '2021-11-12 23:41:41'),
 (293, NULL, NULL, 'blockwishlist_WishlistPageName', NULL, '2021-10-31 15:24:20', '2021-10-31 15:24:20'),
 (294, NULL, NULL, 'blockwishlist_WishlistDefaultTitle', NULL, '2021-10-31 15:24:20', '2021-10-31 15:24:20'),
 (295, NULL, NULL, 'blockwishlist_CreateButtonLabel', NULL, '2021-10-31 15:24:20', '2021-10-31 15:24:20'),
@@ -4524,8 +4601,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (359, NULL, NULL, 'CONF_PS_WIREPAYMENT_VAR_FOREIGN', '2', '2021-10-31 15:24:31', '2021-10-31 15:24:31'),
 (360, NULL, NULL, 'GF_INSTALL_CALC', '1', '2021-10-31 15:25:15', '2021-10-31 15:29:29'),
 (361, NULL, NULL, 'GF_CURRENT_LEVEL', '1', '2021-10-31 15:25:15', '2021-10-31 15:25:15'),
-(362, NULL, NULL, 'GF_CURRENT_LEVEL_PERCENT', '70', '2021-10-31 15:25:15', '2021-11-03 21:59:19'),
-(363, NULL, NULL, 'GF_NOTIFICATION', '8', '2021-10-31 15:25:15', '2021-11-03 21:59:19'),
+(362, NULL, NULL, 'GF_CURRENT_LEVEL_PERCENT', '80', '2021-10-31 15:25:15', '2021-11-11 00:00:35'),
+(363, NULL, NULL, 'GF_NOTIFICATION', '9', '2021-10-31 15:25:15', '2021-11-11 00:00:35'),
 (364, NULL, NULL, 'PSGDPR_CREATION_FORM_SWITCH', '1', '2021-10-31 15:25:15', '2021-10-31 15:25:15'),
 (365, NULL, NULL, 'PSGDPR_CREATION_FORM', NULL, '2021-10-31 15:25:15', '2021-10-31 15:25:15'),
 (366, NULL, NULL, 'PSGDPR_CUSTOMER_FORM_SWITCH', '1', '2021-10-31 15:25:15', '2021-10-31 15:25:15'),
@@ -4559,15 +4636,64 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (394, NULL, NULL, 'PS_LAYERED_FILTER_SHOW_OUT_OF_STOCK_LAST', '0', '2021-10-31 15:25:56', '2021-10-31 15:25:56'),
 (395, NULL, NULL, 'PS_LAYERED_FILTER_BY_DEFAULT_CATEGORY', '0', '2021-10-31 15:25:56', '2021-10-31 15:25:56'),
 (396, NULL, NULL, 'PS_LAYERED_INDEXED', '1', '2021-10-31 15:25:57', '2021-10-31 15:25:57'),
-(397, NULL, NULL, 'GF_NOT_VIEWED_BADGE', '169', '2021-10-31 15:29:29', '2021-11-03 21:59:19'),
+(397, NULL, NULL, 'GF_NOT_VIEWED_BADGE', '142', '2021-10-31 15:29:29', '2021-11-11 00:00:35'),
 (398, NULL, NULL, 'ONBOARDINGV2_CURRENT_STEP', '1', '2021-10-31 15:29:50', '2021-10-31 15:29:50'),
 (399, NULL, NULL, 'ONBOARDINGV2_SHUT_DOWN', '1', '2021-10-31 15:29:56', '2021-11-04 14:10:51'),
-(400, NULL, NULL, 'PS_CCCCSS_VERSION', '78', '2021-10-31 17:13:02', '2021-11-08 16:04:11'),
+(400, NULL, NULL, 'PS_CCCCSS_VERSION', '84', '2021-10-31 17:13:02', '2021-11-13 00:03:41'),
 (401, NULL, NULL, 'PS_CSS_THEME_CACHE', '1', '2021-10-31 17:13:02', '2021-11-04 14:17:23'),
 (402, NULL, NULL, 'PS_JS_THEME_CACHE', '1', '2021-10-31 17:13:02', '2021-11-04 14:17:23'),
 (403, NULL, NULL, 'PS_HTACCESS_CACHE_CONTROL', '1', '2021-10-31 17:13:02', '2021-10-31 17:13:02'),
 (404, NULL, NULL, 'PS_LOGO_MAIL', 'logo_mail-1635698207.jpg', '2021-10-31 17:36:47', '2021-10-31 17:36:47'),
-(405, NULL, NULL, 'PS_CCCJS_VERSION', '77', '2021-10-31 18:22:43', '2021-11-08 16:04:11');
+(405, NULL, NULL, 'PS_CCCJS_VERSION', '83', '2021-10-31 18:22:43', '2021-11-13 00:03:41'),
+(406, NULL, NULL, 'CONF_PAYPAL_FIXED', '0.2', '2021-11-10 23:44:28', '2021-11-10 23:44:28'),
+(407, NULL, NULL, 'CONF_PAYPAL_VAR', '2', '2021-11-10 23:44:28', '2021-11-10 23:44:28'),
+(408, NULL, NULL, 'CONF_PAYPAL_FIXED_FOREIGN', '0.2', '2021-11-10 23:44:28', '2021-11-10 23:44:28'),
+(409, NULL, NULL, 'CONF_PAYPAL_VAR_FOREIGN', '2', '2021-11-10 23:44:28', '2021-11-10 23:44:28'),
+(410, NULL, NULL, 'PAYPAL_OS_WAITING', '14', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(411, NULL, NULL, 'PAYPAL_MERCHANT_ID_SANDBOX', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(412, NULL, NULL, 'PAYPAL_MERCHANT_ID_LIVE', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(413, NULL, NULL, 'PAYPAL_USERNAME_SANDBOX', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(414, NULL, NULL, 'PAYPAL_PSWD_SANDBOX', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(415, NULL, NULL, 'PAYPAL_SIGNATURE_SANDBOX', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(416, NULL, NULL, 'PAYPAL_SANDBOX_ACCESS', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(417, NULL, NULL, 'PAYPAL_USERNAME_LIVE', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(418, NULL, NULL, 'PAYPAL_PSWD_LIVE', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(419, NULL, NULL, 'PAYPAL_SIGNATURE_LIVE', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(420, NULL, NULL, 'PAYPAL_LIVE_ACCESS', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(421, NULL, NULL, 'PAYPAL_SANDBOX', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(422, NULL, NULL, 'PAYPAL_API_INTENT', 'sale', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(423, NULL, NULL, 'PAYPAL_API_ADVANTAGES', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(424, NULL, NULL, 'PAYPAL_API_CARD', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(425, NULL, NULL, 'PAYPAL_METHOD', NULL, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(426, NULL, NULL, 'PAYPAL_EXPRESS_CHECKOUT_SHORTCUT', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(427, NULL, NULL, 'PAYPAL_EXPRESS_CHECKOUT_SHORTCUT_CART', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(428, NULL, NULL, 'PAYPAL_CRON_TIME', '2021-11-10 23:11:30', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(429, NULL, NULL, 'PAYPAL_BY_BRAINTREE', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(430, NULL, NULL, 'PAYPAL_EXPRESS_CHECKOUT_IN_CONTEXT', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(431, NULL, NULL, 'PAYPAL_VAULTING', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(432, NULL, NULL, 'PAYPAL_REQUIREMENTS', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(433, NULL, NULL, 'PAYPAL_MB_EC_ENABLED', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(434, NULL, NULL, 'PAYPAL_CUSTOMIZE_ORDER_STATUS', '0', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(435, NULL, NULL, 'PAYPAL_OS_REFUNDED', '7', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(436, NULL, NULL, 'PAYPAL_OS_CANCELED', '6', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(437, NULL, NULL, 'PAYPAL_OS_ACCEPTED', '2', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(438, NULL, NULL, 'PAYPAL_OS_CAPTURE_CANCELED', '6', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(439, NULL, NULL, 'PAYPAL_OS_ACCEPTED_TWO', '2', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(440, NULL, NULL, 'PAYPAL_OS_WAITING_VALIDATION', '14', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(441, NULL, NULL, 'PAYPAL_OS_PROCESSING', '14', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(442, NULL, NULL, 'PAYPAL_OS_VALIDATION_ERROR', '6', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(443, NULL, NULL, 'PAYPAL_OS_REFUNDED_PAYPAL', '7', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(444, NULL, NULL, 'PAYPAL_NOT_SHOW_PS_CHECKOUT', '[\"5.4.6\",0]', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(445, NULL, NULL, 'PAYPAL_ENABLE_BNPL', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(446, NULL, NULL, 'PAYPAL_BNPL_CART_PAGE', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(447, NULL, NULL, 'PAYPAL_BNPL_PAYMENT_STEP_PAGE', '1', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(448, NULL, NULL, 'PAYPAL_EXPRESS_CHECKOUT_SHORTCUT_HOOK_PRODUCT', 'displayProductActions', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(449, NULL, NULL, 'PAYPAL_EXPRESS_CHECKOUT_SHORTCUT_HOOK_CART', 'displayExpressCheckout', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(450, NULL, NULL, 'PAYPAL_PREVIOUS_VERSION', '5.4.6', '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(451, NULL, NULL, 'PS_PRICE_DISPLAY_PRECISION', '2', '2021-11-10 23:45:35', '2021-11-10 23:45:35'),
+(452, NULL, NULL, 'PAYPAL_EC_CLIENTID_LIVE', NULL, '2021-11-10 23:45:53', '2021-11-10 23:45:53'),
+(453, NULL, NULL, 'PAYPAL_EC_SECRET_LIVE', NULL, '2021-11-10 23:45:53', '2021-11-10 23:45:53'),
+(454, NULL, NULL, 'PAYPAL_CONNECTION_EC_CONFIGURED', '0', '2021-11-10 23:45:53', '2021-11-10 23:45:53');
 
 -- --------------------------------------------------------
 
@@ -4771,7 +4897,16 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (19, 1, 1, 20, 4, 2130706433, '2021-11-04 15:24:02', ''),
 (20, 1, 1, 21, 1, 2130706433, '2021-11-04 17:28:16', ''),
 (21, 1, 1, 22, 1, 2130706433, '2021-11-05 16:18:30', ''),
-(22, 1, 1, 23, 1, 2130706433, '2021-11-08 16:24:19', '');
+(22, 1, 1, 23, 1, 2130706433, '2021-11-08 16:24:19', ''),
+(23, 1, 1, 24, 1, 2130706433, '2021-11-10 17:47:06', ''),
+(24, 1, 1, 23, 1, 2130706433, '2021-11-10 21:53:03', ''),
+(25, 1, 1, 23, 1, 2130706433, '2021-11-10 23:19:36', ''),
+(26, 1, 1, 25, 1, 3232267014, '2021-11-12 16:56:33', ''),
+(27, 1, 1, 26, 1, 3232267022, '2021-11-12 19:42:05', 'http://localhost/'),
+(28, 1, 1, 27, 1, 3232267009, '2021-11-12 23:39:59', ''),
+(29, 1, 1, 26, 1, 3232267022, '2021-11-12 23:40:21', ''),
+(30, 1, 1, 23, 1, 2130706433, '2021-11-12 23:41:44', ''),
+(31, 1, 1, 28, 1, 2130706433, '2021-11-12 23:45:18', '');
 
 -- --------------------------------------------------------
 
@@ -4800,6 +4935,16 @@ CREATE TABLE `ps_connections_source` (
   `keywords` varchar(255) DEFAULT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_connections_source`
+--
+
+INSERT INTO `ps_connections_source` (`id_connections_source`, `id_connections`, `http_referer`, `request_uri`, `keywords`, `date_add`) VALUES
+(1, 26, 'http://192.168.123.14/prestashop/', '192.168.123.14/prestashop/prestashop/index.php', '', '2021-11-12 16:56:33'),
+(2, 26, 'http://192.168.123.14/prestashop/', '192.168.123.14/prestashop/prestashop/index.php', '', '2021-11-12 19:40:05'),
+(3, 27, 'http://localhost/', '192.168.123.14/prestashop/prestashop/index.php', '', '2021-11-12 19:42:05'),
+(4, 26, 'http://192.168.123.14/prestashop/', '192.168.123.14/prestashop/prestashop/index.php', '', '2021-11-12 19:42:14');
 
 -- --------------------------------------------------------
 
@@ -6020,7 +6165,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Nazwisko', 'Imie', 'rb@example.com', '$2y$10$j/ajbqt80ZTe7rdN1zoPG.UU7yd5RoH4TdpCBuf9ciSYE8DHx9Qfu', '2021-10-31 08:24:18', '2021-10-01', '2021-10-31', '0000-00-00', '0000-00-00', 1, '', '', 'default', 'theme.css', 1, 0, 1, 1, NULL, 5, 0, 3, '2021-11-08', '', '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Nazwisko', 'Imie', 'rb@example.com', '$2y$10$j/ajbqt80ZTe7rdN1zoPG.UU7yd5RoH4TdpCBuf9ciSYE8DHx9Qfu', '2021-10-31 08:24:18', '2021-10-01', '2021-10-31', '0000-00-00', '0000-00-00', 1, '', '', 'default', 'theme.css', 1, 0, 1, 1, NULL, 5, 0, 3, '2021-11-13', '', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -6040,7 +6185,8 @@ CREATE TABLE `ps_employee_session` (
 
 INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`) VALUES
 (1, 1, 'fa66857cb03f06eb6cfcdf01b2539c6d99b2e419'),
-(8, 1, 'c6f978cc0424cfc95a189efcf81c9140e096605e');
+(8, 1, 'c6f978cc0424cfc95a189efcf81c9140e096605e'),
+(14, 1, 'cbedd6243358102ce5180e7c36cf566ff7538041');
 
 -- --------------------------------------------------------
 
@@ -6406,7 +6552,12 @@ INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id
 (20, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0),
 (21, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0),
 (22, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'en', 0),
-(23, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0);
+(23, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0),
+(24, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0),
+(25, 6, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0),
+(26, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0),
+(27, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'en', 0),
+(28, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0);
 
 -- --------------------------------------------------------
 
@@ -6793,8 +6944,7 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `pos
 (300, 'actionGeolocationPageForm', 'Modify geolocation page options form content', 'This hook allows to modify geolocation page options form FormBuilder', 1, 1),
 (301, 'actionLocalizationPageForm', 'Modify localization page options form content', 'This hook allows to modify localization page options form FormBuilder', 1, 1),
 (302, 'actionPaymentPreferencesForm', 'Modify payment preferences options form content', 'This hook allows to modify payment preferences options form FormBuilder', 1, 1),
-(303, 'actionEmailConfigurationForm', 'Modify email configuration options form content', 'This hook allows to modify email configuration options form FormBuilder', 1, 1);
-INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `position`) VALUES
+(303, 'actionEmailConfigurationForm', 'Modify email configuration options form content', 'This hook allows to modify email configuration options form FormBuilder', 1, 1),
 (304, 'actionRequestSqlForm', 'Modify request sql options form content', 'This hook allows to modify request sql options form FormBuilder', 1, 1),
 (305, 'actionBackupForm', 'Modify backup options form content', 'This hook allows to modify backup options form FormBuilder', 1, 1),
 (306, 'actionWebservicePageForm', 'Modify webservice page options form content', 'This hook allows to modify webservice page options form FormBuilder', 1, 1),
@@ -7067,10 +7217,10 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `pos
 (576, 'actionBeforeUpdateProductFormHandler', 'Modify product identifiable object data before updating it', 'This hook allows to modify product identifiable object form data before it was updated', 1, 1),
 (577, 'actionAfterUpdateProductFormHandler', 'Modify product identifiable object data after updating it', 'This hook allows to modify product identifiable object form data after it was updated', 1, 1),
 (578, 'actionCustomerDiscountGridDefinitionModifier', 'Modify customer discount grid definition', 'This hook allows to alter customer discount grid columns, actions and filters', 1, 1),
-(579, 'actionCustomerAddressGridDefinitionModifier', 'Modify customer address grid definition', 'This hook allows to alter customer address grid columns, actions and filters', 1, 1);
-INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `position`) VALUES
+(579, 'actionCustomerAddressGridDefinitionModifier', 'Modify customer address grid definition', 'This hook allows to alter customer address grid columns, actions and filters', 1, 1),
 (580, 'actionCartRuleGridDefinitionModifier', 'Modify cart rule grid definition', 'This hook allows to alter cart rule grid columns, actions and filters', 1, 1),
-(581, 'actionOrderStatesGridDefinitionModifier', 'Modify order states grid definition', 'This hook allows to alter order states grid columns, actions and filters', 1, 1),
+(581, 'actionOrderStatesGridDefinitionModifier', 'Modify order states grid definition', 'This hook allows to alter order states grid columns, actions and filters', 1, 1);
+INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `position`) VALUES
 (582, 'actionOrderReturnStatesGridDefinitionModifier', 'Modify order return states grid definition', 'This hook allows to alter order return states grid columns, actions and filters', 1, 1),
 (583, 'actionOutstandingGridDefinitionModifier', 'Modify outstanding grid definition', 'This hook allows to alter outstanding grid columns, actions and filters', 1, 1),
 (584, 'actionCarrierGridDefinitionModifier', 'Modify carrier grid definition', 'This hook allows to alter carrier grid columns, actions and filters', 1, 1),
@@ -7258,7 +7408,11 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `pos
 (766, 'actionObjectCartRuleAddAfter', 'actionObjectCartRuleAddAfter', '', 1, 1),
 (767, 'newOrder', 'newOrder', '', 1, 1),
 (768, 'actionAdminStoresControllerSaveAfter', 'actionAdminStoresControllerSaveAfter', '', 1, 1),
-(769, 'actionAdminWebserviceControllerSaveAfter', 'actionAdminWebserviceControllerSaveAfter', '', 1, 1);
+(769, 'actionAdminWebserviceControllerSaveAfter', 'actionAdminWebserviceControllerSaveAfter', '', 1, 1),
+(770, 'actionBeforeCartUpdateQty', 'actionBeforeCartUpdateQty', '', 1, 1),
+(771, 'displayAdminCartsView', 'displayAdminCartsView', '', 1, 1),
+(772, 'displayOrderPreview', 'displayOrderPreview', '', 1, 1),
+(773, 'displayExpressCheckout', 'displayExpressCheckout', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -7518,6 +7672,21 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (61, 1, 716, 1),
 (61, 1, 717, 1),
 (61, 1, 718, 1),
+(62, 1, 36, 1),
+(62, 1, 37, 1),
+(62, 1, 39, 1),
+(62, 1, 43, 1),
+(62, 1, 50, 1),
+(62, 1, 51, 1),
+(62, 1, 143, 1),
+(62, 1, 328, 1),
+(62, 1, 412, 1),
+(62, 1, 418, 1),
+(62, 1, 419, 1),
+(62, 1, 770, 1),
+(62, 1, 771, 1),
+(62, 1, 772, 1),
+(62, 1, 773, 1),
 (3, 1, 682, 2),
 (4, 1, 686, 2),
 (5, 1, 692, 2),
@@ -7554,6 +7723,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (58, 1, 747, 2),
 (59, 1, 689, 2),
 (61, 1, 14, 2),
+(62, 1, 26, 2),
+(62, 1, 33, 2),
+(62, 1, 46, 2),
+(62, 1, 58, 2),
+(62, 1, 207, 2),
+(62, 1, 208, 2),
+(62, 1, 754, 2),
 (4, 1, 682, 3),
 (5, 1, 686, 3),
 (6, 1, 692, 3),
@@ -7573,6 +7749,9 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (59, 1, 47, 3),
 (59, 1, 683, 3),
 (59, 1, 693, 3),
+(62, 1, 31, 3),
+(62, 1, 69, 3),
+(62, 1, 704, 3),
 (5, 1, 682, 4),
 (6, 1, 686, 4),
 (20, 1, 15, 4),
@@ -7581,6 +7760,7 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (55, 1, 684, 4),
 (59, 1, 71, 4),
 (60, 1, 683, 4),
+(62, 1, 16, 4),
 (7, 1, 682, 5),
 (39, 1, 698, 5),
 (40, 1, 698, 6),
@@ -7839,13 +8019,7 @@ CREATE TABLE `ps_layered_category` (
 
 INSERT INTO `ps_layered_category` (`id_layered_category`, `id_shop`, `id_category`, `id_value`, `type`, `position`, `filter_type`, `filter_show_limit`) VALUES
 (1, 1, 2, NULL, 'category', 1, 0, 0),
-(2, 1, 2, NULL, 'price', 2, 0, 0),
-(3, 1, 3, NULL, 'category', 1, 0, 0),
-(4, 1, 3, NULL, 'price', 2, 0, 0),
-(5, 1, 6, NULL, 'category', 1, 0, 0),
-(6, 1, 6, NULL, 'price', 2, 0, 0),
-(7, 1, 9, NULL, 'category', 1, 0, 0),
-(8, 1, 9, NULL, 'price', 2, 0, 0);
+(2, 1, 2, NULL, 'price', 2, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -7866,7 +8040,7 @@ CREATE TABLE `ps_layered_filter` (
 --
 
 INSERT INTO `ps_layered_filter` (`id_layered_filter`, `name`, `filters`, `n_categories`, `date_add`) VALUES
-(1, 'Mój szablon 2021-10-31', 'a:4:{s:9:\"shop_list\";a:1:{i:0;i:1;}s:10:\"categories\";a:4:{i:0;i:2;i:1;i:3;i:2;i:6;i:3;i:9;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 4, '2021-10-31 15:25:56');
+(1, 'Mój szablon 2021-10-31', 'a:4:{s:9:\"shop_list\";a:1:{i:0;i:1;}s:10:\"categories\";a:1:{i:0;i:2;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 4, '2021-10-31 15:25:56');
 
 -- --------------------------------------------------------
 
@@ -7884,13 +8058,8 @@ CREATE TABLE `ps_layered_filter_block` (
 --
 
 INSERT INTO `ps_layered_filter_block` (`hash`, `data`) VALUES
-('314653c4aa98fc9ccf5b137699092747', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('7294acbb02cf4688c3709ca50e31fccf', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('99a8b59891d6832eefba67582517293d', 'a:1:{s:7:\"filters\";a:2:{i:0;a:7:{s:9:\"type_lite\";s:8:\"category\";s:4:\"type\";s:8:\"category\";s:6:\"id_key\";i:0;s:4:\"name\";s:9:\"Kategorie\";s:6:\"values\";a:0:{}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";s:1:\"0\";}i:1;a:12:{s:9:\"type_lite\";s:5:\"price\";s:4:\"type\";s:5:\"price\";s:6:\"id_key\";i:0;s:4:\"name\";s:4:\"Cena\";s:3:\"max\";d:0;s:3:\"min\";d:0;s:4:\"unit\";s:3:\"zł\";s:14:\"specifications\";a:11:{s:6:\"symbol\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:12:\"currencyCode\";s:3:\"PLN\";s:14:\"currencySymbol\";s:3:\"zł\";s:13:\"numberSymbols\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:15:\"positivePattern\";s:12:\"#,##0.00 ¤\";s:15:\"negativePattern\";s:13:\"-#,##0.00 ¤\";s:17:\"maxFractionDigits\";i:2;s:17:\"minFractionDigits\";i:2;s:12:\"groupingUsed\";b:1;s:16:\"primaryGroupSize\";i:3;s:18:\"secondaryGroupSize\";i:3;}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:3;s:3:\"nbr\";i:0;s:5:\"value\";N;}}}'),
-('bf570d7fcbc0cc514e3d589a5661a801', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('c66337838c00827f013a87345d7c130c', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('cd026ba3627dfe921ddef03e68992e09', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('d1bf5310738075f7ea41596e0cc502c5', 'a:1:{s:7:\"filters\";a:2:{i:0;a:7:{s:9:\"type_lite\";s:8:\"category\";s:4:\"type\";s:8:\"category\";s:6:\"id_key\";i:0;s:4:\"name\";s:9:\"Kategorie\";s:6:\"values\";a:0:{}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";s:1:\"0\";}i:1;a:12:{s:9:\"type_lite\";s:5:\"price\";s:4:\"type\";s:5:\"price\";s:6:\"id_key\";i:0;s:4:\"name\";s:4:\"Cena\";s:3:\"max\";d:0;s:3:\"min\";d:0;s:4:\"unit\";s:3:\"zł\";s:14:\"specifications\";a:11:{s:6:\"symbol\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:12:\"currencyCode\";s:3:\"PLN\";s:14:\"currencySymbol\";s:3:\"zł\";s:13:\"numberSymbols\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:15:\"positivePattern\";s:12:\"#,##0.00 ¤\";s:15:\"negativePattern\";s:13:\"-#,##0.00 ¤\";s:17:\"maxFractionDigits\";i:2;s:17:\"minFractionDigits\";i:2;s:12:\"groupingUsed\";b:1;s:16:\"primaryGroupSize\";i:3;s:18:\"secondaryGroupSize\";i:3;}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:3;s:3:\"nbr\";i:0;s:5:\"value\";N;}}}');
+('769b8cb94282482f9e087a9892aaf0fb', 'a:1:{s:7:\"filters\";a:0:{}}'),
+('bf570d7fcbc0cc514e3d589a5661a801', 'a:1:{s:7:\"filters\";a:0:{}}');
 
 -- --------------------------------------------------------
 
@@ -8523,7 +8692,13 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (312, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-07 14:10:42', '2021-11-07 14:10:42'),
 (313, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-07 16:59:52', '2021-11-07 16:59:52'),
 (314, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-08 16:03:57', '2021-11-08 16:03:57'),
-(315, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-08 16:12:13', '2021-11-08 16:12:13');
+(315, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-08 16:12:13', '2021-11-08 16:12:13'),
+(316, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-10 17:54:04', '2021-11-10 17:54:04'),
+(317, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-10 23:15:58', '2021-11-10 23:15:58'),
+(318, 1, 0, 'Protect vendor folder in module paypal', '', 0, 1, NULL, 1, 0, 1, '2021-11-10 23:44:30', '2021-11-10 23:44:30'),
+(319, 1, 0, 'Połączenie z panelem administracyjnym z 127.0.0.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-12 16:47:04', '2021-11-12 16:47:04'),
+(320, 1, 0, 'Połączenie z panelem administracyjnym z 192.168.123.14', '', 0, NULL, NULL, 1, 1, 1, '2021-11-12 19:40:40', '2021-11-12 19:40:40'),
+(321, 1, 0, 'Połączenie z panelem administracyjnym z 192.168.123.14', '', 0, NULL, NULL, 1, 1, 1, '2021-11-12 23:36:43', '2021-11-12 23:36:43');
 
 -- --------------------------------------------------------
 
@@ -8711,7 +8886,9 @@ INSERT INTO `ps_meta` (`id_meta`, `page`, `configurable`) VALUES
 (45, 'module-ps_metrics-AdminMetricsStats', 1),
 (46, 'module-ps_metrics-AdminLegacyStatsMetrics', 1),
 (47, 'module-ps_metrics-AdminMetricsSettings', 1),
-(48, 'module-ps_metrics-AdminMetricsUpgrade', 1);
+(48, 'module-ps_metrics-AdminMetricsUpgrade', 1),
+(49, 'module-paypal-payment', 1),
+(50, 'module-paypal-validation', 1);
 
 -- --------------------------------------------------------
 
@@ -8773,7 +8950,9 @@ INSERT INTO `ps_meta_lang` (`id_meta`, `id_shop`, `id_lang`, `title`, `descripti
 (45, 1, 1, '', '', '', ''),
 (46, 1, 1, '', '', '', ''),
 (47, 1, 1, '', '', '', ''),
-(48, 1, 1, '', '', '', '');
+(48, 1, 1, '', '', '', ''),
+(49, 1, 1, '', '', '', ''),
+(50, 1, 1, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -8852,7 +9031,8 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 (58, 'ps_metrics', 1, '2.3.1'),
 (59, 'ps_facebook', 1, '1.14.0'),
 (60, 'blockreassurance', 1, '5.0.0'),
-(61, 'ps_facetedsearch', 1, '3.7.1');
+(61, 'ps_facetedsearch', 1, '3.7.1'),
+(62, 'paypal', 1, '5.4.6');
 
 -- --------------------------------------------------------
 
@@ -9109,7 +9289,11 @@ INSERT INTO `ps_module_access` (`id_profile`, `id_authorization_role`) VALUES
 (1, 841),
 (1, 842),
 (1, 843),
-(1, 844);
+(1, 844),
+(1, 845),
+(1, 846),
+(1, 847),
+(1, 848);
 
 -- --------------------------------------------------------
 
@@ -9135,7 +9319,11 @@ INSERT INTO `ps_module_carrier` (`id_module`, `id_shop`, `id_reference`) VALUES
 (35, 1, 1),
 (35, 1, 2),
 (35, 1, 3),
-(35, 1, 4);
+(35, 1, 4),
+(62, 1, 1),
+(62, 1, 2),
+(62, 1, 3),
+(62, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -9155,7 +9343,248 @@ CREATE TABLE `ps_module_country` (
 
 INSERT INTO `ps_module_country` (`id_module`, `id_shop`, `id_country`) VALUES
 (14, 1, 14),
-(35, 1, 14);
+(35, 1, 14),
+(62, 1, 1),
+(62, 1, 2),
+(62, 1, 3),
+(62, 1, 4),
+(62, 1, 5),
+(62, 1, 6),
+(62, 1, 7),
+(62, 1, 8),
+(62, 1, 9),
+(62, 1, 10),
+(62, 1, 11),
+(62, 1, 12),
+(62, 1, 13),
+(62, 1, 14),
+(62, 1, 15),
+(62, 1, 16),
+(62, 1, 17),
+(62, 1, 18),
+(62, 1, 19),
+(62, 1, 20),
+(62, 1, 21),
+(62, 1, 22),
+(62, 1, 23),
+(62, 1, 24),
+(62, 1, 25),
+(62, 1, 26),
+(62, 1, 27),
+(62, 1, 28),
+(62, 1, 29),
+(62, 1, 30),
+(62, 1, 31),
+(62, 1, 32),
+(62, 1, 33),
+(62, 1, 34),
+(62, 1, 35),
+(62, 1, 36),
+(62, 1, 37),
+(62, 1, 38),
+(62, 1, 39),
+(62, 1, 40),
+(62, 1, 41),
+(62, 1, 42),
+(62, 1, 43),
+(62, 1, 44),
+(62, 1, 45),
+(62, 1, 46),
+(62, 1, 47),
+(62, 1, 48),
+(62, 1, 49),
+(62, 1, 50),
+(62, 1, 51),
+(62, 1, 52),
+(62, 1, 53),
+(62, 1, 54),
+(62, 1, 55),
+(62, 1, 56),
+(62, 1, 57),
+(62, 1, 58),
+(62, 1, 59),
+(62, 1, 60),
+(62, 1, 61),
+(62, 1, 62),
+(62, 1, 63),
+(62, 1, 64),
+(62, 1, 65),
+(62, 1, 66),
+(62, 1, 67),
+(62, 1, 68),
+(62, 1, 69),
+(62, 1, 70),
+(62, 1, 71),
+(62, 1, 72),
+(62, 1, 73),
+(62, 1, 74),
+(62, 1, 75),
+(62, 1, 76),
+(62, 1, 77),
+(62, 1, 78),
+(62, 1, 79),
+(62, 1, 80),
+(62, 1, 81),
+(62, 1, 82),
+(62, 1, 83),
+(62, 1, 84),
+(62, 1, 85),
+(62, 1, 86),
+(62, 1, 87),
+(62, 1, 88),
+(62, 1, 89),
+(62, 1, 90),
+(62, 1, 91),
+(62, 1, 92),
+(62, 1, 93),
+(62, 1, 94),
+(62, 1, 95),
+(62, 1, 96),
+(62, 1, 97),
+(62, 1, 98),
+(62, 1, 99),
+(62, 1, 100),
+(62, 1, 101),
+(62, 1, 102),
+(62, 1, 103),
+(62, 1, 104),
+(62, 1, 105),
+(62, 1, 106),
+(62, 1, 107),
+(62, 1, 108),
+(62, 1, 109),
+(62, 1, 110),
+(62, 1, 111),
+(62, 1, 112),
+(62, 1, 113),
+(62, 1, 114),
+(62, 1, 115),
+(62, 1, 116),
+(62, 1, 117),
+(62, 1, 118),
+(62, 1, 119),
+(62, 1, 120),
+(62, 1, 121),
+(62, 1, 122),
+(62, 1, 123),
+(62, 1, 124),
+(62, 1, 125),
+(62, 1, 126),
+(62, 1, 127),
+(62, 1, 128),
+(62, 1, 129),
+(62, 1, 130),
+(62, 1, 131),
+(62, 1, 132),
+(62, 1, 133),
+(62, 1, 134),
+(62, 1, 135),
+(62, 1, 136),
+(62, 1, 137),
+(62, 1, 138),
+(62, 1, 139),
+(62, 1, 140),
+(62, 1, 141),
+(62, 1, 142),
+(62, 1, 143),
+(62, 1, 144),
+(62, 1, 145),
+(62, 1, 146),
+(62, 1, 147),
+(62, 1, 148),
+(62, 1, 149),
+(62, 1, 150),
+(62, 1, 151),
+(62, 1, 152),
+(62, 1, 153),
+(62, 1, 154),
+(62, 1, 155),
+(62, 1, 156),
+(62, 1, 157),
+(62, 1, 158),
+(62, 1, 159),
+(62, 1, 160),
+(62, 1, 161),
+(62, 1, 162),
+(62, 1, 163),
+(62, 1, 164),
+(62, 1, 165),
+(62, 1, 166),
+(62, 1, 167),
+(62, 1, 168),
+(62, 1, 169),
+(62, 1, 170),
+(62, 1, 171),
+(62, 1, 172),
+(62, 1, 173),
+(62, 1, 174),
+(62, 1, 175),
+(62, 1, 176),
+(62, 1, 177),
+(62, 1, 178),
+(62, 1, 179),
+(62, 1, 180),
+(62, 1, 181),
+(62, 1, 182),
+(62, 1, 183),
+(62, 1, 184),
+(62, 1, 185),
+(62, 1, 186),
+(62, 1, 187),
+(62, 1, 188),
+(62, 1, 189),
+(62, 1, 190),
+(62, 1, 191),
+(62, 1, 192),
+(62, 1, 193),
+(62, 1, 194),
+(62, 1, 195),
+(62, 1, 196),
+(62, 1, 197),
+(62, 1, 198),
+(62, 1, 199),
+(62, 1, 200),
+(62, 1, 201),
+(62, 1, 202),
+(62, 1, 203),
+(62, 1, 204),
+(62, 1, 205),
+(62, 1, 206),
+(62, 1, 207),
+(62, 1, 208),
+(62, 1, 209),
+(62, 1, 210),
+(62, 1, 211),
+(62, 1, 212),
+(62, 1, 213),
+(62, 1, 214),
+(62, 1, 215),
+(62, 1, 216),
+(62, 1, 217),
+(62, 1, 218),
+(62, 1, 219),
+(62, 1, 220),
+(62, 1, 221),
+(62, 1, 222),
+(62, 1, 223),
+(62, 1, 224),
+(62, 1, 225),
+(62, 1, 226),
+(62, 1, 227),
+(62, 1, 228),
+(62, 1, 229),
+(62, 1, 230),
+(62, 1, 231),
+(62, 1, 232),
+(62, 1, 233),
+(62, 1, 234),
+(62, 1, 235),
+(62, 1, 236),
+(62, 1, 237),
+(62, 1, 238),
+(62, 1, 239),
+(62, 1, 240),
+(62, 1, 241);
 
 -- --------------------------------------------------------
 
@@ -9175,7 +9604,8 @@ CREATE TABLE `ps_module_currency` (
 
 INSERT INTO `ps_module_currency` (`id_module`, `id_shop`, `id_currency`) VALUES
 (14, 1, 1),
-(35, 1, 1);
+(35, 1, 1),
+(62, 1, -1);
 
 -- --------------------------------------------------------
 
@@ -9373,7 +9803,10 @@ INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
 (60, 1, 3),
 (61, 1, 1),
 (61, 1, 2),
-(61, 1, 3);
+(61, 1, 3),
+(62, 1, 1),
+(62, 1, 2),
+(62, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -9396,9 +9829,11 @@ CREATE TABLE `ps_module_history` (
 INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `date_upd`) VALUES
 (1, 1, 12, '2021-10-31 17:49:42', '2021-11-01 20:22:51'),
 (2, 1, 32, '2021-11-01 12:12:07', '2021-11-02 18:50:48'),
-(3, 1, 35, '2021-11-01 12:13:06', '2021-11-01 12:14:39'),
+(3, 1, 35, '2021-11-01 12:13:06', '2021-11-10 23:46:30'),
 (4, 1, 29, '2021-11-01 20:22:29', '2021-11-02 14:24:18'),
-(5, 1, 60, '2021-11-02 13:45:47', '2021-11-02 13:45:47');
+(5, 1, 60, '2021-11-02 13:45:47', '2021-11-02 13:45:47'),
+(6, 1, 62, '2021-11-10 23:45:19', '2021-11-10 23:45:19'),
+(7, 1, 14, '2021-11-10 23:46:21', '2021-11-10 23:46:21');
 
 -- --------------------------------------------------------
 
@@ -9489,7 +9924,8 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 (58, 1, 7),
 (59, 1, 7),
 (60, 1, 7),
-(61, 1, 7);
+(61, 1, 7),
+(62, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -10010,7 +10446,8 @@ INSERT INTO `ps_order_state` (`id_order_state`, `invoice`, `send_email`, `module
 (10, 0, 1, 'ps_wirepayment', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0),
 (11, 1, 1, '', '#3498D8', 1, 0, 1, 0, 0, 1, 0, 0, 0),
 (12, 0, 1, '', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0),
-(13, 0, 0, 'ps_cashondelivery', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0);
+(13, 0, 0, 'ps_cashondelivery', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(14, 0, 0, 'paypal', '#4169E1', 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -10042,7 +10479,8 @@ INSERT INTO `ps_order_state_lang` (`id_order_state`, `id_lang`, `name`, `templat
 (10, 1, 'Oczekiwanie na płatność przelewem', 'bankwire'),
 (11, 1, 'Płatność przyjęta', 'payment'),
 (12, 1, 'Zamówienie oczekujące (nieopłacone)', 'outofstock'),
-(13, 1, 'Oczekiwanie na płatność przy odbiorze', 'cashondelivery');
+(13, 1, 'Oczekiwanie na płatność przy odbiorze', 'cashondelivery'),
+(14, 1, 'Awaiting for PayPal payment', '');
 
 -- --------------------------------------------------------
 
@@ -10128,6 +10566,103 @@ CREATE TABLE `ps_page_viewed` (
   `id_date_range` int UNSIGNED NOT NULL,
   `counter` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_paypal_capture`
+--
+
+CREATE TABLE `ps_paypal_capture` (
+  `id_paypal_capture` int UNSIGNED NOT NULL,
+  `id_capture` varchar(255) NOT NULL,
+  `id_paypal_order` int NOT NULL,
+  `capture_amount` decimal(10,2) NOT NULL,
+  `result` varchar(255) NOT NULL,
+  `date_add` datetime NOT NULL,
+  `date_upd` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_paypal_ipn`
+--
+
+CREATE TABLE `ps_paypal_ipn` (
+  `id_paypal_ipn` int UNSIGNED NOT NULL,
+  `id_transaction` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `response` text NOT NULL,
+  `date_add` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_paypal_order`
+--
+
+CREATE TABLE `ps_paypal_order` (
+  `id_paypal_order` int UNSIGNED NOT NULL,
+  `id_order` int UNSIGNED NOT NULL,
+  `id_cart` int UNSIGNED NOT NULL,
+  `id_transaction` varchar(255) NOT NULL,
+  `id_payment` varchar(255) NOT NULL,
+  `payment_method` varchar(255) NOT NULL,
+  `currency` varchar(255) NOT NULL,
+  `total_paid` decimal(10,2) NOT NULL,
+  `payment_status` varchar(255) NOT NULL,
+  `total_prestashop` decimal(10,2) NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `payment_tool` varchar(255) NOT NULL,
+  `sandbox` tinyint UNSIGNED NOT NULL,
+  `date_add` datetime NOT NULL,
+  `date_upd` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_paypal_processlogger`
+--
+
+CREATE TABLE `ps_paypal_processlogger` (
+  `id_paypal_processlogger` int UNSIGNED NOT NULL,
+  `id_order` int UNSIGNED NOT NULL,
+  `id_cart` int UNSIGNED NOT NULL,
+  `id_shop` int UNSIGNED NOT NULL,
+  `id_transaction` varchar(50) NOT NULL,
+  `log` varchar(1000) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `sandbox` tinyint UNSIGNED NOT NULL,
+  `tools` varchar(50) NOT NULL,
+  `date_add` datetime NOT NULL,
+  `date_transaction` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Zrzut danych tabeli `ps_paypal_processlogger`
+--
+
+INSERT INTO `ps_paypal_processlogger` (`id_paypal_processlogger`, `id_order`, `id_cart`, `id_shop`, `id_transaction`, `log`, `status`, `sandbox`, `tools`, `date_add`, `date_transaction`) VALUES
+(1, 0, 0, 0, '', 'Client Authentication failed', 'Error', 0, '', '2021-11-10 23:45:53', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_paypal_vaulting`
+--
+
+CREATE TABLE `ps_paypal_vaulting` (
+  `id_paypal_vaulting` int UNSIGNED NOT NULL,
+  `id_customer` int UNSIGNED NOT NULL,
+  `rememberedCards` varchar(255) NOT NULL,
+  `profile_key` varchar(255) NOT NULL,
+  `sandbox` tinyint UNSIGNED NOT NULL,
+  `date_add` datetime NOT NULL,
+  `date_upd` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -11094,7 +11629,7 @@ CREATE TABLE `ps_shop_url` (
 --
 
 INSERT INTO `ps_shop_url` (`id_shop_url`, `id_shop`, `domain`, `domain_ssl`, `physical_uri`, `virtual_uri`, `main`, `active`) VALUES
-(1, 1, 'localhost', 'localhost', '/prestashop/prestashop/', '', 1, 1);
+(1, 1, '192.168.123.14', '192.168.123.14', '/prestashop/prestashop/', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -12241,7 +12776,16 @@ INSERT INTO `ps_tab` (`id_tab`, `id_parent`, `position`, `module`, `class_name`,
 (150, 42, 5, '', 'Marketing', '', 1, 1, 0, 'campaign', NULL, NULL),
 (151, 150, 1, 'ps_facebook', 'AdminPsfacebookModule', '', 1, 1, 0, '', NULL, NULL),
 (152, -1, 13, 'ps_facebook', 'AdminAjaxPsfacebook', '', 1, 1, 0, '', NULL, NULL),
-(153, 0, 6, 'blockreassurance', 'AdminBlockListing', '', 0, 1, 0, '', NULL, NULL);
+(153, 0, 6, 'blockreassurance', 'AdminBlockListing', '', 0, 1, 0, '', NULL, NULL),
+(154, 2, 6, 'paypal', 'AdminParentPaypalConfiguration', '', 0, 1, 0, 'payment', NULL, NULL),
+(155, 154, 1, 'paypal', 'AdminPaypalConfiguration', '', 0, 1, 0, '', NULL, NULL),
+(156, 155, 1, 'paypal', 'AdminPayPalSetup', '', 1, 1, 0, '', NULL, NULL),
+(157, 155, 2, 'paypal', 'AdminPayPalCustomizeCheckout', '', 0, 1, 0, '', NULL, NULL),
+(158, 155, 3, 'paypal', 'AdminPayPalInstallment', '', 0, 1, 0, '', NULL, NULL),
+(159, 155, 4, 'paypal', 'AdminPayPalHelp', '', 1, 1, 0, '', NULL, NULL),
+(160, 155, 5, 'paypal', 'AdminPayPalLogs', '', 0, 1, 0, '', NULL, NULL),
+(161, 154, 2, 'paypal', 'AdminPaypalGetCredentials', '', 0, 1, 0, '', NULL, NULL),
+(162, 154, 3, 'paypal', 'AdminPaypalProcessLogger', '', 1, 1, 0, '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -12419,7 +12963,16 @@ INSERT INTO `ps_tab_lang` (`id_tab`, `id_lang`, `name`) VALUES
 (150, 1, 'Marketing'),
 (151, 1, 'Facebook'),
 (152, 1, 'ps_facebook'),
-(153, 1, 'AdminBlockListing');
+(153, 1, 'AdminBlockListing'),
+(154, 1, 'PayPal Official'),
+(155, 1, 'Configuration'),
+(156, 1, 'Ustawienia'),
+(157, 1, 'Doświadczenie'),
+(158, 1, 'Pay in X times'),
+(159, 1, 'Pomoc'),
+(160, 1, 'Dzienniki'),
+(161, 1, 'Get Credentials'),
+(162, 1, 'Logger');
 
 -- --------------------------------------------------------
 
@@ -14944,6 +15497,36 @@ ALTER TABLE `ps_page_viewed`
   ADD PRIMARY KEY (`id_page`,`id_date_range`,`id_shop`);
 
 --
+-- Indeksy dla tabeli `ps_paypal_capture`
+--
+ALTER TABLE `ps_paypal_capture`
+  ADD PRIMARY KEY (`id_paypal_capture`);
+
+--
+-- Indeksy dla tabeli `ps_paypal_ipn`
+--
+ALTER TABLE `ps_paypal_ipn`
+  ADD PRIMARY KEY (`id_paypal_ipn`);
+
+--
+-- Indeksy dla tabeli `ps_paypal_order`
+--
+ALTER TABLE `ps_paypal_order`
+  ADD PRIMARY KEY (`id_paypal_order`);
+
+--
+-- Indeksy dla tabeli `ps_paypal_processlogger`
+--
+ALTER TABLE `ps_paypal_processlogger`
+  ADD PRIMARY KEY (`id_paypal_processlogger`);
+
+--
+-- Indeksy dla tabeli `ps_paypal_vaulting`
+--
+ALTER TABLE `ps_paypal_vaulting`
+  ADD PRIMARY KEY (`id_paypal_vaulting`);
+
+--
 -- Indeksy dla tabeli `ps_product`
 --
 ALTER TABLE `ps_product`
@@ -15657,7 +16240,7 @@ ALTER TABLE `ps_address`
 -- AUTO_INCREMENT dla tabeli `ps_admin_filter`
 --
 ALTER TABLE `ps_admin_filter`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_advice`
@@ -15705,7 +16288,7 @@ ALTER TABLE `ps_attribute_impact`
 -- AUTO_INCREMENT dla tabeli `ps_authorization_role`
 --
 ALTER TABLE `ps_authorization_role`
-  MODIFY `id_authorization_role` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=845;
+  MODIFY `id_authorization_role` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=885;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_badge`
@@ -15753,7 +16336,7 @@ ALTER TABLE `ps_cart_rule_product_rule_group`
 -- AUTO_INCREMENT dla tabeli `ps_category`
 --
 ALTER TABLE `ps_category`
-  MODIFY `id_category` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_category` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_cms`
@@ -15789,7 +16372,7 @@ ALTER TABLE `ps_condition`
 -- AUTO_INCREMENT dla tabeli `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=406;
+  MODIFY `id_configuration` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=455;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_configuration_kpi`
@@ -15801,13 +16384,13 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_connections` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
 --
 ALTER TABLE `ps_connections_source`
-  MODIFY `id_connections_source` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_connections_source` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_contact`
@@ -15891,7 +16474,7 @@ ALTER TABLE `ps_employee`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_employee_session` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
@@ -15933,7 +16516,7 @@ ALTER TABLE `ps_group_reduction`
 -- AUTO_INCREMENT dla tabeli `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_guest` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_homeslider`
@@ -15951,7 +16534,7 @@ ALTER TABLE `ps_homeslider_slides`
 -- AUTO_INCREMENT dla tabeli `ps_hook`
 --
 ALTER TABLE `ps_hook`
-  MODIFY `id_hook` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=770;
+  MODIFY `id_hook` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=774;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_hook_alias`
@@ -15999,7 +16582,7 @@ ALTER TABLE `ps_lang`
 -- AUTO_INCREMENT dla tabeli `ps_layered_category`
 --
 ALTER TABLE `ps_layered_category`
-  MODIFY `id_layered_category` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_layered_category` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_layered_filter`
@@ -16029,7 +16612,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
+  MODIFY `id_log` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
@@ -16059,19 +16642,19 @@ ALTER TABLE `ps_message`
 -- AUTO_INCREMENT dla tabeli `ps_meta`
 --
 ALTER TABLE `ps_meta`
-  MODIFY `id_meta` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_meta` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module`
 --
 ALTER TABLE `ps_module`
-  MODIFY `id_module` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id_module` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_preference`
@@ -16155,7 +16738,7 @@ ALTER TABLE `ps_order_slip`
 -- AUTO_INCREMENT dla tabeli `ps_order_state`
 --
 ALTER TABLE `ps_order_state`
-  MODIFY `id_order_state` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_order_state` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_page`
@@ -16174,6 +16757,36 @@ ALTER TABLE `ps_pagenotfound`
 --
 ALTER TABLE `ps_page_type`
   MODIFY `id_page_type` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT dla tabeli `ps_paypal_capture`
+--
+ALTER TABLE `ps_paypal_capture`
+  MODIFY `id_paypal_capture` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `ps_paypal_ipn`
+--
+ALTER TABLE `ps_paypal_ipn`
+  MODIFY `id_paypal_ipn` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `ps_paypal_order`
+--
+ALTER TABLE `ps_paypal_order`
+  MODIFY `id_paypal_order` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `ps_paypal_processlogger`
+--
+ALTER TABLE `ps_paypal_processlogger`
+  MODIFY `id_paypal_processlogger` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT dla tabeli `ps_paypal_vaulting`
+--
+ALTER TABLE `ps_paypal_vaulting`
+  MODIFY `id_paypal_vaulting` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_product`
@@ -16431,7 +17044,7 @@ ALTER TABLE `ps_supply_order_state`
 -- AUTO_INCREMENT dla tabeli `ps_tab`
 --
 ALTER TABLE `ps_tab`
-  MODIFY `id_tab` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `id_tab` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_tab_module_preference`
