@@ -66,7 +66,7 @@ class Ps_MainMenu extends Module implements WidgetInterface
     {
         $this->name = 'ps_mainmenu';
         $this->tab = 'front_office_features';
-        $this->version = '2.3.1';
+        $this->version = '2.3.0';
         $this->author = 'PrestaShop';
         $this->imageFiles = null;
 
@@ -96,7 +96,7 @@ class Ps_MainMenu extends Module implements WidgetInterface
             !$this->registerHook('actionObjectProductUpdateAfter') ||
             !$this->registerHook('actionObjectProductDeleteAfter') ||
             !$this->registerHook('actionObjectProductAddAfter') ||
-            !$this->registerHook('actionCategoryUpdate') ||
+            !$this->registerHook('categoryUpdate') ||
             !$this->registerHook('actionShopDataDuplication') ||
             !$this->registerHook('displayTop')) {
             return false;
@@ -986,7 +986,7 @@ class Ps_MainMenu extends Module implements WidgetInterface
         $this->clearMenuCache();
     }
 
-    public function hookActionCategoryUpdate($params)
+    public function hookCategoryUpdate($params)
     {
         $this->clearMenuCache();
     }
