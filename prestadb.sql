@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 21 Lis 2021, 16:05
+-- Czas generowania: 21 Lis 2021, 17:02
 -- Wersja serwera: 8.0.27-0ubuntu0.20.04.1
 -- Wersja PHP: 7.4.3
 
@@ -1254,7 +1254,7 @@ CREATE TABLE `ps_admin_filter` (
 --
 
 INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`, `filter`, `filter_id`) VALUES
-(1, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
+(1, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"tade\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"koncert\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
 (2, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"active\":\"1\",\"id_category_parent\":\"2\"}}', 'category'),
 (3, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page_category'),
 (4, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page'),
@@ -1375,31 +1375,13 @@ CREATE TABLE `ps_attribute` (
 --
 
 INSERT INTO `ps_attribute` (`id_attribute`, `id_attribute_group`, `color`, `position`) VALUES
-(1, 1, '', 0),
-(2, 1, '', 1),
-(3, 1, '', 2),
-(4, 1, '', 3),
-(5, 2, '#AAB2BD', 0),
-(6, 2, '#CFC4A6', 1),
-(7, 2, '#f5f5dc', 2),
-(8, 2, '#ffffff', 3),
-(9, 2, '#faebd7', 4),
-(10, 2, '#E84C3D', 5),
-(11, 2, '#434A54', 6),
-(12, 2, '#C19A6B', 7),
-(13, 2, '#F39C11', 8),
-(14, 2, '#5D9CEC', 9),
-(15, 2, '#A0D468', 10),
-(16, 2, '#F1C40F', 11),
-(17, 2, '#964B00', 12),
-(18, 2, '#FCCACD', 13),
 (19, 3, '', 0),
 (20, 3, '', 1),
 (21, 3, '', 2),
 (22, 4, '', 0),
-(23, 4, '', 1),
-(24, 4, '', 2),
-(25, 4, '', 3);
+(24, 4, '', 1),
+(26, 5, '', 0),
+(27, 5, '', 1);
 
 -- --------------------------------------------------------
 
@@ -1419,10 +1401,9 @@ CREATE TABLE `ps_attribute_group` (
 --
 
 INSERT INTO `ps_attribute_group` (`id_attribute_group`, `is_color_group`, `group_type`, `position`) VALUES
-(1, 0, 'select', 0),
-(2, 1, 'color', 1),
-(3, 0, 'select', 2),
-(4, 0, 'select', 3);
+(3, 0, 'select', 0),
+(4, 0, 'select', 1),
+(5, 0, 'select', 2);
 
 -- --------------------------------------------------------
 
@@ -1442,10 +1423,9 @@ CREATE TABLE `ps_attribute_group_lang` (
 --
 
 INSERT INTO `ps_attribute_group_lang` (`id_attribute_group`, `id_lang`, `name`, `public_name`) VALUES
-(1, 1, 'Rozmiar', 'Rozmiar'),
-(2, 1, 'Kolor', 'Kolor'),
 (3, 1, 'Wymiary', 'Wymiary'),
-(4, 1, 'Typ papieru', 'Typ papieru');
+(4, 1, 'Typ papieru', 'Typ papieru'),
+(5, 1, 'Miejsce', 'Miejsce');
 
 -- --------------------------------------------------------
 
@@ -1463,10 +1443,9 @@ CREATE TABLE `ps_attribute_group_shop` (
 --
 
 INSERT INTO `ps_attribute_group_shop` (`id_attribute_group`, `id_shop`) VALUES
-(1, 1),
-(2, 1),
 (3, 1),
-(4, 1);
+(4, 1),
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -1499,31 +1478,13 @@ CREATE TABLE `ps_attribute_lang` (
 --
 
 INSERT INTO `ps_attribute_lang` (`id_attribute`, `id_lang`, `name`) VALUES
-(1, 1, 'S'),
-(2, 1, 'M'),
-(3, 1, 'L'),
-(4, 1, 'XL'),
-(5, 1, 'Szary'),
-(6, 1, 'Szarobrązowy'),
-(7, 1, 'Beżowy'),
-(8, 1, 'Biały'),
-(9, 1, 'Złamana biel'),
-(10, 1, 'Czerwony'),
-(11, 1, 'czarny'),
-(12, 1, 'Wielbłąd'),
-(13, 1, 'Pomarańczowy'),
-(14, 1, 'Niebieski'),
-(15, 1, 'Zielony'),
-(16, 1, 'Żółty'),
-(17, 1, 'Brązowy'),
-(18, 1, 'Różowy'),
 (19, 1, '40x60cm'),
 (20, 1, '60x90cm'),
 (21, 1, '80x120cm'),
-(22, 1, 'W linie'),
-(23, 1, 'jednolity'),
-(24, 1, 'w kratkę'),
-(25, 1, 'w kropki');
+(22, 1, 'zwykły'),
+(24, 1, 'sztywny'),
+(26, 1, 'Miejsce stojące'),
+(27, 1, 'Miejsce siedzące');
 
 -- --------------------------------------------------------
 
@@ -1541,31 +1502,13 @@ CREATE TABLE `ps_attribute_shop` (
 --
 
 INSERT INTO `ps_attribute_shop` (`id_attribute`, `id_shop`) VALUES
-(1, 1),
-(2, 1),
-(3, 1),
-(4, 1),
-(5, 1),
-(6, 1),
-(7, 1),
-(8, 1),
-(9, 1),
-(10, 1),
-(11, 1),
-(12, 1),
-(13, 1),
-(14, 1),
-(15, 1),
-(16, 1),
-(17, 1),
-(18, 1),
 (19, 1),
 (20, 1),
 (21, 1),
 (22, 1),
-(23, 1),
 (24, 1),
-(25, 1);
+(26, 1),
+(27, 1);
 
 -- --------------------------------------------------------
 
@@ -3279,7 +3222,8 @@ INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `del
 (12, 1, 1, 11, '{\"8\":\"11,\"}', 1, 8, 8, 1, 7, 33, 'a0358c31049dc643188381612f0bf2be', 0, 0, '', 0, 0, '2021-11-20 21:41:30', '2021-11-20 21:42:21', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"c031711fd419af96d63db77fb109b9bd3a18464e\"}'),
 (13, 1, 1, 7, '{\"9\":\"7,\"}', 1, 9, 9, 1, 8, 34, '069078f7c675b7aaf388db218a6bf292', 0, 0, '', 0, 0, '2021-11-20 21:49:27', '2021-11-20 21:50:18', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"c736e81ed7035a5bc98c1892d54497f50aa319b8\"}'),
 (14, 1, 1, 9, '{\"10\":\"9,\"}', 1, 10, 10, 1, 9, 38, 'f05ea7e78133e7c2de3f5df721ed2c34', 0, 0, '', 0, 0, '2021-11-21 14:07:58', '2021-11-21 14:36:51', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checkout-payment-step\":{\"step_is_reachable\":false,\"step_is_complete\":false},\"checksum\":\"ca81b50c888558c1db7efedf650b2cb213455295\"}'),
-(15, 1, 1, 1, '{\"11\":\"1,\"}', 1, 11, 11, 1, 10, 27, 'b56e01e8f2e7a4e7a9f5299a3ca4f6df', 0, 0, '', 0, 0, '2021-11-21 15:54:23', '2021-11-21 15:55:25', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"58b92fe5adf450ad11e0a105ad8f3569b795e5c5\"}');
+(15, 1, 1, 1, '{\"11\":\"1,\"}', 1, 11, 11, 1, 10, 27, 'b56e01e8f2e7a4e7a9f5299a3ca4f6df', 0, 0, '', 0, 0, '2021-11-21 15:54:23', '2021-11-21 15:55:25', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"58b92fe5adf450ad11e0a105ad8f3569b795e5c5\"}'),
+(16, 1, 1, 0, '', 1, 11, 11, 1, 10, 27, 'b56e01e8f2e7a4e7a9f5299a3ca4f6df', 0, 0, '', 0, 0, '2021-11-21 16:54:32', '2021-11-21 16:58:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -3315,7 +3259,10 @@ CREATE TABLE `ps_cart_product` (
 
 INSERT INTO `ps_cart_product` (`id_cart`, `id_product`, `id_address_delivery`, `id_shop`, `id_product_attribute`, `id_customization`, `quantity`, `date_add`) VALUES
 (14, 1, 10, 1, 0, 0, 1, '2021-11-21 14:07:58'),
-(15, 101, 11, 1, 0, 0, 1, '2021-11-21 15:54:23');
+(15, 101, 11, 1, 0, 0, 1, '2021-11-21 15:54:23'),
+(16, 81, 11, 1, 1, 0, 1, '2021-11-21 16:58:07'),
+(16, 81, 11, 1, 2, 0, 1, '2021-11-21 16:58:01'),
+(16, 244, 11, 1, 0, 0, 1, '2021-11-21 16:54:32');
 
 -- --------------------------------------------------------
 
@@ -4411,8 +4358,8 @@ INSERT INTO `ps_condition` (`id_condition`, `id_ps_condition`, `type`, `request`
 (45, 45, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100000', '10', 'time', '3', 0, '2021-11-20 22:00:48', '2021-11-20 22:00:48'),
 (46, 46, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000000', '10', 'time', '4', 0, '2021-11-20 22:00:48', '2021-11-20 22:00:48'),
 (47, 47, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '2', '2', 'hook', 'actionObjectCartAddAfter', 1, '2021-11-20 22:00:48', '2021-11-20 22:00:48'),
-(48, 48, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10', '5', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-20 22:00:48', '2021-11-21 15:54:23'),
-(49, 49, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100', '5', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-20 22:00:48', '2021-11-21 15:54:23'),
+(48, 48, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10', '6', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-20 22:00:48', '2021-11-21 16:54:32'),
+(49, 49, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100', '6', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-20 22:00:48', '2021-11-21 16:54:32'),
 (50, 50, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '1000', '3', 'time', '1', 0, '2021-11-20 22:00:48', '2021-11-21 13:57:31'),
 (51, 51, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10000', '2', 'time', '4', 0, '2021-11-20 22:00:48', '2021-11-20 22:00:48'),
 (52, 52, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100000', '2', 'time', '8', 0, '2021-11-20 22:00:48', '2021-11-20 22:00:48'),
@@ -5038,11 +4985,11 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (141, NULL, NULL, 'PS_SHOW_NEW_MESSAGES', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (142, NULL, NULL, 'PS_FEATURE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (143, NULL, NULL, 'PS_COMBINATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(144, NULL, NULL, 'PS_SPECIFIC_PRICE_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2021-11-20 23:07:12'),
+(144, NULL, NULL, 'PS_SPECIFIC_PRICE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2021-11-21 16:59:44'),
 (145, NULL, NULL, 'PS_VIRTUAL_PROD_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2021-10-31 15:25:48'),
 (146, NULL, NULL, 'PS_CUSTOMIZATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (147, NULL, NULL, 'PS_CART_RULE_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(148, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2021-10-31 15:35:52'),
+(148, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2021-11-21 17:00:35'),
 (149, NULL, NULL, 'PS_ALIAS_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2021-11-20 23:41:53'),
 (150, NULL, NULL, 'PS_TAX_ADDRESS_TYPE', 'id_address_delivery', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (151, NULL, NULL, 'PS_SHOP_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5614,7 +5561,9 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (50, 1, 1, 39, 1, 3232267022, '2021-11-21 14:41:54', ''),
 (51, 1, 1, 40, 1, 3232267022, '2021-11-21 14:59:27', ''),
 (52, 1, 1, 41, 1, 3232267022, '2021-11-21 15:08:00', ''),
-(53, 1, 1, 27, 1, 3232267009, '2021-11-21 15:17:50', '');
+(53, 1, 1, 27, 1, 3232267009, '2021-11-21 15:17:50', ''),
+(54, 1, 1, 27, 1, 3232267009, '2021-11-21 16:11:39', ''),
+(55, 1, 1, 40, 1, 3232267022, '2021-11-21 17:02:26', '');
 
 -- --------------------------------------------------------
 
@@ -6945,7 +6894,8 @@ INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`
 (27, 1, 'bcb5ef7e6a71c8efef4bff32e1f5576a63e818ea'),
 (28, 1, '32818dba3d77b2b48ae14f69bf928e9f17d194c5'),
 (29, 1, '9a001ca7f91ae3213286a8b16fd3bcd5af8cdf0b'),
-(30, 1, 'a792bc7e753d6ddf650722b449eb00d5f1562f29');
+(30, 1, 'a792bc7e753d6ddf650722b449eb00d5f1562f29'),
+(31, 1, 'f4a082caac66c851b496b1fe8f4bbaefbe112777');
 
 -- --------------------------------------------------------
 
@@ -7013,13 +6963,14 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('carts', 13, 1, 'pl', '2021-11-20 21:50:18'),
 ('carts', 14, 1, 'pl', '2021-11-21 14:36:51'),
 ('carts', 15, 1, 'pl', '2021-11-21 15:55:25'),
+('carts', 16, 1, 'pl', '2021-11-21 16:58:07'),
 ('categories', 20, 1, 'pl', '2021-11-20 23:07:02'),
 ('orders', 6, 1, 'pl', '2021-11-20 21:20:44'),
 ('orders', 7, 1, 'pl', '2021-11-20 21:42:32'),
 ('orders', 8, 1, 'pl', '2021-11-20 21:50:33'),
 ('orders', 9, 1, 'pl', '2021-11-21 15:55:32'),
-('products', 1, 1, 'pl', '2021-11-20 23:21:49'),
-('products', 2, 1, 'pl', '2021-11-20 23:21:50'),
+('products', 1, 1, 'pl', '2021-11-21 17:00:35'),
+('products', 2, 1, 'pl', '2021-11-21 16:36:18'),
 ('products', 3, 1, 'pl', '2021-11-20 23:21:51'),
 ('products', 4, 1, 'pl', '2021-11-20 23:21:52'),
 ('products', 5, 1, 'pl', '2021-11-20 23:21:53'),
@@ -7098,7 +7049,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 78, 1, 'pl', '2021-11-20 23:22:57'),
 ('products', 79, 1, 'pl', '2021-11-20 23:22:58'),
 ('products', 80, 1, 'pl', '2021-11-20 23:23:01'),
-('products', 81, 1, 'pl', '2021-11-20 23:23:02'),
+('products', 81, 1, 'pl', '2021-11-21 16:55:53'),
 ('products', 82, 1, 'pl', '2021-11-20 23:23:02'),
 ('products', 83, 1, 'pl', '2021-11-20 23:23:03'),
 ('products', 84, 1, 'pl', '2021-11-20 23:23:04'),
@@ -7117,7 +7068,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 97, 1, 'pl', '2021-11-20 23:23:15'),
 ('products', 98, 1, 'pl', '2021-11-20 23:23:16'),
 ('products', 99, 1, 'pl', '2021-11-20 23:23:16'),
-('products', 100, 1, 'pl', '2021-11-20 23:23:17'),
+('products', 100, 1, 'pl', '2021-11-21 16:54:05'),
 ('products', 101, 1, 'pl', '2021-11-20 23:23:18'),
 ('products', 102, 1, 'pl', '2021-11-20 23:23:20'),
 ('products', 103, 1, 'pl', '2021-11-20 23:23:21'),
@@ -11176,13 +11127,7 @@ CREATE TABLE `ps_layered_filter_block` (
 --
 
 INSERT INTO `ps_layered_filter_block` (`hash`, `data`) VALUES
-('26317fbedceac39413bcc23434c639f9', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('624352309b7e0484de018d8a2f505058', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('7294acbb02cf4688c3709ca50e31fccf', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('8237d8b7c86e48b36773e011f45f0958', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('bf570d7fcbc0cc514e3d589a5661a801', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('c66337838c00827f013a87345d7c130c', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('cd026ba3627dfe921ddef03e68992e09', 'a:1:{s:7:\"filters\";a:0:{}}');
+('26317fbedceac39413bcc23434c639f9', 'a:1:{s:7:\"filters\";a:0:{}}');
 
 -- --------------------------------------------------------
 
@@ -11214,7 +11159,8 @@ INSERT INTO `ps_layered_indexable_attribute_group` (`id_attribute_group`, `index
 (1, 1),
 (2, 1),
 (3, 1),
-(4, 1);
+(4, 1),
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -11307,7 +11253,7 @@ CREATE TABLE `ps_layered_price_index` (
 --
 
 INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `price_min`, `price_max`, `id_country`) VALUES
-(1, 1, 1, '60.00000', '60.00000', 14),
+(1, 1, 1, '54.00000', '60.00000', 14),
 (2, 1, 1, '65.00000', '65.00000', 14),
 (3, 1, 1, '156.00000', '156.00000', 14),
 (4, 1, 1, '50.00000', '50.00000', 14),
@@ -11862,6 +11808,18 @@ CREATE TABLE `ps_layered_product_attribute` (
   `id_attribute_group` int UNSIGNED NOT NULL DEFAULT '0',
   `id_shop` int UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Zrzut danych tabeli `ps_layered_product_attribute`
+--
+
+INSERT INTO `ps_layered_product_attribute` (`id_attribute`, `id_product`, `id_attribute_group`, `id_shop`) VALUES
+(22, 100, 4, 1),
+(24, 100, 4, 1),
+(26, 81, 5, 1),
+(26, 100, 5, 1),
+(27, 81, 5, 1),
+(27, 100, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -12586,7 +12544,31 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (606, 1, 0, 'Połączenie z panelem administracyjnym z 192.168.123.14', '', 0, NULL, NULL, 1, 1, 1, '2021-11-21 15:03:49', '2021-11-21 15:03:49'),
 (607, 1, 0, 'Protect vendor folder in module ps_googleanalytics', '', 0, 1, NULL, 1, 0, 1, '2021-11-21 15:10:38', '2021-11-21 15:10:38'),
 (608, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 15, 1, NULL, 1, 0, 0, '2021-11-21 15:55:36', '2021-11-21 15:55:36'),
-(609, 1, 0, 'Połączenie z panelem administracyjnym z 192.168.123.14', '', 0, 1, NULL, 1, 0, 1, '2021-11-21 16:01:12', '2021-11-21 16:01:12');
+(609, 1, 0, 'Połączenie z panelem administracyjnym z 192.168.123.14', '', 0, 1, NULL, 1, 0, 1, '2021-11-21 16:01:12', '2021-11-21 16:01:12'),
+(610, 1, 0, 'Połączenie z panelem administracyjnym z 192.168.123.1', '', 0, NULL, NULL, 1, 1, 1, '2021-11-21 16:11:09', '2021-11-21 16:11:09'),
+(611, 1, 0, 'Product modification', 'Product', 2, 1, NULL, 1, 0, 1, '2021-11-21 16:36:15', '2021-11-21 16:36:15'),
+(612, 1, 0, 'Product modification', 'Product', 2, 1, NULL, 1, 0, 1, '2021-11-21 16:36:18', '2021-11-21 16:36:18'),
+(613, 1, 0, 'dodanie AttributeGroup', 'AttributeGroup', 5, 1, NULL, 1, 0, 1, '2021-11-21 16:40:07', '2021-11-21 16:40:07'),
+(614, 1, 0, 'dodanie Attribute', 'Attribute', 26, 1, NULL, 1, 0, 1, '2021-11-21 16:40:23', '2021-11-21 16:40:23'),
+(615, 1, 0, 'dodanie Attribute', 'Attribute', 27, 1, NULL, 1, 0, 1, '2021-11-21 16:40:31', '2021-11-21 16:40:31'),
+(616, 1, 0, 'dodanie Attribute', 'Attribute', 28, 1, NULL, 1, 0, 1, '2021-11-21 16:40:38', '2021-11-21 16:40:38'),
+(617, 1, 0, 'Attribute modyfikacja', 'Attribute', 26, 1, NULL, 1, 0, 1, '2021-11-21 16:46:24', '2021-11-21 16:46:24'),
+(618, 1, 0, 'Attribute modyfikacja', 'Attribute', 27, 1, NULL, 1, 0, 1, '2021-11-21 16:46:40', '2021-11-21 16:46:40'),
+(619, 1, 0, 'Attribute modyfikacja', 'Attribute', 27, 1, NULL, 1, 0, 1, '2021-11-21 16:46:48', '2021-11-21 16:46:48'),
+(620, 1, 0, 'Product modification', 'Product', 81, 1, NULL, 1, 0, 1, '2021-11-21 16:48:46', '2021-11-21 16:48:46'),
+(621, 1, 0, 'Product modification', 'Product', 81, 1, NULL, 1, 0, 1, '2021-11-21 16:49:02', '2021-11-21 16:49:02'),
+(622, 1, 0, 'Product modification', 'Product', 81, 1, NULL, 1, 0, 1, '2021-11-21 16:49:53', '2021-11-21 16:49:53'),
+(623, 1, 0, 'Product modification', 'Product', 81, 1, NULL, 1, 0, 1, '2021-11-21 16:49:57', '2021-11-21 16:49:57'),
+(624, 1, 0, 'Attribute modyfikacja', 'Attribute', 22, 1, NULL, 1, 0, 1, '2021-11-21 16:50:43', '2021-11-21 16:50:43'),
+(625, 1, 0, 'Attribute modyfikacja', 'Attribute', 22, 1, NULL, 1, 0, 1, '2021-11-21 16:50:48', '2021-11-21 16:50:48'),
+(626, 1, 0, 'Attribute modyfikacja', 'Attribute', 24, 1, NULL, 1, 0, 1, '2021-11-21 16:50:57', '2021-11-21 16:50:57'),
+(627, 1, 0, 'Product modification', 'Product', 100, 1, NULL, 1, 0, 1, '2021-11-21 16:53:19', '2021-11-21 16:53:19'),
+(628, 1, 0, 'Product modification', 'Product', 100, 1, NULL, 1, 0, 1, '2021-11-21 16:53:47', '2021-11-21 16:53:47'),
+(629, 1, 0, 'Product modification', 'Product', 100, 1, NULL, 1, 0, 1, '2021-11-21 16:54:02', '2021-11-21 16:54:02'),
+(630, 1, 0, 'Product modification', 'Product', 100, 1, NULL, 1, 0, 1, '2021-11-21 16:54:05', '2021-11-21 16:54:05'),
+(631, 1, 0, 'Product modification', 'Product', 81, 1, NULL, 1, 0, 1, '2021-11-21 16:55:53', '2021-11-21 16:55:53'),
+(632, 1, 0, 'Product modification', 'Product', 1, 1, NULL, 1, 0, 1, '2021-11-21 17:00:33', '2021-11-21 17:00:33'),
+(633, 1, 0, 'Product modification', 'Product', 1, 1, NULL, 1, 0, 1, '2021-11-21 17:00:35', '2021-11-21 17:00:35');
 
 -- --------------------------------------------------------
 
@@ -15042,8 +15024,8 @@ CREATE TABLE `ps_product` (
 --
 
 INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_category_default`, `id_shop_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ean13`, `isbn`, `upc`, `mpn`, `ecotax`, `quantity`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `reference`, `supplier_reference`, `location`, `width`, `height`, `depth`, `weight`, `out_of_stock`, `additional_delivery_times`, `quantity_discount`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_is_pack`, `cache_has_attachments`, `is_virtual`, `cache_default_attribute`, `date_add`, `date_upd`, `advanced_stock_management`, `pack_stock_type`, `state`, `product_type`) VALUES
-(1, 3, 3, 20, 1, 5, 0, 0, '0000000000001', '', '00000000001', 'null', '0.000000', 0, 0, 0, 0, '48.780488', '30.000000', 'null', '0.000000', '0.000000', 'event-1', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 0, 3, 1, ''),
-(2, 3, 5, 20, 1, 5, 0, 0, '0000000000002', '', '00000000002', 'null', '0.000000', 0, 0, 0, 0, '52.845528', '32.500000', 'null', '0.000000', '0.000000', 'event-2', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 0, 3, 1, ''),
+(1, 3, 3, 20, 1, 5, 0, 0, '0000000000001', '', '00000000001', 'null', '0.000000', 0, 0, 0, 0, '48.780488', '30.000000', 'null', '0.000000', '0.000000', 'event-1', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-21 17:00:35', 0, 3, 1, ''),
+(2, 3, 5, 20, 1, 5, 0, 0, '0000000000002', '', '00000000002', 'null', '0.000000', 0, 0, 0, 0, '52.845528', '32.500000', 'null', '0.000000', '0.000000', 'event-2', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-21 16:36:18', 0, 3, 1, ''),
 (3, 3, 7, 20, 1, 5, 0, 0, '0000000000003', '', '00000000003', 'null', '0.000000', 0, 0, 0, 0, '126.829268', '78.000000', 'null', '0.000000', '0.000000', 'event-3', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 0, 3, 1, ''),
 (4, 3, 10, 20, 1, 5, 0, 0, '0000000000004', '', '00000000004', 'null', '0.000000', 0, 0, 0, 0, '40.650407', '25.000000', 'null', '0.000000', '0.000000', 'event-4', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 0, 3, 1, ''),
 (5, 3, 11, 20, 1, 5, 0, 0, '0000000000005', '', '00000000005', 'null', '0.000000', 0, 0, 0, 0, '16.260163', '10.000000', 'null', '0.000000', '0.000000', 'event-5', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 0, 3, 1, ''),
@@ -15122,7 +15104,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (78, 3, 14, 20, 1, 5, 0, 0, '0000000000078', '', '00000000078', 'null', '0.000000', 0, 0, 0, 0, '24.390244', '15.000000', 'null', '0.000000', '0.000000', 'event-78', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 0, 3, 1, ''),
 (79, 3, 47, 20, 1, 5, 0, 0, '0000000000079', '', '00000000079', 'null', '0.000000', 0, 0, 0, 0, '24.390244', '15.000000', 'null', '0.000000', '0.000000', 'event-79', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 0, 3, 1, ''),
 (80, 3, 17, 20, 1, 5, 0, 0, '0000000000080', '', '00000000080', 'null', '0.000000', 0, 0, 0, 0, '16.260163', '10.000000', 'null', '0.000000', '0.000000', 'event-80', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 0, 3, 1, ''),
-(81, 3, 20, 20, 1, 5, 0, 0, '0000000000081', '', '00000000081', 'null', '0.000000', 0, 0, 0, 0, '22.357724', '13.750000', 'null', '0.000000', '0.000000', 'event-81', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 0, 3, 1, ''),
+(81, 3, 20, 20, 1, 5, 0, 0, '0000000000081', '', '00000000081', 'null', '0.000000', 0, 0, 0, 0, '22.357724', '0.000000', 'null', '0.000000', '0.000000', 'event-81', '', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 1, '2021-11-01 00:00:00', '2021-11-21 16:55:53', 0, 3, 1, 'combinations'),
 (82, 3, 7, 20, 1, 5, 0, 0, '0000000000082', '', '00000000082', 'null', '0.000000', 0, 0, 0, 0, '126.829268', '78.000000', 'null', '0.000000', '0.000000', 'event-82', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 0, 3, 1, ''),
 (83, 3, 22, 20, 1, 5, 0, 0, '0000000000083', '', '00000000083', 'null', '0.000000', 0, 0, 0, 0, '17.886179', '11.000000', 'null', '0.000000', '0.000000', 'event-83', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 0, 3, 1, ''),
 (84, 3, 48, 20, 1, 5, 0, 0, '0000000000084', '', '00000000084', 'null', '0.000000', 0, 0, 0, 0, '32.520325', '20.000000', 'null', '0.000000', '0.000000', 'event-84', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:04', 0, 3, 1, ''),
@@ -15141,7 +15123,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (97, 3, 13, 20, 1, 5, 0, 0, '0000000000097', '', '00000000097', 'null', '0.000000', 0, 0, 0, 0, '68.292683', '42.000000', 'null', '0.000000', '0.000000', 'event-97', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:13', 0, 3, 1, ''),
 (98, 3, 18, 20, 1, 5, 0, 0, '0000000000098', '', '00000000098', 'null', '0.000000', 0, 0, 0, 0, '26.829268', '16.500000', 'null', '0.000000', '0.000000', 'event-98', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:13', 0, 3, 1, ''),
 (99, 3, 31, 20, 1, 5, 0, 0, '0000000000099', '', '00000000099', 'null', '0.000000', 0, 0, 0, 0, '48.780488', '30.000000', 'null', '0.000000', '0.000000', 'event-99', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:13', 0, 3, 1, ''),
-(100, 3, 25, 20, 1, 5, 0, 0, '0000000000100', '', '00000000100', 'null', '0.000000', 0, 0, 0, 0, '52.032520', '32.000000', 'null', '0.000000', '0.000000', 'event-100', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 0, 3, 1, ''),
+(100, 3, 25, 20, 1, 5, 0, 0, '0000000000100', '', '00000000100', 'null', '0.000000', 0, 0, 0, 0, '52.032520', '32.000000', 'null', '0.000000', '0.000000', 'event-100', '', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 3, '2021-11-01 00:00:00', '2021-11-21 16:54:05', 0, 3, 1, 'combinations'),
 (101, 3, 4, 19, 1, 5, 0, 0, '0000000000001', '', '00000000001', 'null', '0.000000', 0, 0, 0, 0, '28.455285', '17.500000', 'null', '0.000000', '0.000000', 'event-1', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 0, 3, 1, ''),
 (102, 3, 51, 19, 1, 5, 0, 0, '0000000000002', '', '00000000002', 'null', '0.000000', 0, 0, 0, 0, '24.390244', '15.000000', 'null', '0.000000', '0.000000', 'event-2', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 0, 3, 1, ''),
 (103, 3, 52, 19, 1, 5, 0, 0, '0000000000003', '', '00000000003', 'null', '0.000000', 0, 0, 0, 0, '32.520325', '20.000000', 'null', '0.000000', '0.000000', 'event-3', 'null', '', '0.300000', '0.100000', '0.005000', '0.030000', 2, 1, 0, 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 0, 3, 1, ''),
@@ -15626,6 +15608,18 @@ CREATE TABLE `ps_product_attribute` (
   `available_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_product_attribute`
+--
+
+INSERT INTO `ps_product_attribute` (`id_product_attribute`, `id_product`, `reference`, `supplier_reference`, `location`, `ean13`, `isbn`, `upc`, `mpn`, `wholesale_price`, `price`, `ecotax`, `quantity`, `weight`, `unit_price_impact`, `default_on`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `available_date`) VALUES
+(1, 81, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 0, '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(2, 81, '', '', '', '', '', '', '', '0.000000', '12.000000', '0.000000', 0, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(3, 100, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 0, '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(4, 100, '', '', '', '', '', '', '', '0.000000', '3.000000', '0.000000', 0, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(5, 100, '', '', '', '', '', '', '', '0.000000', '20.000000', '0.000000', 0, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(6, 100, '', '', '', '', '', '', '', '0.000000', '23.000000', '0.000000', 0, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
@@ -15636,6 +15630,22 @@ CREATE TABLE `ps_product_attribute_combination` (
   `id_attribute` int UNSIGNED NOT NULL,
   `id_product_attribute` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_product_attribute_combination`
+--
+
+INSERT INTO `ps_product_attribute_combination` (`id_attribute`, `id_product_attribute`) VALUES
+(26, 1),
+(27, 2),
+(22, 3),
+(26, 3),
+(24, 4),
+(26, 4),
+(22, 5),
+(27, 5),
+(24, 6),
+(27, 6);
 
 -- --------------------------------------------------------
 
@@ -15669,6 +15679,18 @@ CREATE TABLE `ps_product_attribute_shop` (
   `low_stock_alert` tinyint(1) NOT NULL DEFAULT '0',
   `available_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_product_attribute_shop`
+--
+
+INSERT INTO `ps_product_attribute_shop` (`id_product`, `id_product_attribute`, `id_shop`, `wholesale_price`, `price`, `ecotax`, `weight`, `unit_price_impact`, `default_on`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `available_date`) VALUES
+(81, 1, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(81, 2, 1, '0.000000', '12.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(100, 3, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(100, 4, 1, '0.000000', '3.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(100, 5, 1, '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(100, 6, 1, '0.000000', '23.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -15868,7 +15890,7 @@ CREATE TABLE `ps_product_lang` (
 --
 
 INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`, `description_short`, `link_rewrite`, `meta_description`, `meta_keywords`, `meta_title`, `name`, `available_now`, `available_later`, `delivery_in_stock`, `delivery_out_stock`) VALUES
-(1, 1, 1, '„Usta milczą, dusza śpiewa”<br /> <br />Zapraszamy Państwa na wyjątkowy wieczór, który będzie podróżą w krainę operetki, barwnych salonów arcyksiążąt, wystawnych bali i podróżą w krainę czardasza. Nie zabraknie również musicalowych perełek z My Fair Lady czy Upiora w operze. Koncert wypełni piękna muzyka i sentymentalny nastrój - przenikający każdy fragment urokliwego Na scenie wystąpią :<br /> <br />• Iwona Kaczmarek – sopran • Piotr Kaczmarek – tenor • Wojciech Kaczmarek – baryton ( 20 lat) • Adam Kaczmarek – tenor (17 lat) •<br /> <br />Akompaniament - Orkiestra Kameralna „Alla Vienna” pod kierownictwem muzycznym prof. Adama Manijaka.<br /> <br />Prowadzenie koncertu red. Tomasz Szuran.<br /> <br />Zapraszamy na koncerty Śpiewającej Rodziny Kaczmarek<br /> <br />www.pieknekoncerty.pl<br /> <br />www.braciakaczmarek.pl<br /> <br />Zapraszamy na koncerty Śpiewającej Rodziny Kaczmarek', '<b>Organizator:</b> Agencja Artystyczna ŚPIEWAJĄCA RODZINA KACZMAREK Piotr Kaczmarek<br /><b>Miasto</b>: Kielce<br /><b>Lokacja</b>: Filharmonia Świętokrzyska im. Oskara Kolberga w Kielcach<br /><b>Czas</b>: 20.11.2021 , g. 18:00 (sobota)', '1', 'null', 'null', 'Koncert Śpiewajacej Rodziny Kaczmarek „Usta milczą, dusza śpiewa”', 'Koncert Śpiewajacej Rodziny Kaczmarek Usta milczą, dusza śpiewa', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
+(1, 1, 1, '<p>„Usta milczą, dusza śpiewa”<br /><br />Zapraszamy Państwa na wyjątkowy wieczór, który będzie podróżą w krainę operetki, barwnych salonów arcyksiążąt, wystawnych bali i podróżą w krainę czardasza. Nie zabraknie również musicalowych perełek z My Fair Lady czy Upiora w operze. Koncert wypełni piękna muzyka i sentymentalny nastrój - przenikający każdy fragment urokliwego Na scenie wystąpią :<br /><br />• Iwona Kaczmarek – sopran • Piotr Kaczmarek – tenor • Wojciech Kaczmarek – baryton ( 20 lat) • Adam Kaczmarek – tenor (17 lat) •<br /><br />Akompaniament - Orkiestra Kameralna „Alla Vienna” pod kierownictwem muzycznym prof. Adama Manijaka.<br /><br />Prowadzenie koncertu red. Tomasz Szuran.<br /><br />Zapraszamy na koncerty Śpiewającej Rodziny Kaczmarek<br /><br />www.pieknekoncerty.pl<br /><br />www.braciakaczmarek.pl<br /><br />Zapraszamy na koncerty Śpiewającej Rodziny Kaczmarek</p>', '<p><b>Organizator:</b> Agencja Artystyczna ŚPIEWAJĄCA RODZINA KACZMAREK Piotr Kaczmarek<br /><b>Miasto</b>: Kielce<br /><b>Lokacja</b>: Filharmonia Świętokrzyska im. Oskara Kolberga w Kielcach<br /><b>Czas</b>: 20.11.2021 , g. 18:00 (sobota)</p>', '1', 'null', 'null', 'Koncert Śpiewajacej Rodziny Kaczmarek „Usta milczą, dusza śpiewa”', 'Koncert Śpiewajacej Rodziny Kaczmarek Usta milczą, dusza śpiewa', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (2, 1, 1, 'Zapraszamy Państwa na wyjątkowy wieczór, który będzie podróżą w krainę operetki, barwnych salonów arcyksiążąt, wystawnych bali i w krainę Czardasza. Nie zabraknie również musicalowych perełek z My Fair Lady czy Upiora w operze. Koncert wypełni piękna muzyka i sentymentalny nastrój. Na scenie wystąpią:<br />• Iwona Kaczmarek – sopran • Piotr Kaczmarek – tenor • Wojciech Kaczmarek – baryton (20 lat) • Adam Kaczmarek – tenor (17 lat) •<br />Akompaniament - Orkiestra Kameralna „Alla Vienna” pod kierownictwem muzycznym prof. Adama Manijaka.<br /><br />Prowadzenie koncertu red. Tomasz Szuran.<br /><br />Zapraszamy na koncerty Śpiewającej Rodziny Kaczmarek<br />www.pieknekoncerty.pl<br />www.braciakaczmarek.pl<br /><br />Organizator Śpiewająca Rodzina Kaczmarek', '<b>Organizator:</b> Filharmonia Świętokrzyska im Oskara Kolberga<br /><b>Miasto</b>: Kielce<br /><b>Lokacja</b>: Filharmonia Świętokrzyska im. Oskara Kolberga w Kielcach<br /><b>Czas</b>: 20.11.2021 , g. 18:00 (sobota)', '2', 'null', 'null', 'Śpiewająca Rodzina KACZMAREK Usta milczą, dusza śpiewa', 'Śpiewająca Rodzina KACZMAREK Usta milczą, dusza śpiewa', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (3, 1, 1, 'Koncert „Mira i Tadeusz”<br />Gdyby nie Mira, nie byłoby Sygietyńskiego, ani „Mazowsza” – powiedział kiedyś Marian Hemar, wybitny polski poeta, przyjaciel Sygietyńskich. To zdanie oddaje w pełni rolę obojga artystów, w powstaniu zespołu, który od ponad siedemdziesięciu lat propaguje polską kulturę narodową w jej regionalnych odmianach, na scenach całego świata.<br />W tym roku przypada 120. rocznica urodzin Miry Zimińskiej-Sygietyńskiej i 125. rocznica urodzin Tadeusza Sygietyńskiego. Z tej okazji zespół, który począł się w marzeniach Tadeusza i został ukształtowany muzycznie przez niego, przy wizjonerskim, scenicznym wsparciu Miry, pragnie zaprezentować Państwu wyjątkowy koncert pod tytułem „Mira i Tadeusz”. Widowisko pełne najpiękniejszych pieśni i tańców z repertuaru „Mazowsza”, przepełnione wspomnieniami o założycielach i ich życiu sprzed „Mazowsza” i z „Mazowszem”, na długo pozostanie w pamięci każdego, kto zdecyduje się je obejrzeć.<br />„Mazowsze” młode, świeże, piękne i pełne wigoru – takie jak chcieli jego założyciele, zabierze Państwa w niezapomnianą podróż w czasie i przestrzeni po Polsce i polskiej kulturze. Wystąpią soliści, balet, chór i orkiestra PZLPiT „Mazowsze” pod dyrekcją maestro Jacka Bonieckiego.', '<b>Organizator:</b> Państwowy Zespół Ludowy Pieśni i Tańca Mazowsze<br /><b>Miasto</b>: Otrębusy<br /><b>Lokacja</b>: Matecznik Mazowsze\"<br /><b>Czas</b>: 20.11.2021 , g. 18:00 (sobota)\"', '3', 'null', 'null', 'Mira i Tadeusz', 'Mira i Tadeusz', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (4, 1, 1, 'Miejski Dom Kultury w Wągrowcu zaprasza na kolejną edycję Wągrowiec Fest! Już 20 listopada o godz. 18:00 na Hali Sportowej Ośrodka Sportu i Rekreacji w Wągrowcu zagrają dla Państwa znani i lubiani artyści muzyki śląskiej: Tomasz Calicki, De Silvers i Leszek i Minika Filec. Imprezę poprowadzi Andrzej Miś.', '<b>Organizator:</b> Miejski Dom Kultury<br /><b>Miasto</b>: Wągrowiec<br /><b>Lokacja</b>: Hala OSiR<br /><b>Czas</b>: 20.11.2021 , g. 18:00 (sobota)', '4', 'null', 'null', 'WĄGROWIEC FEST 2021', 'WĄGROWIEC FEST 2021', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
@@ -15948,7 +15970,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (78, 1, 1, '27.11.2021, godz. 19:00<br />Studio Koncertowe Polskiego Radia im. W. Lutosławskiego w Warszawie<br /><br />PROGRAM:<br />Paweł Mykietyn - III Kwartet smyczkowy<br />Paweł Szymański - Compartment 2, Car 7<br />Robert Schumann - Kwartet smyczkowy a-moll op. 41 nr 1<br /><br />WYKONAWCY:<br />Miłosz Pękala - wibrafon<br />Meccore String Quartet w składzie:<br />Wojciech Koprowski - skrzypce<br />Aleksandra Bryła - skrzypce<br />Michał Bryła - altówka<br />Marcin Mączyński - wiolonczela<br /><br />Po koncercie zapraszamy na panel dyskusyjny z udziałem artystów.<br /><br />Bilety: 30 zł<br /><br />www.festiwaltrzycztery.pl<br /><br />6. Festiwal muzyczny TRZY-CZTE-RY. Konteksty. Kontrasty. Konfrontacje. organizowany jest przez Fundację Przypływ Kultury we współpracy z Programem 2 Polskiego Radia.<br />Dofinansowano ze środków Ministra Kultury, Dziedzictwa Narodowego i Sportu pochodzących z Funduszu Promocji Kultury w ramach programu „Muzyka”, realizowanego przez Narodowy Instytut Muzyki i Tańca. Projekt współfinansuje Stowarzyszenie Autorów ZAIKS oraz Związek Artystów Wykonawców STOART.<br />Patronat medialny: Polskie Centrum Informacji Muzycznej POLMIC, Magazyn Presto.<br /><br />ORGANIZATOR: Fundacja Przypływ Kultury<br />WSPÓŁORGANIZATOR: Program 2 Polskiego Radia', '<b>Organizator:</b> Polskie Radio SA<br /><b>Miasto</b>: Warszawa<br /><b>Lokacja</b>: Studio Koncertowe Polskiego Radia im.Witolda Lutosławskiego<br /><b>Czas</b>: 27.11.2021 , g. 19:00 (sobota)', '78', 'null', 'null', 'KONCERT 6. 6. Festiwal muzyczny “TRZY-CZTE-RY Konteksty. Kontrasty. Konfrontacje.”', 'KONCERT 6. 6. Festiwal muzyczny “TRZY-CZTE-RY Konteksty. Kontrasty. Konfrontacje.', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (79, 1, 1, 'Korek ma już pięć lat - powstał w 2016 roku. Od samego początku obraca się w kręgu rockowo-bluesowych klimatów. Początkowo były to covery, aktualnie może pochwalić się dwoma autorskimi płytami.<br />Skład zespołu to: Jacek Skrzypczak – wokal, Marcin Wojciechowski – gitara, Maciej Skrzypczak – gitara, Grzegorz Michalak – bas, Tomasz Buchwald – perkusja.<br /><br />Korek wystąpił w Muzeum już kilkukrotnie: w amfiteatrze podczas koncertów wakacyjnych i jako support The Klenczon Experience.<br /><br />Teraz Korek gra z najlepszymi!<br /><br />Zapraszamy na wyjątkowe wydarzenie: grupa wraz z Jurkiem Styczyńskim (uznanym muzykiem sesyjnym, a przede wszystkim gitarzystą zespołu Dżem) zagra utwory Tadeusza Nalepy!<br /><br />Tadeusz Nalepa (1943-2007) - polski kompozytor, gitarzysta, wokalista, harmonijkarz i autor tekstów. Założyciel legendarnego zespołu Breakout, który przez 13 lat istnienia wydał 10 płyt. Nalepa pod swoim nazwiskiem nagrał 9 albumów.<br /><br />Bilety: przedsprzedaż - 30 zł, w dniu koncertu, w kasie Muzeum - 40 zł.', '<b>Organizator:</b> Muzeum Śremskie w Śremie<br /><b>Miasto</b>: Śrem<br /><b>Lokacja</b>: Sala widowiskowa Muzeum Śremskiego<br /><b>Czas</b>: 27.11.2021 , g. 19:00 (sobota)', '79', 'null', 'null', 'Korek gra Nalepę', 'Korek gra Nalepę', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (80, 1, 1, 'Najpiękniejsze brzmienia z Norwegii, Polski i Gruzji na wielki finał III edycji Festiwalu Eufonie! <br /><br />Muzyka Krzysztofa Pendereckiego towarzyszy nam od samego początku – jego kompozycjami rozpoczęliśmy pierwszą i zakończyliśmy drugą edycję festiwalu. Tegoroczny koncert finałowy zainaugurujemy jego II Symfonią „Wigilijną”. W kolejnych częściach wysłuchamy Koncertu fortepianowego a-moll op. 16 Edvarda Griega – kompozytora, pianisty i dyrygenta, nazywanego twórcą narodowej szkoły muzycznej w Norwegii – oraz Morning Prayers pochodzącego z Gruzji Giji Kanczeliego.<br />W tym polsko-norwesko-gruzińskim repertuarze wystąpią: zwyciężca Międzynarodowego Konkursu Muzycznego Królowej Elżbiety w 2016 roku, Lukáš Vondráček oraz Orkiestra Filharmonii Narodowej. Batutę oddajemy jej dyrektorowi artystycznemu, Andrzejowi Boreyce.<br /><br />Program<br /><br />Krzysztof Penderecki: II Symfonia „Wigilijna”<br />***przerwa***<br />Edward Grieg: Koncert fortepianowy a-moll op. 16<br />Gija Kanczeli: Morning Prayers<br /><br /><br /><br /><br />I strefa – 50 zł normalny, 35 zł ulgowy*<br />II strefa – 35 zł normalny, 25 zł ulgowy*<br />III strefa – 25 zł normalny, 15 zł ulgowy*<br /><br /><br />I strefa – 60 zł normalny, 40 zł ulgowy*<br />II strefa – 40 zł normalny, 30 zł ulgowy*<br />III strefa – 30 zł normalny, 20 zł ulgowy*<br /><br /> emerytów, rencistów, uczniów, studentów i studentów zagranicznych (do 26. roku życia), doktorantów (do 35. roku życia), nauczycieli szkół i akademii muzycznych, posiadaczy Karty Dużej Rodziny, kobiet w ciąży oraz dla osób z niepełnosprawnościami i ich opiekunów. Melomanów poruszających się na wózkach Organizator festiwalu zaprasza na koncerty bezpłatnie po uprzedniej rezerwacji miejsca informując drogą mailową <br />Każda osoba posiadająca odpowiednią legitymację (szkolną, studencką, doktorancką, nauczycielską ISIC, ZUS), Kartę Dużej Rodziny lub inny dokument poświadczający ma prawo do zakupu biletu ulgowego.<br /><br />Organizatorzy: <br />Mecenasem festiwalu jest: <br /><br />www.eufonie.pl<br /><br /><br /><br /><br /><br />The most beautiful sounds from Norway, Poland and Georgia for the grand finale of the 3rd edition of the Eufonie Festival!<br /><br />Krzysztof Penderecki’s music has been accompanying us from the very beginning: it was with his compositions that we started the first and finished the second edition of the festival. We will inaugurate this year’s final concert with his No. 2 ‘.’ In the following parts, we will listen to the , Op. 16 by Edvard Grieg, composer, pianist and conductor, called the founder of the musical nationalism in Norway, and Morning Prayers by Giya Kancheli, a Georgian composer.<br /><br />This Polish-Norwegian-Georgian repertoire will be performed by: winner of the 2016 Queen Elisabeth Competition,  Competition and . The baton will be taken by its artistic director, .<br /><br /><br /><br /><br />1st zone – PLN 50 regular, PLN 35 reduced<br />2nd zone – PLN 35 regular, PLN 25 reduced<br />3rd zone – PLN 25 regular, PLN 15 reduced<br /><br /><br />1st zone – PLN 60 regular, PLN 40 reduced<br />2nd zone – PLN 40 regular, PLN 30 reduced<br />3rd zone – PLN 30 regular, PLN 20 reduced<br /><br /><br />Patron:<br /><br />www.eufonie.pl', '<b>Organizator:</b> Narodowe Centrum Kultury<br /><b>Miasto</b>: Warszawa<br /><b>Lokacja</b>: Filharmonia Narodowa w Warszawie<br /><b>Czas</b>: 27.11.2021 , g. 19:30 (sobota)', '80', 'null', 'null', 'Eufonie 2021 - Vondráček / Orkiestra Filharmonii Narodowej / Boreyko', 'Eufonie 2021 - Vondráček  Orkiestra Filharmonii Narodowej  Boreyko', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
-(81, 1, 1, 'Program<br />Anton Webern<br />„Fünf Sätze” na kwartet smyczkowy op. 5<br /><br />Julia Lacherstorfer<br />un:fold [zamówienie Wiener Konzerthaus, Wiener Musikverein, Elbphilharmonie Hamburg, Konzerthaus Dortmund i European Concert Hall Organisation]<br /><br />Ludwig van Beethoven<br />Kwartet smyczkowy cis-moll op. 131<br /><br />Kwartet smyczkowy zyskał w XIX wieku sporą popularność, uosabiając tradycję domowego muzykowania i muzyki absolutnej. Jednocześnie kompozytorzy od początku testowali jego formalne ramy. Beethoven w późnych kwartetach szukał jedności przez różnicę – przez kontrasty, ale i powtórzenia. Temat fugi pojawia się w pierwszej i ostatniej z siedmiu aż części Kwartetu cis-moll, a całość przenika refleksyjne tempo adagio. Webern we wczesnym opusie zachowuje dużo szacunku dla gatunku i swojego poprzednika, podobnie jak i on działającego w Wiedniu (sto lat wcześniej). Jednak aforystyczne rozmiary jego Pięciu utworów – jeden kwadrans wobec trzech Beethovena – oraz rozluźnione ramy tonalne i śmiałe techniki artykulacyjne otwierają nowe perspektywy. Lacherstorfer jako popularna skrzypaczka i wokalistka, związana także z austriackim folklorem, dodaje do tradycji kwartetu smyczkowego kolejne elementy.<br />[Jan Topolski]<br /><br />Wykonawcy<br /><br />– skrzypce<br />– skrzypce<br />– altówka<br />– wiolonczela', '<b>Organizator:</b> Narodowa Orkiestra Symfoniczna Polskiego Radia z siedzibą w Katowicach<br /><b>Miasto</b>: Katowice<br /><b>Lokacja</b>: NOSPR w Katowicach<br /><b>Czas</b>: 27.11.2021 , g. 19:30 (sobota)', '81', 'null', 'null', 'ECHO Rising Stars / Simply Quartet', 'ECHO Rising Stars  Simply Quartet', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
+(81, 1, 1, '<p>Program<br />Anton Webern<br />„Fünf Sätze” na kwartet smyczkowy op. 5<br /><br />Julia Lacherstorfer<br />un:fold [zamówienie Wiener Konzerthaus, Wiener Musikverein, Elbphilharmonie Hamburg, Konzerthaus Dortmund i European Concert Hall Organisation]<br /><br />Ludwig van Beethoven<br />Kwartet smyczkowy cis-moll op. 131<br /><br />Kwartet smyczkowy zyskał w XIX wieku sporą popularność, uosabiając tradycję domowego muzykowania i muzyki absolutnej. Jednocześnie kompozytorzy od początku testowali jego formalne ramy. Beethoven w późnych kwartetach szukał jedności przez różnicę – przez kontrasty, ale i powtórzenia. Temat fugi pojawia się w pierwszej i ostatniej z siedmiu aż części Kwartetu cis-moll, a całość przenika refleksyjne tempo adagio. Webern we wczesnym opusie zachowuje dużo szacunku dla gatunku i swojego poprzednika, podobnie jak i on działającego w Wiedniu (sto lat wcześniej). Jednak aforystyczne rozmiary jego Pięciu utworów – jeden kwadrans wobec trzech Beethovena – oraz rozluźnione ramy tonalne i śmiałe techniki artykulacyjne otwierają nowe perspektywy. Lacherstorfer jako popularna skrzypaczka i wokalistka, związana także z austriackim folklorem, dodaje do tradycji kwartetu smyczkowego kolejne elementy.<br />[Jan Topolski]<br /><br />Wykonawcy<br /><br />– skrzypce<br />– skrzypce<br />– altówka<br />– wiolonczela</p>', '<p><b>Organizator:</b> Narodowa Orkiestra Symfoniczna Polskiego Radia z siedzibą w Katowicach<br /><b>Miasto</b>: Katowice<br /><b>Lokacja</b>: NOSPR w Katowicach<br /><b>Czas</b>: 27.11.2021 , g. 19:30 (sobota)</p>', '81', 'null', 'null', 'ECHO Rising Stars / Simply Quartet', 'ECHO Rising Stars  Simply Quartet', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (82, 1, 1, 'Koncert „Mira i Tadeusz”<br />Gdyby nie Mira, nie byłoby Sygietyńskiego, ani „Mazowsza” – powiedział kiedyś Marian Hemar, wybitny polski poeta, przyjaciel Sygietyńskich. To zdanie oddaje w pełni rolę obojga artystów, w powstaniu zespołu, który od ponad siedemdziesięciu lat propaguje polską kulturę narodową w jej regionalnych odmianach, na scenach całego świata.<br />W tym roku przypada 120. rocznica urodzin Miry Zimińskiej-Sygietyńskiej i 125. rocznica urodzin Tadeusza Sygietyńskiego. Z tej okazji zespół, który począł się w marzeniach Tadeusza i został ukształtowany muzycznie przez niego, przy wizjonerskim, scenicznym wsparciu Miry, pragnie zaprezentować Państwu wyjątkowy koncert pod tytułem „Mira i Tadeusz”. Widowisko pełne najpiękniejszych pieśni i tańców z repertuaru „Mazowsza”, przepełnione wspomnieniami o założycielach i ich życiu sprzed „Mazowsza” i z „Mazowszem”, na długo pozostanie w pamięci każdego, kto zdecyduje się je obejrzeć.<br />„Mazowsze” młode, świeże, piękne i pełne wigoru – takie jak chcieli jego założyciele, zabierze Państwa w niezapomnianą podróż w czasie i przestrzeni po Polsce i polskiej kulturze. Wystąpią soliści, balet, chór i orkiestra PZLPiT „Mazowsze” pod dyrekcją maestro Jacka Bonieckiego.', '<b>Organizator:</b> Państwowy Zespół Ludowy Pieśni i Tańca Mazowsze<br /><b>Miasto</b>: Otrębusy<br /><b>Lokacja</b>: Matecznik Mazowsze\"<br /><b>Czas</b>: 28.11.2021 , g. 17:00 (niedziela)\"', '82', 'null', 'null', 'Mira i Tadeusz', 'Mira i Tadeusz', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (83, 1, 1, 'Zapraszamy na kolejne Andrzejki Waligórskie, czyli spotkanie z Olekiem Grotowskim – wykonawcą piosenek ze świetnymi tekstami Andrzeja Waligórskiego.<br /><br />Andrzej Waligórski zasłynął jako twórca tekstów piosenek wykonywanych między innymi przez Tadeusza Chyłę (Ballada o cysorzu) i Olka Grotowskiego z Małgorzatą Zwierzchowską (około tysiąca piosenek). Sam określał siebie często jako tekściarza. Stworzył postać Dreptaka (symbol przeciętnego Polaka z jego wadami i zaletami), był autorem m.in. „Bajeczek Babci Pimpusiowej”, felietonu radiowego Pocztówki z Karłowic oraz popularnego słuchowiska radiowego „Rycerze” nadawanego w magazynie „60 minut na godzinę”, parodiującego Trylogię Henryka Sienkiewicza (pochodzi z niego piosenka „Hej, szable w dłoń”). Trwałość wierszy Andrzeja Waligórskiego to przede wszystkim zasługa Olka Grotowskiego, który umie znaleźć muzyczny rytm tej poezji i przyprawić ją dźwiękiem gitary o czym można będzie się przekonać podczas pałacykowego klimatycznego spotkania waligórsko-grotowskiego.', '<b>Organizator:</b> Dom Środowisk Twórczych Pałac T. Zielińskiego<br /><b>Miasto</b>: Kielce<br /><b>Lokacja</b>: DŚT - Pałacyk Zielińskiego<br /><b>Czas</b>: 28.11.2021 , g. 17:00 (niedziela)', '83', 'null', 'null', '„Andrzejki Waligórskie” – recital piosenek satyrycznych', 'Andrzejki Waligórskie – recital piosenek satyrycznych', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (84, 1, 1, 'Andrzejki po szkocku i irlandzku w Gostyniu, czyli koncert:<br />CELTIC FUSION, DANCE AND LITERATURE<br /><br />To koncert muzyki, tańca i słowa – projekt sceniczny będący owocem wieloletniej współpracy zespołu muzyki celtyckiej Jig Reel Maniacs i formacji tańca irlandzkiego Tuatha &amp; Ellorien.<br />W Y K O N A W C Y<br />JIG REEL MANIACS<br />Jig Reel Maniacs to trzydziestojednoletnia, druga stażem na polskim rynku formacja inspirująca się muzyką szkocką i irlandzką, a łącząca tradycyjne celtyckie nuty z nowoczesnymi aranżacjami nawiązującymi do różnych trendów muzyki świata.<br />Obok wiodących klimatów irlandzkich i szkockich w repertuarze grupy nie brakuje pierwiastków walijskich i bretońskich oraz muzycznych smaków z tzw. nurtu World Music.<br />Septet Jigowo-Reelowi Maniacy porusza się swobodnie od klasycznych – poprzez popowe, rockowe, reggae\'owe, funkowe – do modernistycznych interpretacji standardów celtyckich oraz kompozycji własnych, które okrasza improwizacjami. W dwóch słowach: Celtic fusion.', '<b>Organizator:</b> Gostyński Ośrodek Kultury Hutnik\" z siedzibą w Gostyniu<br /><b>Miasto</b>: Gostyń<br /><b>Lokacja</b>: Gostyński Ośrodek Kultury<br /><b>Czas</b>: 28.11.2021 , g. 17:00 (niedziela)\"', '84', 'null', 'null', 'Andrzejki po szkocku i irlandzku', 'Andrzejki po szkocku i irlandzku', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
@@ -15967,7 +15989,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (97, 1, 1, '<br />Małgorzata Ostrowska, wokalistka, kompozytorka, autorka znanych tekstów. Z jej ust popłynęły m.in. takie przeboje jak „Szklana pogoda, „Droga pani z TV, „Słowa, „Mister of America, „Po niebieskim niebie czy „Meluzyna.<br /><br />Ostrowska od kilku dekad należy do najciekawszych postaci polskiej sceny muzycznej. Przez wiele lat była związana z zespołem popowo-rockowym Lombard. W 1999 roku rozpoczęła solową karierę. Jest intrygująca, odważna, bezpretensjonalna. Wyróżnia się też jednym z najbardziej charakterystycznych głosów w Polsce.<br /><br />Wokalistka ma na swoim koncie wiele prestiżowych nagród. Wśród nich – Bursztynowego Słowika za całokształt działalności artystycznej, którego otrzymała w 1999 roku w Sopocie. W 2007 roku artystka odsłoniła swoją gwiazdę w Alei Gwiazd Polskiej Piosenki w Opolu, a w 2013 roku podczas jubileuszowej, 50. edycji festiwalu otrzymała tytuł „Ikony Festiwalu Opolskiego”.<br />', '<b>Organizator:</b> Polska Filharmonia Bałtycka im. Fryderyka Chopina w Gdańsku<br /><b>Miasto</b>: Gdańsk<br /><b>Lokacja</b>: Polska Filharmonia Bałtycka im. Fryderyka Chopina w Gdańsku<br /><b>Czas</b>: 30.11.2021 , g. 19:00 (wtorek)', '97', 'null', 'null', 'Ostrowska Małgorzata -Akustycznie', 'Ostrowska Małgorzata -Akustycznie', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (98, 1, 1, 'Scena Muzyki Polskiej', '<b>Organizator:</b> Filharmonia Narodowa<br /><b>Miasto</b>: Warszawa<br /><b>Lokacja</b>: Filharmonia Narodowa w Warszawie<br /><b>Czas</b>: 30.11.2021 , g. 19:00 (wtorek)', '98', 'null', 'null', 'Scena dla muzyki polskiej 30.11.2021 g. 19:', 'Scena dla muzyki polskiej 30.11.2021 g. 19:', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (99, 1, 1, 'Wykonawcy:<br />Orkiestra Kameralna Capella Bydgostiesis<br />Sławomir Chrzanowski dyrygent<br />Ewelina Szybilska sopran<br />Łukasz Gaj tenor<br /><br />Repertuar:<br />m.in.: Johann Strauss, Imre Kálmán, Franz Lehár', '<b>Organizator:</b> Filharmonia Pomorska im. Ignacego Jana Paderewskiego w Bydgoszczy<br /><b>Miasto</b>: Bydgoszcz<br /><b>Lokacja</b>: Filharmonia Pomorska w Bydgoszczy<br /><b>Czas</b>: 30.11.2021 , g. 19:00 (wtorek)', '99', 'null', 'null', 'Koncert andrzejkowy', 'Koncert andrzejkowy', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
-(100, 1, 1, 'Sala Koncertowa „Fryderyk” to miejsce kameralnych spotkań z muzyką Fryderyka Chopina, w stylu XIX-wiecznych spotkań salonowych. Tu, w sercu warszawskiego Starego Miasta spędzicie niezapomniany czas w jednej z najpiękniejszych sal koncertowych. Wspaniały fortepian Steinway, kryształowe żyrandole, lustra, piękne sztukaterie i atmosfera niewymuszonej elegancji oraz występy znakomitych pianistów sprawią, że będziecie chcieli tu wrócić. Nie bez przyczyny Sala Koncertowa Fryderyk jako jedyne miejsce koncertów chopinowskich znalazła się w ofercie „ Warszawa Luksusowa” Warszawskiej Organizacji Turystycznej. Sala Koncertowa Fryderyk znajduje się w centrum Starego Miasta Warszawy. Mieści się w XIX - wiecznej kamienicy przy ul. Podwale 15. Nieopodal Sali Koncertowej Fryderyk znajduje się restauracja Honoratka, w której Fryderyk Chopin jadał obiady, a z drugiej strony Pałac Młodziejowskich, który był miejscem jego pierwszego publicznego koncertu.Na tej ulicy mieszkała siostra Fryderyka Chopina, Ludwika i tu przechowywała jego serce. Koncerty wykonują pianiści, których nazwiska znane są w Europie i na świecie. Profesorowie Uniwersytetu Muzycznego w Warszawie i zwycięzcy międzynarodowych konkursów fortepianowych. Absolwenci Juillard School w Nowym Yorku, Conservatoire de Paris, czy Royal Academy of Music w Londynie: Joanna Ławrynowicz, Anna Kubicz, Maciej Poliszewski, Maria Korecka-Soszkowska czy Robert Skiera. Koncerty chopinowskie w Sali Koncertowej Fryderyk odbywają się codziennie o godz. 19.00.  W przerwie częstujemy lamką wina. Zanurz się w dźwiękach fortepianu, pozwól ponieść się pięknej muzyce w wytwornym wnętrzu. Wnętrze Sali Koncertowej Fryderyk w Warszawie Sala Koncertowa Fryderyk powstała dzięki inspiracji wielkim twórcą muzyki klasycznej oraz epoki, w której żył i tworzył. Stąd inspirowane XIX wiekiem luksusowe wnętrze. Charakterystyczne gipsowe sztukaterie, kryształowe lustra i żyrandole, stylowe dekoracje XIX europejskich designerów powodują, że sala koncertowa z muzyką Fryderyka Chopina ma niepowtarzalną atmosferę. Pomimo tak wyjątkowego wnętrza dresscode uczestników jest dowolny. Koncerty Chopinowskie w Warszawie Każdy fan koncertów muzyki klasycznej powinien chociaż raz odwiedzić to wyjątkowe miejsce. To tutaj prezentowana jest muzyka Fryderyka Chopina na żywo w Warszawie. Wykonują ją zdolni muzycy tacy jak między innymi Anna Kubicz, Maciej Poliszewski, Maria Korecka – Soszkowska czy Robert Skiera oraz najlepsi muzycy, profesorzy Uniwersytetu Muzycznego imienia Fryderyka Chopina, muzycy, którzy ukończyli najbardziej prestiżowe uczelnie świata, np. Julliard School w Nowym Jorku, Conservatoire de Paris, czy Royal Academy of Music w Londynie, a także laureaci i zwycięzcy prestiżowych konkursów Koncerty Chopinowskie Warszawa to niepowtarzalna okazja do przypomnienia sobie twórczości tego wspaniałego artysty. Koncerty z muzyką Fryderyka Chopina odbywają się codziennie o godzinie 19:00.', '<b>Organizator:</b> Agencja Koncertowa PRESTO 2 Marcin Sokołowski<br /><b>Miasto</b>: Warszawa<br /><b>Lokacja</b>: Fryderyk Concert Hall w Warszawie<br /><b>Czas</b>: 30.11.2021 , g. 19:00 (wtorek)', '100', 'null', 'null', 'Koncert Chopinowski w Sali Koncertowej Fryderyk', 'Koncert Chopinowski w Sali Koncertowej Fryderyk', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
+(100, 1, 1, '<p>Sala Koncertowa „Fryderyk” to miejsce kameralnych spotkań z muzyką Fryderyka Chopina, w stylu XIX-wiecznych spotkań salonowych. Tu, w sercu warszawskiego Starego Miasta spędzicie niezapomniany czas w jednej z najpiękniejszych sal koncertowych. Wspaniały fortepian Steinway, kryształowe żyrandole, lustra, piękne sztukaterie i atmosfera niewymuszonej elegancji oraz występy znakomitych pianistów sprawią, że będziecie chcieli tu wrócić. Nie bez przyczyny Sala Koncertowa Fryderyk jako jedyne miejsce koncertów chopinowskich znalazła się w ofercie „ Warszawa Luksusowa” Warszawskiej Organizacji Turystycznej. Sala Koncertowa Fryderyk znajduje się w centrum Starego Miasta Warszawy. Mieści się w XIX - wiecznej kamienicy przy ul. Podwale 15. Nieopodal Sali Koncertowej Fryderyk znajduje się restauracja Honoratka, w której Fryderyk Chopin jadał obiady, a z drugiej strony Pałac Młodziejowskich, który był miejscem jego pierwszego publicznego koncertu.Na tej ulicy mieszkała siostra Fryderyka Chopina, Ludwika i tu przechowywała jego serce. Koncerty wykonują pianiści, których nazwiska znane są w Europie i na świecie. Profesorowie Uniwersytetu Muzycznego w Warszawie i zwycięzcy międzynarodowych konkursów fortepianowych. Absolwenci Juillard School w Nowym Yorku, Conservatoire de Paris, czy Royal Academy of Music w Londynie: Joanna Ławrynowicz, Anna Kubicz, Maciej Poliszewski, Maria Korecka-Soszkowska czy Robert Skiera. Koncerty chopinowskie w Sali Koncertowej Fryderyk odbywają się codziennie o godz. 19.00. W przerwie częstujemy lamką wina. Zanurz się w dźwiękach fortepianu, pozwól ponieść się pięknej muzyce w wytwornym wnętrzu. Wnętrze Sali Koncertowej Fryderyk w Warszawie Sala Koncertowa Fryderyk powstała dzięki inspiracji wielkim twórcą muzyki klasycznej oraz epoki, w której żył i tworzył. Stąd inspirowane XIX wiekiem luksusowe wnętrze. Charakterystyczne gipsowe sztukaterie, kryształowe lustra i żyrandole, stylowe dekoracje XIX europejskich designerów powodują, że sala koncertowa z muzyką Fryderyka Chopina ma niepowtarzalną atmosferę. Pomimo tak wyjątkowego wnętrza dresscode uczestników jest dowolny. Koncerty Chopinowskie w Warszawie Każdy fan koncertów muzyki klasycznej powinien chociaż raz odwiedzić to wyjątkowe miejsce. To tutaj prezentowana jest muzyka Fryderyka Chopina na żywo w Warszawie. Wykonują ją zdolni muzycy tacy jak między innymi Anna Kubicz, Maciej Poliszewski, Maria Korecka – Soszkowska czy Robert Skiera oraz najlepsi muzycy, profesorzy Uniwersytetu Muzycznego imienia Fryderyka Chopina, muzycy, którzy ukończyli najbardziej prestiżowe uczelnie świata, np. Julliard School w Nowym Jorku, Conservatoire de Paris, czy Royal Academy of Music w Londynie, a także laureaci i zwycięzcy prestiżowych konkursów Koncerty Chopinowskie Warszawa to niepowtarzalna okazja do przypomnienia sobie twórczości tego wspaniałego artysty. Koncerty z muzyką Fryderyka Chopina odbywają się codziennie o godzinie 19:00.</p>', '<p><b>Organizator:</b> Agencja Koncertowa PRESTO 2 Marcin Sokołowski<br /><b>Miasto</b>: Warszawa<br /><b>Lokacja</b>: Fryderyk Concert Hall w Warszawie<br /><b>Czas</b>: 30.11.2021 , g. 19:00 (wtorek)</p>', '100', 'null', 'null', 'Koncert Chopinowski w Sali Koncertowej Fryderyk', 'Koncert Chopinowski w Sali Koncertowej Fryderyk', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (101, 1, 1, 'Czy słup elektryczny może się zakochać? Czy świat mamy narysowany pod powiekami? Kim są kroplaki i księżulki? I co by było, gdyby mól żył jak król?<br />Agnieszka Osiecka była mistrzynią rymów, skojarzeń, „brzęczących wyrazów” oraz niecodziennych pytań. Słuchając jej piosenek dla dzieci, ma się wrażenie, że ona sama nigdy tak do końca nie dorosła. Była dojrzałą artystką, pozostając przy tym dzieckiem.<br />Jak to się robi? My też tak chcemy! Dlatego stworzyliśmy spektakl muzyczny w oparciu o piosenki poetki, które pisała dla dzieci. Założymy się, że nie znaliście Agnieszki z tej strony! Macie jednak szansę, by nadrobić te zaległości razem z nami – wystarczy przy kasie Teatru wypowiedzieć magiczne zaklęcie: RAPETE PAPETE PSTRYK!', '<b>Organizator:</b> Teatr Nowy im. Tadeusza Łomnickiego<br /><b>Miasto</b>: Poznań<br /><b>Lokacja</b>: Teatr Nowy w Poznaniu<br /><b>Czas</b>: 20.11.2021 , g. 15:00 (sobota)', '1', 'null', 'null', 'RAPETE PAPETE PSTRYK. OSIECKA DLA DZIECKA', 'RAPETE PAPETE PSTRYK. OSIECKA DLA DZIECKA', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (102, 1, 1, 'Calineczka<br /><br />Na podstawie baśni H.Ch. Andersena (wg tłumaczenia Bogusławy Sochańskiej)<br /><br />/ dla widzów od lat 5 / czas trwania: 1 godz. 10 min./<br /><br />TWÓRCY:<br />Reżyseria – Przemysław Jaszczak<br />Asystent reżysera – Daniel Arbaczewski<br />Adaptacja – Magda Żarnecka<br />Scenografia – Adam Królikowski<br />Lalki – Magda Bielecka<br />Muzyka – Paweł Skorupka<br />Ruch sceniczny – Piotr Soroka<br />Reżyseria światła – Bary<br />Przygotowanie wokalne – Marcelina Paniuta<br /><br />OBSADA:<br />Gabriela Jaskuła – Calineczka<br />Roma Drozdówna – Kobieta (Matka Calineczki), Ryba, Chrabąszcz, Żaba, Chór Kwiatów.<br />Ilona Zgiet – Zielarka, Szczurzyca, Ryba, Chór Kwiatów<br />Katarzyna Borek – Duszek Kwiatowy, Śmierć<br />Mirella Rogoza-Biel – Duszek Kwiatowy, Ćma,<br />Bartosz Siwek – Brzydki Ropuch, Chrabąszcz, Kret, Chór Kwiatów<br />Natalia Sacharczuk– Duszek Kwiatowy, Jaskółka,<br />Kacper Kubiec – Chrabąszcz, Książę, Ryba<br /><br />PREMIERA 5 października 2013<br /><br />Cena – 30 zł<br /><br />KRÓTKO O SPEKTAKLU:<br /><br />Piękna maleńka dziewczyna jest nieszczęśliwa, bo… jest zbyt piękna! Przez co nikt nie traktuje jej poważnie. Od tak urodziwej osoby wymaga się przecież jedynie tego, by była… i prezentowała się atrakcyjnie, jak laleczka, figurka z porcelany, ozdóbka. Calineczka chce czegoś więcej – miłości, spełnienia, wolności. Na razie jednak wszyscy spotkani na jej drodze – Ropucha, Chrabąszcz, Kret – chcą mieć ją na własność i zmienić,  każdy na swój sposób. Calineczka samotnie usycha z tęsknoty za marzeniami i za kimś kto będzie jej naprawdę bliski. Spełnienie marzeń mogą  zagwarantować tylko skrzydła, dzięki którym odleci hen, daleko!  Tak, ale skąd wziąć skrzydła?', '<b>Organizator:</b> Teatr im. H.Ch. Andersena w Lublinie<br /><b>Miasto</b>: Lublin<br /><b>Lokacja</b>: Teatr im. H. Ch. Andersena w Lublinie<br /><b>Czas</b>: 20.11.2021 , g. 16:00 (sobota)', '2', 'null', 'null', 'Calineczka', 'Calineczka', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
 (103, 1, 1, 'Co to jest wolność? Jak rodzi się przyjaźń? Czy różnice powinny nas dzielić, czy łączyć?<br />W pięknym spektaklu pełnym muzyki, zabawy, kolorów i przekomarzania się widzowie mają okazję poznać odpowiedzi na wiele ważnych pytań. Adonis chcąc, nie chcąc, przyjmuje niespodziewanego gościa. Węgiel, różniący się od tytułowego bohatera jak noc od dnia, opowiada mu o nieznanym świecie i rozbudza tęsknotę za tym, co nowe i – wydawałoby się – nieosiągalne. Z początkowej wzajemnej niechęci niespodziewanie rodzi się przyjaźń, która daje odwagę i pozwala przenosić góry.<br />Sztuka autorstwa Freda Apke w reżyserii Jakuba Szydłowskiego i Rafała Supińskiego będzie niezwykłym doświadczeniem zarówno dla dzieci, jak i dorosłych. Opowieść angażuje i zachęca do aktywnego udziału w doświadczeniu teatralnym. Wszystkie pytania, na które próbują sobie odpowiedzieć Adonis i Węgiel, kierowane są również w stronę widzów. Mówimy o samodzielności, otwartości i przełamywaniu barier z humorem, energią i polotem. Zwłaszcza z polotem, bo właśnie o lot tu chodzi – rozpostarcie skrzydeł i wiarę we własne możliwości.<br />Adonis i Węgiel pokazują, że jest wiele rodzajów piękna. Nie ma sensu stroić się w cudze piórka, bo każdy z nas jest wyjątkowy właśnie taki, jaki jest. A właśnie – kim właściwie jest Adonis? Kim jest jego gość? Tego dowiecie się podczas spektaklu.<br />Spektakl przeznaczony jest dla dzieci w wieku 5+ i ich opiekunów oraz grup przedszkolnych i początkowych klas szkolnych.<br />Teatr nie bierze odpowiedzialności za udział nieletnich uczestników w wydarzeniach, za ich udział odpowiedzialni są ich opiekunowie.<br />W każdym wydarzeniu opłatę ponosi uczestnik wraz z opiekunem.', '<b>Organizator:</b> Teatr Kameralny w Bydgoszczy<br /><b>Miasto</b>: Bydgoszcz<br /><b>Lokacja</b>: Teatr Kameralny w Bydgoszczy<br /><b>Czas</b>: 20.11.2021 , g. 16:00 (sobota)', '3', 'null', 'null', 'Adonis ma gościa', 'Adonis ma gościa', 'Bilety dostępne', 'Bilety niedostępne', 'null', 'null'),
@@ -16482,8 +16504,8 @@ CREATE TABLE `ps_product_shop` (
 --
 
 INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ecotax`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_default_attribute`, `advanced_stock_management`, `date_add`, `date_upd`, `pack_stock_type`) VALUES
-(1, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '48.780488', '30.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 3),
-(2, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '52.845528', '32.500000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 3),
+(1, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '48.780488', '30.000000', 'null', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-21 17:00:35', 3),
+(2, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '52.845528', '32.500000', 'null', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-21 16:36:18', 3),
 (3, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '126.829268', '78.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 3),
 (4, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '40.650407', '25.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 3),
 (5, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '16.260163', '10.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:21:45', 3),
@@ -16562,7 +16584,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (78, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '24.390244', '15.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 3),
 (79, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '24.390244', '15.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 3),
 (80, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '16.260163', '10.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 3),
-(81, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '22.357724', '13.750000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 3),
+(81, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '22.357724', '13.750000', 'null', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, '2021-11-01 00:00:00', '2021-11-21 16:55:53', 3),
 (82, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '126.829268', '78.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 3),
 (83, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '17.886179', '11.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:22:56', 3),
 (84, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '32.520325', '20.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:04', 3),
@@ -16581,7 +16603,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (97, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '68.292683', '42.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:13', 3),
 (98, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '26.829268', '16.500000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:13', 3),
 (99, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '48.780488', '30.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:13', 3),
-(100, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '52.032520', '32.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 3),
+(100, 1, 20, 5, 0, 0, '0.000000', 0, 0, 0, '52.032520', '32.000000', 'null', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 3, 0, '2021-11-01 00:00:00', '2021-11-21 16:54:05', 3),
 (101, 1, 19, 5, 0, 0, '0.000000', 0, 0, 0, '28.455285', '17.500000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 3),
 (102, 1, 19, 5, 0, 0, '0.000000', 0, 0, 0, '24.390244', '15.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 3),
 (103, 1, 19, 5, 0, 0, '0.000000', 0, 0, 0, '32.520325', '20.000000', 'null', '0.000000', '0.000000', 0, 1, 1, 1, '404', 0, 1, '2022-01-01', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-01 00:00:00', '2021-11-20 23:23:17', 3),
@@ -17587,7 +17609,13 @@ INSERT INTO `ps_product_supplier` (`id_product_supplier`, `id_product`, `id_prod
 (539, 539, 0, 3, 'null', '7.500000', 1),
 (540, 540, 0, 3, 'null', '7.500000', 1),
 (541, 541, 0, 3, 'null', '10.000000', 1),
-(542, 542, 0, 3, 'null', '10.000000', 1);
+(542, 542, 0, 3, 'null', '10.000000', 1),
+(543, 81, 1, 3, '', '0.000000', 1),
+(544, 81, 2, 3, '', '0.000000', 1),
+(545, 100, 3, 3, '', '0.000000', 1),
+(546, 100, 4, 3, '', '0.000000', 1),
+(547, 100, 5, 3, '', '0.000000', 1),
+(548, 100, 6, 3, '', '0.000000', 1);
 
 -- --------------------------------------------------------
 
@@ -18678,11 +18706,12 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (1, 74295, 1),
 (1, 74296, 1),
 (1, 74297, 1),
-(1, 74299, 1),
 (1, 74300, 1),
-(1, 74301, 1),
 (1, 74302, 1),
 (1, 74303, 1),
+(1, 74310, 1),
+(1, 74311, 1),
+(1, 149726, 1),
 (1, 74233, 2),
 (1, 74222, 4),
 (1, 74223, 4),
@@ -30301,6 +30330,9 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (81, 85839, 1),
 (81, 85840, 1),
 (81, 85841, 1),
+(81, 74687, 2),
+(81, 108211, 2),
+(81, 147996, 2),
 (81, 76436, 3),
 (81, 74284, 4),
 (81, 74441, 4),
@@ -30312,6 +30344,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (81, 74259, 5),
 (81, 74298, 7),
 (81, 74214, 10),
+(81, 74218, 10),
 (81, 75800, 10),
 (81, 85768, 10),
 (81, 85769, 10),
@@ -30322,7 +30355,6 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (81, 85774, 10),
 (81, 85775, 10),
 (81, 85776, 10),
-(81, 74218, 20),
 (82, 74206, 1),
 (82, 74221, 1),
 (82, 74233, 1),
@@ -32825,7 +32857,6 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (100, 74671, 1),
 (100, 74672, 1),
 (100, 74683, 1),
-(100, 74687, 1),
 (100, 74692, 1),
 (100, 74693, 1),
 (100, 74698, 1),
@@ -32881,11 +32912,11 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (100, 78184, 1),
 (100, 78185, 1),
 (100, 78186, 1),
-(100, 78187, 1),
+(100, 78187, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (100, 78188, 1),
 (100, 78189, 1),
-(100, 78190, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(100, 78190, 1),
 (100, 78191, 1),
 (100, 78192, 1),
 (100, 78193, 1),
@@ -33028,6 +33059,11 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (100, 78648, 1),
 (100, 87778, 1),
 (100, 74669, 2),
+(100, 108211, 2),
+(100, 147996, 2),
+(100, 148715, 2),
+(100, 148716, 2),
+(100, 74687, 3),
 (100, 78330, 3),
 (100, 74222, 4),
 (100, 74304, 4),
@@ -33037,6 +33073,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (100, 74298, 8),
 (100, 74206, 10),
 (100, 74214, 10),
+(100, 74218, 10),
 (100, 74658, 10),
 (100, 81184, 10),
 (100, 88398, 10),
@@ -33047,7 +33084,6 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (100, 78177, 11),
 (100, 74233, 12),
 (100, 75143, 12),
-(100, 74218, 20),
 (101, 74221, 1),
 (101, 74235, 1),
 (101, 74236, 1),
@@ -46099,7 +46135,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (187, 80017, 4),
 (187, 93165, 4),
 (187, 76623, 7),
-(187, 74214, 10),
+(187, 74214, 10);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (187, 78762, 10),
 (187, 86545, 10),
 (187, 86546, 10),
@@ -46107,8 +46144,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (187, 86548, 10),
 (187, 86549, 10),
 (187, 101639, 10),
-(187, 101640, 10);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(187, 101640, 10),
 (187, 101641, 10),
 (187, 74253, 11),
 (187, 84299, 11),
@@ -59176,7 +59212,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (304, 90933, 1),
 (304, 91529, 1),
 (304, 92239, 1),
-(304, 92240, 1),
+(304, 92240, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (304, 93188, 1),
 (304, 94906, 1),
 (304, 97034, 1),
@@ -59185,8 +59222,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (304, 97037, 1),
 (304, 97038, 1),
 (304, 97039, 1),
-(304, 97040, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(304, 97040, 1),
 (304, 97041, 1),
 (304, 97042, 1),
 (304, 97043, 1),
@@ -72063,7 +72099,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (423, 75954, 1),
 (423, 75962, 1),
 (423, 76415, 1),
-(423, 76430, 1),
+(423, 76430, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (423, 76433, 1),
 (423, 76554, 1),
 (423, 78206, 1),
@@ -72072,8 +72109,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (423, 81821, 1),
 (423, 81831, 1),
 (423, 81857, 1),
-(423, 84572, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(423, 84572, 1),
 (423, 84656, 1),
 (423, 85159, 1),
 (423, 88025, 1),
@@ -84908,7 +84944,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (524, 74575, 1),
 (524, 74626, 1),
 (524, 74638, 1),
-(524, 74720, 1),
+(524, 74720, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (524, 74774, 1),
 (524, 74781, 1),
 (524, 74877, 1),
@@ -84917,8 +84954,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (524, 74888, 1),
 (524, 74900, 1),
 (524, 74901, 1),
-(524, 74966, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(524, 74966, 1),
 (524, 74969, 1),
 (524, 74971, 1),
 (524, 74974, 1),
@@ -101490,6 +101526,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (80548, 1, 1, 'plytowych'),
 (76907, 1, 1, 'plyty'),
 (89529, 1, 1, 'plywackie'),
+(149726, 1, 1, 'plzapraszamy'),
 (75748, 1, 1, 'pm'),
 (83724, 1, 1, 'pn'),
 (74679, 1, 1, 'poblizu'),
@@ -104507,6 +104544,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (114324, 1, 1, 'stoczyl'),
 (76322, 1, 1, 'stoi'),
 (90734, 1, 1, 'stoja'),
+(147996, 1, 1, 'stojace'),
 (114105, 1, 1, 'stokholm'),
 (75565, 1, 1, 'stolicy'),
 (90047, 1, 1, 'stomil'),
@@ -104954,6 +104992,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (78200, 1, 1, 'sztukaterie'),
 (103238, 1, 1, 'sztuke'),
 (74701, 1, 1, 'sztuki'),
+(148715, 1, 1, 'sztywny'),
 (89344, 1, 1, 'szuka'),
 (90586, 1, 1, 'szukaja'),
 (89438, 1, 1, 'szukajaca'),
@@ -107631,11 +107670,11 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (143014, 1, 1, 'zbieraja'),
 (80106, 1, 1, 'zbigniew'),
 (93590, 1, 1, 'zbigniewa'),
-(86433, 1, 1, 'zbigniewem'),
+(86433, 1, 1, 'zbigniewem');
+INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (81403, 1, 1, 'zbijowskiego'),
 (81390, 1, 1, 'zbijowskiej'),
-(91574, 1, 1, 'zbiorowej');
-INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
+(91574, 1, 1, 'zbiorowej'),
 (101996, 1, 1, 'zblizaj'),
 (135006, 1, 1, 'zblizajacych'),
 (76405, 1, 1, 'zblizone'),
@@ -108054,6 +108093,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (140595, 1, 1, 'zwykl'),
 (127262, 1, 1, 'zwykla'),
 (102525, 1, 1, 'zwykle'),
+(148716, 1, 1, 'zwykly'),
 (90998, 1, 1, 'zyc'),
 (140584, 1, 1, 'zychowicz'),
 (75700, 1, 1, 'zycia'),
@@ -108242,6 +108282,14 @@ CREATE TABLE `ps_specific_price` (
   `to` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_specific_price`
+--
+
+INSERT INTO `ps_specific_price` (`id_specific_price`, `id_specific_price_rule`, `id_cart`, `id_product`, `id_shop`, `id_shop_group`, `id_currency`, `id_country`, `id_group`, `id_customer`, `id_product_attribute`, `price`, `from_quantity`, `reduction`, `reduction_tax`, `reduction_type`, `from`, `to`) VALUES
+(1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '2021-11-14 00:00:00', '2021-12-05 00:00:00'),
+(2, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.150000', 1, 'percentage', '0000-00-00 00:00:00', '2021-11-28 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -108253,6 +108301,16 @@ CREATE TABLE `ps_specific_price_priority` (
   `id_product` int NOT NULL,
   `priority` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_specific_price_priority`
+--
+
+INSERT INTO `ps_specific_price_priority` (`id_specific_price_priority`, `id_product`, `priority`) VALUES
+(1, 2, 'id_shop;id_currency;id_country;id_group'),
+(3, 81, 'id_shop;id_currency;id_country;id_group'),
+(7, 100, 'id_shop;id_currency;id_country;id_group'),
+(12, 1, 'id_shop;id_currency;id_country;id_group');
 
 -- --------------------------------------------------------
 
@@ -108727,7 +108785,11 @@ INSERT INTO `ps_statssearch` (`id_statssearch`, `id_shop`, `id_shop_group`, `key
 (31, 1, 1, 'syn', 12, '2021-11-20 23:44:09'),
 (32, 1, 1, 'zad', 4, '2021-11-20 23:45:28'),
 (33, 1, 1, 'zaduszki', 2, '2021-11-20 23:45:30'),
-(34, 1, 1, 'zaduszki', 2, '2021-11-20 23:45:30');
+(34, 1, 1, 'zaduszki', 2, '2021-11-20 23:45:30'),
+(35, 1, 1, 'Ec', 152, '2021-11-21 16:54:22'),
+(36, 1, 1, 'Echo', 19, '2021-11-21 16:54:22'),
+(37, 1, 1, 'Echo', 19, '2021-11-21 16:54:22'),
+(38, 1, 1, 'Echo', 19, '2021-11-21 16:54:40');
 
 -- --------------------------------------------------------
 
@@ -108775,548 +108837,554 @@ CREATE TABLE `ps_stock_available` (
 --
 
 INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_product_attribute`, `id_shop`, `id_shop_group`, `quantity`, `physical_quantity`, `reserved_quantity`, `depends_on_stock`, `out_of_stock`, `location`) VALUES
-(1, 1, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(2, 2, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(3, 3, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(4, 4, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(5, 5, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(6, 6, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(7, 7, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(8, 8, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(9, 9, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(10, 10, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(11, 11, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(12, 12, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(13, 13, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(14, 14, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(15, 15, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(16, 16, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(17, 17, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(18, 18, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(19, 19, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(20, 20, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(21, 21, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(22, 22, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(23, 23, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(24, 24, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(25, 25, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(26, 26, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(27, 27, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(28, 28, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(29, 29, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(30, 30, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(31, 31, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(32, 32, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(33, 33, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(34, 34, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(35, 35, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(36, 36, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(37, 37, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(38, 38, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(39, 39, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(40, 40, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(41, 41, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(42, 42, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(43, 43, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(44, 44, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(45, 45, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(46, 46, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(47, 47, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(48, 48, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(49, 49, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(50, 50, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(51, 51, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(52, 52, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(53, 53, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(54, 54, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(55, 55, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(56, 56, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(57, 57, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(58, 58, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(59, 59, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(60, 60, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(61, 61, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(62, 62, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(63, 63, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(64, 64, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(65, 65, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(66, 66, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(67, 67, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(68, 68, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(69, 69, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(70, 70, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(71, 71, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(72, 72, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(73, 73, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(74, 74, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(75, 75, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(76, 76, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(77, 77, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(78, 78, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(79, 79, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(80, 80, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(81, 81, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(82, 82, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(83, 83, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(84, 84, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(85, 85, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(86, 86, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(87, 87, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(88, 88, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(89, 89, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(90, 90, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(91, 91, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(92, 92, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(93, 93, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(94, 94, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(95, 95, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(96, 96, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(97, 97, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(98, 98, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(99, 99, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(100, 100, 0, 1, 0, 100, 0, 0, 0, 0, ''),
+(1, 1, 0, 1, 0, 100, 101, 1, 0, 0, ''),
+(2, 2, 0, 1, 0, 100, 101, 1, 0, 0, ''),
+(3, 3, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(4, 4, 0, 1, 0, 100, 101, 1, 0, 0, ''),
+(5, 5, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(6, 6, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(7, 7, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(8, 8, 0, 1, 0, 100, 101, 1, 0, 0, ''),
+(9, 9, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(10, 10, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(11, 11, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(12, 12, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(13, 13, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(14, 14, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(15, 15, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(16, 16, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(17, 17, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(18, 18, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(19, 19, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(20, 20, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(21, 21, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(22, 22, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(23, 23, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(24, 24, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(25, 25, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(26, 26, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(27, 27, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(28, 28, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(29, 29, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(30, 30, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(31, 31, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(32, 32, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(33, 33, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(34, 34, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(35, 35, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(36, 36, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(37, 37, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(38, 38, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(39, 39, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(40, 40, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(41, 41, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(42, 42, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(43, 43, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(44, 44, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(45, 45, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(46, 46, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(47, 47, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(48, 48, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(49, 49, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(50, 50, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(51, 51, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(52, 52, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(53, 53, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(54, 54, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(55, 55, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(56, 56, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(57, 57, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(58, 58, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(59, 59, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(60, 60, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(61, 61, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(62, 62, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(63, 63, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(64, 64, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(65, 65, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(66, 66, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(67, 67, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(68, 68, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(69, 69, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(70, 70, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(71, 71, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(72, 72, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(73, 73, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(74, 74, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(75, 75, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(76, 76, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(77, 77, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(78, 78, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(79, 79, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(80, 80, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(81, 81, 0, 1, 0, 40, 40, 0, 0, 0, ''),
+(82, 82, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(83, 83, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(84, 84, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(85, 85, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(86, 86, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(87, 87, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(88, 88, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(89, 89, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(90, 90, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(91, 91, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(92, 92, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(93, 93, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(94, 94, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(95, 95, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(96, 96, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(97, 97, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(98, 98, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(99, 99, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(100, 100, 0, 1, 0, 0, 0, 0, 0, 2, ''),
 (101, 101, 0, 1, 0, 99, 100, 1, 0, 0, ''),
-(102, 102, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(103, 103, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(104, 104, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(105, 105, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(106, 106, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(107, 107, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(108, 108, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(109, 109, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(110, 110, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(111, 111, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(112, 112, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(113, 113, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(114, 114, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(115, 115, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(116, 116, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(117, 117, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(118, 118, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(119, 119, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(120, 120, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(121, 121, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(122, 122, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(123, 123, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(124, 124, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(125, 125, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(126, 126, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(127, 127, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(128, 128, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(129, 129, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(130, 130, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(131, 131, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(132, 132, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(133, 133, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(134, 134, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(135, 135, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(136, 136, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(137, 137, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(138, 138, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(139, 139, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(140, 140, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(141, 141, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(142, 142, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(143, 143, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(144, 144, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(145, 145, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(146, 146, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(147, 147, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(148, 148, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(149, 149, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(150, 150, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(151, 151, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(152, 152, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(153, 153, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(154, 154, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(155, 155, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(156, 156, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(157, 157, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(158, 158, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(159, 159, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(160, 160, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(161, 161, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(162, 162, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(163, 163, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(164, 164, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(165, 165, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(166, 166, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(167, 167, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(168, 168, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(169, 169, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(170, 170, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(171, 171, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(172, 172, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(173, 173, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(174, 174, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(175, 175, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(176, 176, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(177, 177, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(178, 178, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(179, 179, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(180, 180, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(181, 181, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(182, 182, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(183, 183, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(184, 184, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(185, 185, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(186, 186, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(187, 187, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(188, 188, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(189, 189, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(190, 190, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(191, 191, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(192, 192, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(193, 193, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(194, 194, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(195, 195, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(196, 196, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(197, 197, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(198, 198, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(199, 199, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(200, 200, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(201, 201, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(202, 202, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(203, 203, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(204, 204, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(205, 205, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(206, 206, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(207, 207, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(208, 208, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(209, 209, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(210, 210, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(211, 211, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(212, 212, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(213, 213, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(214, 214, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(215, 215, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(216, 216, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(217, 217, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(218, 218, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(219, 219, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(220, 220, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(221, 221, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(222, 222, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(223, 223, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(224, 224, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(225, 225, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(226, 226, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(227, 227, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(228, 228, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(229, 229, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(230, 230, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(231, 231, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(232, 232, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(233, 233, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(234, 234, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(235, 235, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(236, 236, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(237, 237, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(238, 238, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(239, 239, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(240, 240, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(241, 241, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(242, 242, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(243, 243, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(244, 244, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(245, 245, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(246, 246, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(247, 247, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(248, 248, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(249, 249, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(250, 250, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(251, 251, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(252, 252, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(253, 253, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(254, 254, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(255, 255, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(256, 256, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(257, 257, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(258, 258, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(259, 259, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(260, 260, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(261, 261, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(262, 262, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(263, 263, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(264, 264, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(265, 265, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(266, 266, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(267, 267, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(268, 268, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(269, 269, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(270, 270, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(271, 271, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(272, 272, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(273, 273, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(274, 274, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(275, 275, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(276, 276, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(277, 277, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(278, 278, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(279, 279, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(280, 280, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(281, 281, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(282, 282, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(283, 283, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(284, 284, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(285, 285, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(286, 286, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(287, 287, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(288, 288, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(289, 289, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(290, 290, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(291, 291, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(292, 292, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(293, 293, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(294, 294, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(295, 295, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(296, 296, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(297, 297, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(298, 298, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(299, 299, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(300, 300, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(301, 301, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(302, 302, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(303, 303, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(304, 304, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(305, 305, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(306, 306, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(307, 307, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(308, 308, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(309, 309, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(310, 310, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(311, 311, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(312, 312, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(313, 313, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(314, 314, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(315, 315, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(316, 316, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(317, 317, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(318, 318, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(319, 319, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(320, 320, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(321, 321, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(322, 322, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(323, 323, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(324, 324, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(325, 325, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(326, 326, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(327, 327, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(328, 328, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(329, 329, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(330, 330, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(331, 331, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(332, 332, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(333, 333, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(334, 334, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(335, 335, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(336, 336, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(337, 337, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(338, 338, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(339, 339, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(340, 340, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(341, 341, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(342, 342, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(343, 343, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(344, 344, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(345, 345, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(346, 346, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(347, 347, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(348, 348, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(349, 349, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(350, 350, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(351, 351, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(352, 352, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(353, 353, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(354, 354, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(355, 355, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(356, 356, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(357, 357, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(358, 358, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(359, 359, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(360, 360, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(361, 361, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(362, 362, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(363, 363, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(364, 364, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(365, 365, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(366, 366, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(367, 367, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(368, 368, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(369, 369, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(370, 370, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(371, 371, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(372, 372, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(373, 373, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(374, 374, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(375, 375, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(376, 376, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(377, 377, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(378, 378, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(379, 379, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(380, 380, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(381, 381, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(382, 382, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(383, 383, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(384, 384, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(385, 385, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(386, 386, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(387, 387, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(388, 388, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(389, 389, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(390, 390, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(391, 391, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(392, 392, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(393, 393, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(394, 394, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(395, 395, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(396, 396, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(397, 397, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(398, 398, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(399, 399, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(400, 400, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(401, 401, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(402, 402, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(403, 403, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(404, 404, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(405, 405, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(406, 406, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(407, 407, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(408, 408, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(409, 409, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(410, 410, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(411, 411, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(412, 412, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(413, 413, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(414, 414, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(415, 415, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(416, 416, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(417, 417, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(418, 418, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(419, 419, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(420, 420, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(421, 421, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(422, 422, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(423, 423, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(424, 424, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(425, 425, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(426, 426, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(427, 427, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(428, 428, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(429, 429, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(430, 430, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(431, 431, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(432, 432, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(433, 433, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(434, 434, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(435, 435, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(436, 436, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(437, 437, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(438, 438, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(439, 439, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(440, 440, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(441, 441, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(442, 442, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(443, 443, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(444, 444, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(445, 445, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(446, 446, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(447, 447, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(448, 448, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(449, 449, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(450, 450, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(451, 451, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(452, 452, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(453, 453, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(454, 454, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(455, 455, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(456, 456, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(457, 457, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(458, 458, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(459, 459, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(460, 460, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(461, 461, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(462, 462, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(463, 463, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(464, 464, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(465, 465, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(466, 466, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(467, 467, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(468, 468, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(469, 469, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(470, 470, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(471, 471, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(472, 472, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(473, 473, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(474, 474, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(475, 475, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(476, 476, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(477, 477, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(478, 478, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(479, 479, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(480, 480, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(481, 481, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(482, 482, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(483, 483, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(484, 484, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(485, 485, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(486, 486, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(487, 487, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(488, 488, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(489, 489, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(490, 490, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(491, 491, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(492, 492, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(493, 493, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(494, 494, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(495, 495, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(496, 496, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(497, 497, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(498, 498, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(499, 499, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(500, 500, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(501, 501, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(502, 502, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(503, 503, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(504, 504, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(505, 505, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(506, 506, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(507, 507, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(508, 508, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(509, 509, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(510, 510, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(511, 511, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(512, 512, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(513, 513, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(514, 514, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(515, 515, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(516, 516, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(517, 517, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(518, 518, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(519, 519, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(520, 520, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(521, 521, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(522, 522, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(523, 523, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(524, 524, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(525, 525, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(526, 526, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(527, 527, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(528, 528, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(529, 529, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(530, 530, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(531, 531, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(532, 532, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(533, 533, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(534, 534, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(535, 535, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(536, 536, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(537, 537, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(538, 538, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(539, 539, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(540, 540, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(541, 541, 0, 1, 0, 100, 0, 0, 0, 0, ''),
-(542, 542, 0, 1, 0, 100, 0, 0, 0, 0, '');
+(102, 102, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(103, 103, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(104, 104, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(105, 105, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(106, 106, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(107, 107, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(108, 108, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(109, 109, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(110, 110, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(111, 111, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(112, 112, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(113, 113, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(114, 114, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(115, 115, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(116, 116, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(117, 117, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(118, 118, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(119, 119, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(120, 120, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(121, 121, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(122, 122, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(123, 123, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(124, 124, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(125, 125, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(126, 126, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(127, 127, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(128, 128, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(129, 129, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(130, 130, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(131, 131, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(132, 132, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(133, 133, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(134, 134, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(135, 135, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(136, 136, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(137, 137, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(138, 138, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(139, 139, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(140, 140, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(141, 141, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(142, 142, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(143, 143, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(144, 144, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(145, 145, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(146, 146, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(147, 147, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(148, 148, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(149, 149, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(150, 150, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(151, 151, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(152, 152, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(153, 153, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(154, 154, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(155, 155, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(156, 156, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(157, 157, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(158, 158, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(159, 159, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(160, 160, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(161, 161, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(162, 162, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(163, 163, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(164, 164, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(165, 165, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(166, 166, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(167, 167, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(168, 168, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(169, 169, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(170, 170, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(171, 171, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(172, 172, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(173, 173, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(174, 174, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(175, 175, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(176, 176, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(177, 177, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(178, 178, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(179, 179, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(180, 180, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(181, 181, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(182, 182, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(183, 183, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(184, 184, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(185, 185, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(186, 186, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(187, 187, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(188, 188, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(189, 189, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(190, 190, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(191, 191, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(192, 192, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(193, 193, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(194, 194, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(195, 195, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(196, 196, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(197, 197, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(198, 198, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(199, 199, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(200, 200, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(201, 201, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(202, 202, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(203, 203, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(204, 204, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(205, 205, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(206, 206, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(207, 207, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(208, 208, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(209, 209, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(210, 210, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(211, 211, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(212, 212, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(213, 213, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(214, 214, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(215, 215, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(216, 216, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(217, 217, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(218, 218, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(219, 219, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(220, 220, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(221, 221, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(222, 222, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(223, 223, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(224, 224, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(225, 225, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(226, 226, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(227, 227, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(228, 228, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(229, 229, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(230, 230, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(231, 231, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(232, 232, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(233, 233, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(234, 234, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(235, 235, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(236, 236, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(237, 237, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(238, 238, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(239, 239, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(240, 240, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(241, 241, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(242, 242, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(243, 243, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(244, 244, 0, 1, 0, 120, 120, 0, 0, 0, ''),
+(245, 245, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(246, 246, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(247, 247, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(248, 248, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(249, 249, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(250, 250, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(251, 251, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(252, 252, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(253, 253, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(254, 254, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(255, 255, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(256, 256, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(257, 257, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(258, 258, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(259, 259, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(260, 260, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(261, 261, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(262, 262, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(263, 263, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(264, 264, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(265, 265, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(266, 266, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(267, 267, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(268, 268, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(269, 269, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(270, 270, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(271, 271, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(272, 272, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(273, 273, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(274, 274, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(275, 275, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(276, 276, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(277, 277, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(278, 278, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(279, 279, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(280, 280, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(281, 281, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(282, 282, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(283, 283, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(284, 284, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(285, 285, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(286, 286, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(287, 287, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(288, 288, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(289, 289, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(290, 290, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(291, 291, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(292, 292, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(293, 293, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(294, 294, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(295, 295, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(296, 296, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(297, 297, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(298, 298, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(299, 299, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(300, 300, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(301, 301, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(302, 302, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(303, 303, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(304, 304, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(305, 305, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(306, 306, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(307, 307, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(308, 308, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(309, 309, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(310, 310, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(311, 311, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(312, 312, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(313, 313, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(314, 314, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(315, 315, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(316, 316, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(317, 317, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(318, 318, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(319, 319, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(320, 320, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(321, 321, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(322, 322, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(323, 323, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(324, 324, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(325, 325, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(326, 326, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(327, 327, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(328, 328, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(329, 329, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(330, 330, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(331, 331, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(332, 332, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(333, 333, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(334, 334, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(335, 335, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(336, 336, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(337, 337, 0, 1, 0, 110, 110, 0, 0, 0, ''),
+(338, 338, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(339, 339, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(340, 340, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(341, 341, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(342, 342, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(343, 343, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(344, 344, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(345, 345, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(346, 346, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(347, 347, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(348, 348, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(349, 349, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(350, 350, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(351, 351, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(352, 352, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(353, 353, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(354, 354, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(355, 355, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(356, 356, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(357, 357, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(358, 358, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(359, 359, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(360, 360, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(361, 361, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(362, 362, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(363, 363, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(364, 364, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(365, 365, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(366, 366, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(367, 367, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(368, 368, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(369, 369, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(370, 370, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(371, 371, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(372, 372, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(373, 373, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(374, 374, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(375, 375, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(376, 376, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(377, 377, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(378, 378, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(379, 379, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(380, 380, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(381, 381, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(382, 382, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(383, 383, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(384, 384, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(385, 385, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(386, 386, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(387, 387, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(388, 388, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(389, 389, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(390, 390, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(391, 391, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(392, 392, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(393, 393, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(394, 394, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(395, 395, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(396, 396, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(397, 397, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(398, 398, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(399, 399, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(400, 400, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(401, 401, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(402, 402, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(403, 403, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(404, 404, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(405, 405, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(406, 406, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(407, 407, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(408, 408, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(409, 409, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(410, 410, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(411, 411, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(412, 412, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(413, 413, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(414, 414, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(415, 415, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(416, 416, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(417, 417, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(418, 418, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(419, 419, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(420, 420, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(421, 421, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(422, 422, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(423, 423, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(424, 424, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(425, 425, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(426, 426, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(427, 427, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(428, 428, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(429, 429, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(430, 430, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(431, 431, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(432, 432, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(433, 433, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(434, 434, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(435, 435, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(436, 436, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(437, 437, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(438, 438, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(439, 439, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(440, 440, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(441, 441, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(442, 442, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(443, 443, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(444, 444, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(445, 445, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(446, 446, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(447, 447, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(448, 448, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(449, 449, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(450, 450, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(451, 451, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(452, 452, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(453, 453, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(454, 454, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(455, 455, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(456, 456, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(457, 457, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(458, 458, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(459, 459, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(460, 460, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(461, 461, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(462, 462, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(463, 463, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(464, 464, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(465, 465, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(466, 466, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(467, 467, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(468, 468, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(469, 469, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(470, 470, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(471, 471, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(472, 472, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(473, 473, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(474, 474, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(475, 475, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(476, 476, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(477, 477, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(478, 478, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(479, 479, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(480, 480, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(481, 481, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(482, 482, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(483, 483, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(484, 484, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(485, 485, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(486, 486, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(487, 487, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(488, 488, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(489, 489, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(490, 490, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(491, 491, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(492, 492, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(493, 493, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(494, 494, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(495, 495, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(496, 496, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(497, 497, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(498, 498, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(499, 499, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(500, 500, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(501, 501, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(502, 502, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(503, 503, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(504, 504, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(505, 505, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(506, 506, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(507, 507, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(508, 508, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(509, 509, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(510, 510, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(511, 511, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(512, 512, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(513, 513, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(514, 514, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(515, 515, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(516, 516, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(517, 517, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(518, 518, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(519, 519, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(520, 520, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(521, 521, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(522, 522, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(523, 523, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(524, 524, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(525, 525, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(526, 526, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(527, 527, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(528, 528, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(529, 529, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(530, 530, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(531, 531, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(532, 532, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(533, 533, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(534, 534, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(535, 535, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(536, 536, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(537, 537, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(538, 538, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(539, 539, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(540, 540, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(541, 541, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(542, 542, 0, 1, 0, 100, 100, 0, 0, 0, ''),
+(543, 81, 1, 1, 0, 20, 20, 0, 0, 0, ''),
+(544, 81, 2, 1, 0, 20, 20, 0, 0, 0, ''),
+(545, 100, 3, 1, 0, 0, 0, 0, 0, 2, ''),
+(546, 100, 4, 1, 0, 0, 0, 0, 0, 2, ''),
+(547, 100, 5, 1, 0, 0, 0, 0, 0, 2, ''),
+(548, 100, 6, 1, 0, 0, 0, 0, 0, 2, '');
 
 -- --------------------------------------------------------
 
@@ -109888,7 +109956,35 @@ INSERT INTO `ps_stock_mvt` (`id_stock_mvt`, `id_stock`, `id_order`, `id_supply_o
 (539, 539, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 100, '2021-11-20 23:29:48', 1, '0.000000', '0.000000', '0.000000', NULL),
 (540, 540, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 100, '2021-11-20 23:29:49', 1, '0.000000', '0.000000', '0.000000', NULL),
 (541, 541, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 100, '2021-11-20 23:29:49', 1, '0.000000', '0.000000', '0.000000', NULL),
-(542, 542, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 100, '2021-11-20 23:29:50', 1, '0.000000', '0.000000', '0.000000', NULL);
+(542, 542, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 100, '2021-11-20 23:29:50', 1, '0.000000', '0.000000', '0.000000', NULL),
+(543, 543, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:21', 1, '0.000000', '0.000000', '0.000000', NULL),
+(544, 544, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:21', 1, '0.000000', '0.000000', '0.000000', NULL),
+(545, 244, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:21', 1, '0.000000', '0.000000', '0.000000', NULL),
+(546, 543, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(547, 544, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(548, 244, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(549, 312, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(550, 313, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(551, 315, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(552, 317, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(553, 318, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(554, 319, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(555, 320, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(556, 321, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(557, 322, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(558, 323, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(559, 324, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(560, 325, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(561, 326, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(562, 327, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(563, 328, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(564, 329, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(565, 330, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(566, 331, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(567, 333, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(568, 334, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(569, 335, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL),
+(570, 337, NULL, NULL, 11, 1, 'Nazwisko', 'Imie', 10, '2021-11-21 16:57:29', 1, '0.000000', '0.000000', '0.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -111940,7 +112036,8 @@ INSERT INTO `ps_wishlist` (`id_wishlist`, `id_customer`, `id_shop`, `id_shop_gro
 (1, 3, 1, 1, 'B5A72AF73FA4597B', 'Moja lista życzeń', NULL, '2021-11-02 22:03:28', '2021-11-02 22:03:28', 1),
 (2, 4, 1, 1, 'E8596B2E3229B933', 'Moja lista życzeń', NULL, '2021-11-13 23:45:38', '2021-11-13 23:45:38', 1),
 (3, 5, 1, 1, '9223AC30C329F435', 'Moja lista życzeń', NULL, '2021-11-16 22:22:29', '2021-11-16 22:22:29', 1),
-(4, 9, 1, 1, '80DDA3794E065BB2', 'Moja lista życzeń', NULL, '2021-11-21 14:37:24', '2021-11-21 14:37:24', 1);
+(4, 9, 1, 1, '80DDA3794E065BB2', 'Moja lista życzeń', NULL, '2021-11-21 14:37:24', '2021-11-21 14:37:24', 1),
+(5, 10, 1, 1, '27152A23E05E7401', 'Moja lista życzeń', NULL, '2021-11-21 16:11:40', '2021-11-21 16:11:40', 1);
 
 -- --------------------------------------------------------
 
@@ -114115,13 +114212,13 @@ ALTER TABLE `ps_attachment_lang`
 -- AUTO_INCREMENT dla tabeli `ps_attribute`
 --
 ALTER TABLE `ps_attribute`
-  MODIFY `id_attribute` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_attribute` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_attribute_group`
 --
 ALTER TABLE `ps_attribute_group`
-  MODIFY `id_attribute_group` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_attribute_group` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_attribute_impact`
@@ -114157,7 +114254,7 @@ ALTER TABLE `ps_carrier`
 -- AUTO_INCREMENT dla tabeli `ps_cart`
 --
 ALTER TABLE `ps_cart`
-  MODIFY `id_cart` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_cart` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_cart_rule`
@@ -114229,7 +114326,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_connections` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
@@ -114319,7 +114416,7 @@ ALTER TABLE `ps_employee`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_employee_session` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
@@ -114463,7 +114560,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=610;
+  MODIFY `id_log` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=634;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
@@ -114649,7 +114746,7 @@ ALTER TABLE `ps_product`
 -- AUTO_INCREMENT dla tabeli `ps_product_attribute`
 --
 ALTER TABLE `ps_product_attribute`
-  MODIFY `id_product_attribute` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_product_attribute` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_product_comment`
@@ -114673,7 +114770,7 @@ ALTER TABLE `ps_product_download`
 -- AUTO_INCREMENT dla tabeli `ps_product_supplier`
 --
 ALTER TABLE `ps_product_supplier`
-  MODIFY `id_product_supplier` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+  MODIFY `id_product_supplier` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_profile`
@@ -114763,7 +114860,7 @@ ALTER TABLE `ps_search_engine`
 -- AUTO_INCREMENT dla tabeli `ps_search_word`
 --
 ALTER TABLE `ps_search_word`
-  MODIFY `id_word` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147654;
+  MODIFY `id_word` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149825;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_shop`
@@ -114787,13 +114884,13 @@ ALTER TABLE `ps_shop_url`
 -- AUTO_INCREMENT dla tabeli `ps_specific_price`
 --
 ALTER TABLE `ps_specific_price`
-  MODIFY `id_specific_price` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_specific_price` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_specific_price_priority`
 --
 ALTER TABLE `ps_specific_price_priority`
-  MODIFY `id_specific_price_priority` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_specific_price_priority` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_specific_price_rule`
@@ -114823,7 +114920,7 @@ ALTER TABLE `ps_state`
 -- AUTO_INCREMENT dla tabeli `ps_statssearch`
 --
 ALTER TABLE `ps_statssearch`
-  MODIFY `id_statssearch` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_statssearch` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_stock`
@@ -114835,13 +114932,13 @@ ALTER TABLE `ps_stock`
 -- AUTO_INCREMENT dla tabeli `ps_stock_available`
 --
 ALTER TABLE `ps_stock_available`
-  MODIFY `id_stock_available` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+  MODIFY `id_stock_available` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_stock_mvt`
 --
 ALTER TABLE `ps_stock_mvt`
-  MODIFY `id_stock_mvt` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+  MODIFY `id_stock_mvt` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=571;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_stock_mvt_reason`
@@ -114973,7 +115070,7 @@ ALTER TABLE `ps_web_browser`
 -- AUTO_INCREMENT dla tabeli `ps_wishlist`
 --
 ALTER TABLE `ps_wishlist`
-  MODIFY `id_wishlist` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_wishlist` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_wishlist_product`
