@@ -467,7 +467,6 @@
  }
  img {
   vertical-align:middle;
-  margin-left:62px
  }
  [role="button"] {
   cursor:pointer
@@ -8295,7 +8294,8 @@
  .carousel .carousel-item img {
   width:100%;
   max-width:100%;
-  height:auto
+  height:auto;
+  margin-left:62px
  }
  .carousel .carousel-item .caption {
   position:absolute;
@@ -11146,7 +11146,8 @@
  }
  #header .logo {
   max-width:100%;
-  height:auto
+  height:auto;
+  margin-left:62px
  }
  #header #_desktop_logo h1 {
   margin-bottom:0
@@ -11321,7 +11322,8 @@
  }
  #wrapper .banner {
   display:block;
-  margin-bottom:1.5rem
+  margin-bottom:1.5rem;
+  margin-left:60px
  }
  #wrapper .breadcrumb {
   padding:0;
