@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+sudo apt install nodejs
+sudo apt install npm
+# add both to PATH?
+sudo chmod -R 777 .
