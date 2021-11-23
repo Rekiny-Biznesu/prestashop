@@ -1,0 +1,21 @@
+{
+  "name": "prestashop-scrapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrap_bilety24.ts",
+  "scripts": {
+    "scrap-bilety24": "ts-node scrap_bilety24.ts",
+    "json-to-presta-csv": "ts-node json_to_presta_csv.ts",
+    "import-on-presta": "ts-node import_on_presta.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/selenium-webdriver": "^4.0.16",
+    "nodejs-file-downloader": "^4.7.4",
+    "selenium-webdriver": "^4.0.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
