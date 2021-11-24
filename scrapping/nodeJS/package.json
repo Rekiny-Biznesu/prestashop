@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^16.11.10",
     "@types/selenium-webdriver": "^4.0.16",
     "nodejs-file-downloader": "^4.7.4",
     "selenium-webdriver": "^4.0.0",
