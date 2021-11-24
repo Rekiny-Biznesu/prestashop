@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+cp exports/presta-csv/events.csv ../admin057uc2t3k/import/
 cd nodeJS
 npm run import-on-presta
 cd ..
