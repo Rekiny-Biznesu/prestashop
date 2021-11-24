@@ -3,7 +3,7 @@ const Downloader = require("nodejs-file-downloader");
 import { Event } from "./common";
 
 const AMOUNT_TO_SKIP_FROM_EACH_CATEGORY = 0;
-const MAX_EVENTS_FROM_CATEGORY = 100;
+const MAX_EVENTS_FROM_CATEGORY = 1;
 const JSON_FILE_NAME = "events.json";
 const PRESTA_CSV_FILE_NAME = "events.csv";
 
@@ -68,7 +68,7 @@ function prestashopProductFromEvent(event: Event, category: string, id: number) 
     return { // DO NOT CHANGE THE ORDER OF KEYS
         id: id,
         active: 1,
-        name: event.title.replaceAll(INVALID_CHARS, "").replaceAll(INVALID_CHARS, "") .slice(0, MAX_NAME_LENGTH),
+        name: event.title.replace(INVALID_CHARS, "").replace(INVALID_CHARS, "") .slice(0, MAX_NAME_LENGTH),
         categories: category,
         priceTaxExcluded: event.variants[0].price.replace(",", "."), // netto
         taxRulesID: 5,
@@ -81,7 +81,7 @@ function prestashopProductFromEvent(event: Event, category: string, id: number) 
         referenceHash: `event-${id}`,
         supplierReferenceHash:  null,
         supplier: null,
-        manufacturer: event.organizer.replaceAll(INVALID_CHARS, "").slice(0, MAX_MANUFACTURER_LENGTH),
+        manufacturer: event.organizer.replace(INVALID_CHARS, "").slice(0, MAX_MANUFACTURER_LENGTH),
         ean13Code: id.toString().padStart(13, "0"),
         upcCode: id.toString().padStart(11, "0"),
         mpn: null,
@@ -104,13 +104,13 @@ function prestashopProductFromEvent(event: Event, category: string, id: number) 
             + `<b>Miasto</b>: ${event.variants[0].address}<br/>`
             + `<b>Lokacja</b>: ${event.variants[0].location}<br/>`
             + `<b>Czas</b>: ${event.variants[0].time}`)
-                .replaceAll('""', "") + '"')
+                .replace(/"/g, "") + '"')
                 .slice(0, MAX_SUMMARY_LENGTH),
-        description: `"${event.description.replaceAll('"', "")}"`
-            .replaceAll("\n", "<br/>")
+        description: `"${event.description.replace(/"/g, "")}"`
+            .replace(/\n/g, "<br/>")
             .slice(0, MAX_DESCRIPTION_LENGTH),
-        tags: category.toLowerCase().replaceAll(" ", "_"),
-        metaTitle: event.title.replaceAll('"', ""),
+        tags: category.toLowerCase().replace(/ /g, "_"),
+        metaTitle: event.title.replace(/"/g, ""),
         metaKeywords: null,
         metaDescription: null,
         urlRewrite: id,
@@ -121,7 +121,7 @@ function prestashopProductFromEvent(event: Event, category: string, id: number) 
         productCreationDate: "2021-11-01",
         showPrice: 1,
         imageUrls: event.imageURL,
-        imageAltTexts: event.title.replaceAll(INVALID_CHARS, ""),
+        imageAltTexts: event.title.replace(INVALID_CHARS, ""),
         deleteExistingImages: 1,
         feature: null,
         availableOnlineOnly: category === "Online" ? 1 : 0,
