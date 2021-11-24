@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo wget https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz -O /tmp/geckodriver.tar.gz \
+  && sudo tar -C /opt -xzf /tmp/geckodriver.tar.gz \
+  && sudo chmod 755 /opt/geckodriver \
+  && sudo ln -fs /opt/geckodriver /usr/bin/geckodriver \
+  && sudo ln -fs /opt/geckodriver /usr/local/bin/geckodriver
+sudo chmod -R 777 .
+cd nodeJS
+npm install
+cd ..

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd nodeJS
+npm run json-to-presta-csv
+cd ..
