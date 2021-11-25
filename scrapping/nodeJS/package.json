@@ -6,7 +6,8 @@
   "scripts": {
     "scrap-bilety24": "ts-node scrap_bilety24.ts",
     "json-to-presta-csv": "ts-node json_to_presta_csv.ts",
-    "import-on-presta": "ts-node import_on_presta.ts"
+    "import-on-presta": "ts-node import_on_presta.ts",
+    "selenium-testing": "ts-node selenium_testing.ts"
   },
   "keywords": [],
   "author": "",
