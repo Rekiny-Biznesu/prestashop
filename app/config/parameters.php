@@ -4,7 +4,7 @@
     'database_host' => '127.0.0.1',
     'database_port' => '',
     'database_name' => 'prestadb',
-    'database_user' => 'hanna',
+    'database_user' => 'admin',
     'database_password' => '1w3r56U*O)',
     'database_prefix' => 'ps_',
     'database_engine' => 'InnoDB',
