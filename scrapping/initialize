@@ -12,3 +12,4 @@ sudo chmod -R 777 .
 cd nodeJS
 npm install
 cd ..
+
